@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation JavaScript</title>
+<style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        main {
+            width: 75%;
+            padding: 20px;
+            background-color: #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #f7f7f7;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            clear: both;
+        }
+        h2 {
+            text-align: center;
+        }
+        img {
+            max-width: 100%; /* La largeur maximale de l'image est de 100% de la largeur de son conteneur */
+            height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+            display: block; /* Assure que l'image ne crée pas de "ligne de texte" */
+            margin: 0 auto; /* Centre l'image horizontalement */
+        }
+        section {
+            background-color: #ffffff; /* Couleur de fond */
+            border-radius: 8px; /* Coins arrondis */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            padding: 20px; /* Espacement intérieur */
+            margin-bottom: 20px; /* Marge inférieure */
+        }
+        nav {
+            width: 25%;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav h2 {
+            color: #555;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 10px;
+            border: 2px solid black;
+            text-align: center;
+            border-radius: 25px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: black;
+        }
+        nav li:hover {
+            background-color: black;
+        }
+        .menu-toggle {
+    display: none; /* Masquer par défaut sur les grands écrans */
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.menu-toggle:hover {
+    background-color: #555;
+}
+.typebutton {
+            border-radius: 5px;
+            font-weight: bold;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: #ccc;
+            font-size: 15px;
+            padding: 5px;
+        }
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            transition: opacity 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            opacity: 0.8;
+        }
+
+/* Styles pour les écrans de taille maximale de 768px (petits écrans) */
+@media (max-width: 768px) {
+    nav {
+        width: 100%; /* Occuper toute la largeur disponible */
+        display: none; /* Masquer le menu par défaut sur les petits écrans */
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton du menu hamburger */
+    }
+
+    nav.open {
+        width: 95%;
+        margin-bottom: 10px;
+        display: block; /* Afficher le menu lorsque le bouton est cliqué */
+    }
+    
+    main {
+        display: block;
+        width: 95%;
+    }
+
+    .container {
+        display: block;
+    }
+    
+    .menu-list {
+        display: block;
+    }
+
+    nav li {
+        padding: 8px;
+        border-radius: 0px;
+    }
+
+    nav a:hover {
+        border-radius: 0px;;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Javascript - Les instructions conditionnelles</h1>
+    </header>
+    <button id="scrollToTopBtn" onclick="scrollToTop()" title="Retour en haut">Retour en haut</button>
+    <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+    <div class="container">
+        <nav>
+            <ul>
+                <a href="typesjs.html"><li>Types de Données</li></a>
+                <a href="variablesjs.html"><li>Variables et Assignation</li></a>
+                <a href="operateursjs.html"><li>Opérateurs Arithmétiques</li></a>
+                <a href="typesconversions.html"><li>Conversions de Types</li></a>
+                <a href="mathsfunctionsjs.html"><li>Les fonctions Math()</li></a>
+                <a href="statementsjs.html"><li>Les instructions conditionnelles</li></a>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="controlsflow">
+                <h2>Les Instructions Conditionnelles en JavaScript</h2>
+                <p>Les contrôles d'états (if / else / else if) permettent de prendre des décisions conditionnelles dans JavaScript. Ils permettent d'exécuter différentes parties de code en fonction de conditions spécifiques.</p>
+                <p>Voici les principaux mots-clés utilisés pour les contrôles d'états :</p>
+                <ul>
+                    <li><button class="typebutton" onclick="goTo(1)">if :</button> Utilisé pour exécuter un bloc de code si une condition est vraie.</li>
+                    <li><button class="typebutton" onclick="goTo(2)">else :</button> Utilisé pour exécuter un bloc de code si la condition de l'<code>if</code> est fausse.</li>
+                    <li><button class="typebutton" onclick="goTo(3)">else if :</button> Utilisé pour spécifier une nouvelle condition si la première condition de l'<code>if</code> est fausse.</li>
+                    <li><button class="typebutton" onclick="goTo(4)">Opérateur Ternaire :</button> Utilisé pour exécuter un bloc de code en fonction de différentes conditions.</li>
+                    <li><button class="typebutton" onclick="goTo(5)">switch() : </button> Permet d'évaluer une expression et d'exécuter différents blocs de code en fonction de la valeur de cette expression.</li>
+                </ul>
+            </section>
+
+            <section id="if">
+                <h2>L'instruction "if"</h2>
+                <p>Le mot-clé <code>if</code> est utilisé pour exécuter un bloc de code si une condition spécifiée est évaluée comme vraie (true). La condition peut être une expression qui est évaluée comme vraie ou fausse.</p>
+                <img src="../RAYSOIMAGES/conditionifjs.png">
+                <ul>
+                    <li>Syntaxe : <pre>if(condition){
+    bloc de code à effectuer
+}</pre></li>
+                <li>L'instruction <code>if</code> peut être suivie d'une instruction else optionnelle, qui permet d'exécuter un bloc de code si la condition spécifiée est fausse.</li>
+                <li>Si la condition fournie est vraie, le bloc de code à l'intérieur des accolades {} est exécuté. Sinon, si une instruction <code>else</code> est présente, le bloc de code dans <code>else</code> est exécuté.
+            </ul>
+            </section>
+
+            <section id="else">
+                <h2>L'instruction "else"</h2>
+                <p>Le mot-clé <code>else</code> permet d'exécuter un bloc de code si la condition de l'<code>if</code> associé est fausse. Voici un exemple :</p>
+                <img src="../RAYSOIMAGES/conditionelsejs.png">
+                <ul>
+                    <li>Syntaxe : <pre>if(condition){
+    bloc de code à effectuer
+} else {
+    bloc de code à effectuer
+}</pre></li>
+                <li>L'instruction <code>else</code> est utilisée conjointement avec l'instruction if pour exécuter un bloc de code alternatif si la condition de l'instruction if est évaluée à false. Cela permet de gérer les cas où la condition principale n'est pas remplie.</li>
+                </ul>
+            </section>
+
+            <section id="elseif">
+                <h2>Le mot-clé "else if"</h2>
+                <p>Le mot-clé <code>else if</code> permet de spécifier une nouvelle condition si la première condition de l'<code>if</code> est fausse. Voici un exemple :</p>3
+                <img src="../RAYSOIMAGES/conditionelseifjs.png">
+                <ul>
+                    <li>L'instruction else if permet d'ajouter des conditions supplémentaires à une structure conditionnelle if...else. Elle est utilisée lorsque vous avez besoin de tester plusieurs conditions consécutives.</li>
+                </ul>
+            </section>
+
+            <section id="ternary-operator">
+                <h2>L'Opérateur Ternaire</h2>
+                <p>L'opérateur ternaire, également appelé opérateur conditionnel, permet d'exécuter un bloc de code en fonction d'une condition donnée. Il s'agit d'un raccourci pour écrire des instructions conditionnelles.</p>
+                <img src="../RAYSOIMAGES/ternaryoperatorjs.png">
+                <ul>
+                    <li>Syntaxe : condition ? expressionSiVrai : expressionSiFaux;</li>
+                    <li>L'opérateur ternaire se compose des éléments suivants :</li>
+                    <ul>
+                        <li><code>condition</code> : Une expression évaluée comme vraie ou fausse.</li>
+                        <li><code>expressionSiVrai</code> : L'expression ou le bloc de code exécuté si la condition est vraie.</li>
+                        <li><code>expressionSiFaux</code> : L'expression ou le bloc de code exécuté si la condition est fausse.</li>
+                    </ul>
+            </section>
+
+            <section id="switch">
+                <h2>La fonction switch()</h2>
+                <p>La fonction `switch()` permet d'évaluer une expression et d'exécuter différents blocs de code en fonction de la valeur de cette expression. Voici un exemple :</p>
+                <img src="../RAYSOIMAGES/switchjs.png">
+                <ul>
+                    <li>Syntaxe :
+<pre>
+switch(expression) {
+    case valeur1/condition1:
+        // Bloc de code à exécuter si 
+        // expression est égale à la 
+        // valeur.
+    break;
+</pre></li>
+                    <li>La fonction switch() se compose des éléments suivants :</li>
+                    <ul>
+                        <li><code>case ... : </code> : la valeur de la variable .</li>
+                        <li><code>{...}</code> : le bloc de code exécuté si la valeur correspond.</li>
+                        <li><code>break;</code> : L'expression pour sortir du code</li>
+                        <li>On peut utilisé <code>default : { bloc de code }</code> à la fin du switch pour éxécuté un code si aucune case ne correspond à la valeur.</li>
+                    </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Documentation JavaScript</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+        }
+
+        function goTo(section) {
+            switch(section) {
+                case 1 : 
+                    window.location.href="#if";
+                    break;
+                case 2 :
+                    window.location.href="#else";
+                    break;
+                case 3 : 
+                    window.location.href="#elseif";
+                    break;
+                case 4 :
+                    window.location.href="#ternary-operator";
+                    break;
+                case 5 : 
+                    window.location.href="#switch";
+                    break;
+            }
+        }
+
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        }
+
+        // Fonction pour faire défiler la page vers le haut lorsque le bouton est cliqué
+        function scrollToTop() {
+            document.body.scrollTop = 0; // Pour les navigateurs Safari
+            document.documentElement.scrollTop = 0; // Pour les autres navigateurs
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* Commentaire */
+.token-comment {
+    color: #6272a4;
+}
+
+/* Ponctuation */
+.token-punctuation {
+    color: #f8f8f2;
+}
+
+/* Symboles */
+.token-method {
+    color: rgb(255, 108, 108);
+}
+
+/* Symboles alternatifs */
+.token-symbols-alt {
+    color: #f1fa8c;
+}
+
+.token-string {
+    color: rgba(251, 255, 0, 0.838)
+}
+
+/* Opérateurs */
+.token-operator {
+    color: #ffffff;
+}
+
+.token-operator1 {
+    color: rgb(255, 208, 0)
+}
+.token-compare {
+    color: aqua;
+}
+
+/* Fonction et nom de classe */
+.token-function {
+    color: #71e5ff;
+}
+
+/* Regex */
+.token-regex {
+    color: #d16969;
+}
+
+/* Nom de classe */
+.token-classname {
+    color: #8be9fd;
+}
+
+/* Variable */
+.token-variable {
+    color: #87cdff;
+}
+
+/* Mot-clé */
+.token-keyword {
+    color: #98a3ff;
+}
+
+/* Important */
+.token-important {
+    color: #ff79c6;
+}
+
+/* Interpolation */
+.token-interpolation {
+    color: #f8f8f2;
+}
+
+/* Cdata */
+.token-array{
+    color: gray;
+}
+
+/* Valeur d'attribut */
+.token-bool {
+    color: #ce9178;
+}
+
+.token-number {
+    color: rgba(0, 255, 132, 0.744);
+}
+  
+  /* Boîte de code */
+  .code-box {
+    background-color: #282a36; /* Couleur de fond de la boîte de code */
+    color: #ffffff; /* Couleur du texte */
+    padding: 10px;
+    line-height: 1.6;
+    width: 95%;
+    border-radius: 0 5px 5px 0; /* Coins arrondis à droite */
+    margin-bottom: 14px;
+    height: auto;
+    margin-top: 14px;
+  }
+  
+  
+  /* Boutons de la barre d'outils */
+  .toolbar button {
+    background: #282a38;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: white !important;
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+
+  
+  .toolbar button:hover {
+    opacity: 0.5;
+  }
+
+.code-content {
+    font-family: 'Lucida Console', monospace;
+    font-size: 15px; /* Taille de police pour le code */
+    white-space: pre-wrap;
+    overflow-x: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+  

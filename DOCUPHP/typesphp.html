@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les types de données en Javascript</title>
+    <style>
+          .toolbar {
+    color: white;
+    background-color: #282a36; /* Couleur de fond de la barre d'outils */
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    position: relative;
+    left: 500px;
+display: none;
+  }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../Remove-bg.ai_1720312053002.png">
+
+</head>
+  <body>
+    <header>
+        <img src="../Remove-bg.ai_1720311973464.png">
+        <h1>PHP - Les types de données</h1>
+        <button id="toggle" class="toggleLightButton">Mode sombre</button>
+      </header>
+
+    <main>
+        <nav>
+            <ul>
+              <li>
+                <a href="typesphp.html">Types de Données</a>
+                <ul class="sub-menu">
+                  <li><a href="typesphp.html#strings">Chaînes de caractères</a></li>
+                  <li><a href="typesphp.html#numbers">Nombres</a></li>
+                  <li><a href="typesphp.html#booleans">Booléens</a></li>
+                  <li><a href="typesphp.html#undefined">undefined (Indéfini)</a></li>
+                  <li><a href="typesphp.html#null">null (valeur vide)</a></li>
+                  <li><a href="typesphp.html#arrays">Tableaux (Arrays)</a></li>
+                  <li><a href="typesphp.html#objects">Objets (Object)</a></li>
+                  <li><a href="typesphp.html#typeof">L'opérateur typeof</a></li>
+                </li>
+                </ul>
+                <li><a href="string_methodsphp.html">Méthodes de chaines de caractères</a></li>
+            </ul>
+          </nav>
+
+
+
+      <div class="container">
+        <section class="types">
+          <h2>Les différents types de données en PHP</h2>
+          <ul>
+            <li><b>String</b> : C'est une séquence de caractères comme des lettres, chiffres, symboles pour représenter un texte en PHP.</li>
+            <li><b>Boolean</b> : Permet de représenter une valeur logique avec les booléens true(vrai) et false(faux).</li>
+            <li><b>Integer (int)</b> : Permet de réprésenter un nombre entier.</li>
+            <li><b>Décimal (float)</b> : Permet de réprésenter un nombre décimal (à virgules).</li>
+            <li><b>undefined</b> : Valeur par défaut si une variable à été déclarée mais aucune valeur lui à été assignée.</li>
+            <li><b>null</b> : Réprésente l'absence volontaire de valeur pour une variable.</li>
+            <li><b>Array</b> : Permet de stocker une collection ordonnée d'élements, offre une manipulation de données efficace telle qu'une liste.</li>
+            <li><b>Object</b> : Permet de regrouper des données et des fonctionnalités dans une seule unité.</li>
+            <li>La fonction <b>var_dump()</b> : Permet de savoir le type de données d'une valeur.</li>
+          </ul>
+        </section>
+
+        <section id="strings">
+          <h2>Le type : String (chaine de caractères)</h2>
+          <p>Un "string" est une chaine de caractères, cela peut être un mot, une expression ou une phrase.</p>
+          <p>En PHP, il y'a deux moyens d'écrire une chaîne de caractères : </p><br>
+          <ul>
+            <li>Guillemets doubles : <button class="copy">" "</button> -> Utilisés pour créer une chaîne de caractères.</li>
+            <li>Guillemets simples : <button class="copy">' '</button> -> Utilisés également pour créer une chaîne de caractères.</li> 
+          </ul>
+          <div class="container1">
+        
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-string">"Bienvenue sur notre site !"</span> <span class="token-comment">// Ici on utilise les guillemets doubles.</span>
+<span class="token-string">'Bienvenue sur notre site !'</span> <span class="token-comment">// Ici on utilise les guillemets simples.</span>
+                </pre>
+            </div>
+          </div>
+          <br><hr><br>
+          <h3>Les séquences d'échappement sur les chaînes de caractères</h3>
+          <ul>
+            <li><b>\n</b> -> Permet de sauter une ligne dans une chaîne de caractères.</li>
+          </ul>
+          <br><hr><br>
+          <h3>Littéraux de modèles (Interpolation de variables) : </h3>
+          <p>Afin d'implémenter des variables dans une chaine de caractères, nous devons utiliser déjà ce que l'on appelle les backticks : ` `</p>
+          <div class="container1">
+        
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-keyword">$</span><span class="token-variable">name</span> = <span class="token-string">"Bruno"</span>;
+<span class="token-function">echo</span> "<span class="token-string">Le nom de l'utilisateur est :</span> <span class="token-variable">$name</span>" <span class="token-comment">// Le nom de l'utilisateur est Bruno.</span>
+                </pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="numbers">
+            <h2>Le type : Number (valeurs numériques)</h2>
+            <p>Un "number" est une valeur numérique en JavaScript, pouvant être un entier ou un nombre décimal.</p>
+            <p>Les nombres s'utilisent principalement pour les opérations, en Javascript nous pouvons écrire un nombre entier et décimal qu'il soit positif ou négatif :</p>
+            <div class="container1">
+          
+              <div class="code-box">
+                <div class="toolbar">
+                      <div class="color-circle red"></div>
+                      <div class="color-circle yellow"></div>
+                      <div class="color-circle green"></div>
+                      <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                      <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                      <pre class="code-content">
+  <span class="token-number">2.5</span> <span class="token-comment">// Ceci est un nombre décimal positif.</span>
+  <span class="token-number">1000000</span> <span class="token-comment">// Ceci est un nombre entier positif.</span>
+  <span class="token-number">-50.25</span> <span class="token-comment">// Ceci est un nombre décimal négatif.</span>
+  <span class="token-number">-100</span> <span class="token-comment">// Ceci est un nombre entier négatif.</span>
+                  </pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="booleans">
+            <h2>Le type : Boolean (instructions logiques)</h2>
+            <p>Un "boolean" contient seulement deux valeurs "true" (vrai) et "false" (faux)</p>
+            <p>Les booléens s'utilisent comme des conditions vraies ou fausses, principalement utilisés pour vérifier si quelque chose est vrai ou faux (avec une comparaison par exemple), dans ce cas true reflète "oui" et false reflète "non"</p>
+            <ul>
+              <li>Tout les nombres positifs ou négatifs sauf 0, Toutes les chaines de caractères sauf une chaine de caractères vide (" ") et le booléen true sont considérés comme vraies.</li>
+              <li>Le nombre 0, null,undefined,NaN,the boolean False et une chaine vide sont considérés comme étant faux.</li>
+            </ul>
+            <div class="container1">
+        
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                      <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                      <pre class="code-content">
+  <span class="token-bool">true</span> <span class="token-comment">// true signifie vrai.</span>
+  <span class="token-bool">false</span> <span class="token-comment">// false signifie faux.</span>
+                  </pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="undefined">
+            <h2>Le type : undefined</h2>
+            <p>En JavaScript, si nous n'attribuons pas de valeur à une variable, la valeur n'est pas définie. De plus, si une fonction ne renvoie rien, elle renvoie undefined.</p>
+
+         <div class="container1">
+        
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                      <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                      <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">youtubeur</span>; <span class="token-comment">// Nous assignons pas de valeur à la variable "youtubeur"</span>
+<span class="token-function">console.log</span>(<span class="token-variable">youtubeur</span>) <span class="token-comment">// Renvoie undefined dans la console</span>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="null">
+            <h2>Le type : null</h2>
+            <p>En Javascript, le type de données "null", indique une valeur qui est vide.
+         <div class="container1">
+        
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                      <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                      <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">youtubeur</span> = null; <span class="token-comment">// On définis la variable à une valeur null.</span>
+</pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="arrays">
+            <h2>Le type : Array (Tableaux)</h2>
+<p>Un tableau est une liste de valeurs de données entre crochets. Les tableaux peuvent contenir des types de données identiques ou différents. Les valeurs du tableau sont référencées par leur index. En JavaScript, l'index du tableau commence à zéro. C'est-à-dire que le premier élément d'un tableau se trouve à l'index zéro, le deuxième élément à l'index un et le troisième élément à l'index deux, etc.</p>
+
+              <div class="container1">
+        
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                      <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                      <pre class="code-content">
+[<span class="token-string">"Chocolat"</span>, <span class="token-number">59</span>, <span class="token-string">"Nutella"</span>, <span class="token-bool">false</span>] <span class="token-comment">// Création d'un Array qui contient plusieurs types de données.</span>
+                  </pre>
+              </div>
+            </div>
+          </section>
+
+          <section id="typeof">
+            <h2>L'opérateur typeof</h2>
+            <p>L'opérateur typeof permet de savoir le type de données d'une valeur, variable etc.. (utile pour la compréhension du javascript)</p>
+            <div class="container1">
+                <div class="code-box">
+                    <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-operator1">typeof</span> undefined); <span class="token-comment">// Affichera "undefined"</span>
+<span class="token-function">console.log</span>(<span class="token-operator1">typeof</span> null); <span class="token-comment">// Affichera "null"</span>
+<span class="token-function">console.log</span>(<span class="token-operator1">typeof</span> <span class="token-bool">true</span>); <span class="token-comment">// Affichera "bool"</span>
+<span class="token-function">console.log</span>(<span class="token-operator1">typeof</span> <span class="token-number">42</span>); <span class="token-comment">// Affichera "number</span>
+<span class="token-function">console.log</span>(<span class="token-operator1">typeof</span> <span class="token-string">Hello"</span>); <span class="token-comment">// Affichera "string"</span>
+<span class="token-function">console.log</span>(<span class="token-operator1">typeof</span> {}); <span class="token-comment">// Affichera "object"</span>
+<span class="token-function">console.log</span>(<span class="token-operator1">typeof</span> []); <span class="token-comment">// Affichera "object" (c'est un tableau)</span>
+                    </pre>
+                </div>
+            </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+// Sélectionnez le bouton avec la classe "copy"
+const copyButton = document.querySelector('.copy');
+
+// Ajoutez un gestionnaire d'événements au clic sur le bouton "copy"
+copyButton.addEventListener('click', () => {
+    // Récupérez le texte contenu dans le bouton
+    const buttonText = copyButton.textContent;
+
+    // Créez un nouvel élément textarea dans le document
+    const textArea = document.createElement('textarea');
+    textArea.value = buttonText; // Définissez la valeur du textarea avec le texte du bouton
+
+    // Ajoutez le textarea au document (il n'est pas visible à l'écran)
+    document.body.appendChild(textArea);
+
+    // Sélectionnez le texte dans le textarea
+    textArea.select();
+    
+    // Copiez le texte sélectionné dans le presse-papiers du système
+    document.execCommand('copy');
+
+    // Supprimez le textarea du document
+    document.body.removeChild(textArea);
+
+    // Facultatif : Affichez une confirmation à l'utilisateur
+    alert('Texte copié : ' + buttonText);
+});
+    </script>
+  </body>
+</html>

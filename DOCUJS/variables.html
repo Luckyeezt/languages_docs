@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les variables en Javascript</title>
+    <style>
+          .toolbar {
+    color: white;
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    display: flex;
+    justify-content: flex-end;
+  }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEUAAAD///+qqqr7+/vQ0NDLy8teXl5oaGjW1tbu7u5kZGTZ2dnx8fHT09PIyMi3t7ePj48gICAODg5ubm53d3c1NTXi4uJNTU2hoaG9vb2ysrLm5uZbW1vAwMBzc3OWlpaGhoZGRkYtLS2BgYE/Pz8cHBweHh4oKChLS0sVFRVBQUGcnJxj+1INAAAGIklEQVR4nO2ca3uqOhBGQaq7tlTwgncram3r9v//v6P2CswkE5Qk+zzv+lqlWRJymZkQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAw2G73fYHrlvRCNnwOGuPw0+icXs+2vhnumtVmf8VfHEz/Xb7TXc18kyyRzWzo/3a6JH63ufNnL1YaLiYWoajmPe70M6sNF5EDcPOQuN3pmWp/XrMDROB34nxxpaCBlPDF8kN/GBoz0KFoeGD2O9EatGDx8zw2UQwDNc2TTiMDDtmgmGYWzThMDHMIlPDcGTXhoI0fKA/2zUWDMOlXR0CA0PhNFEk7lsWqiA3NH4IP+jZNirTFhuSC20BuV2hCmLDUU3BMHyzLlVAbFj3Fp6W4dalCkgNJ/UF/5F7OGMNxq30eZgfe/SOqvvHvlMRqSE32c9/thDPxK7Yg02U0HBJ+8WTwqd2pd9hPKlcyD5CwzUtWA7JvBXGIz/2FncyQ3JhQC3JfnrqoyeRDNKwOjqQS9IVcb3B5yejvPGmC5EZDsiBktzEby5/unO+HP1GZkjum+IDecXj6QZ6sGn6RmZIzvdd5pLxyp8bGEgNycliwVzSkxHmiysMuXvoGVf00sirzsjyJDJ8IRdtTLDDM2SGr+RscXTRYGNkhvSMX1m0eYnQ8J76WDhz0GBjhIZT0jCcOmixKeTNqRpyUZq5gyYbIjQMGMNw4cMWUInUkM9qJ1v7rTZBapiyhmE0f7XfbjmkITGVD3jDEzNJ9YYjpIbBSqkY3juPqXGQzxdlqA2YLlI/FwBiQzpmVSBqOQ7+ksgN/2oNT9y5zxeWkRsGLYli+OhTBOOMgaE0B9zd2VXQYGK4kRmeHH26jyaGBjnEhT/Po5EhE9wnWfmymDMzNFH0JeptaBjs5IrhkxehKlPDYGJQVRP5ULxHpufV9aUmdTUeVLbVMAyGBtVfiR0NBXUMpcubC84rhuoZBu/6dbgvijUNg2CpqNYv4jhaRbZTYmjg6Daff4Xhaeag0/sVnMbjrjIMgqylO3pxhss0WoGM08gNg+CQCqr3XfZTcSRKwVLbWSOHIRxh3kKDtrM6THDcxvDcWZXrVYcZcTLLXW/BvFPdR3fhVNLwuebFUn7B6m5lc1PD4JUtQ3XXTUnDKwJJ7A7Z2alL0vCacOCE6anOQow3N+QSHM5WbrfupQEXrXIWQm3AkK4JdzbnkyvvKw3JCICzXSK5A1bMFv1cf03yHKazgA251uIXIHkkuMHkWEOVTFuBfGa4pMPyslHS7hNe7BseEvbsEdUYZmTPPqNPY92/e6eu2WiF2HlJzGz5+qQhdZT+8DN+6AYNMkXV4HOYXSYEJpBAH5sk6pgLGwfNlp0Mijd3Puir5o6ej8hCoO6+/LFlachVL3rIXy2/hQzBw89YST5cZBCj/KBl1SiFSpGuY2xm1fb2u8yH2r/QB7aeBC3mlyjMeeFGClFKG9Kn6ifomG7hkeF27veVrvwBs7doIqA4qUT57sszGZMn+z2nKzKiR2pi5JLEtx9KD3Pi33QLD8OAK1UrbFYVwZd4WirY6+/Y2OnN4zTcW4CS79Yf1lzbiw+sOq39ePxa/7x20jb/a9y86F2Rpo17rel0OlcczS7NXNr8SxTFcaRJmt68kw51rVJRGtfp0ySG3L7+lD49IKIy6pmUXzA0cCR/U781eeVizFEEA5o4zkYNpSJi4mLCNCFLM2vSOi+TOZNTF7ui04eNpQ9rvuaBbs1B/oYvgvdmDFXnBxQwM/P2igG1ucKoOu8EYje3/bq9vtFgt/kAoQhQ7MlMo568QUFJeX2RrnKLY1AI9UPTeUP+nSsUsabotSOpuyiwaP5ct0HFazim3yDwG8O538q7Wx7EI4Qo3JcZ9Io7S4ehBrLVjfhFD5nwcby3WMuekfmlIkZ5k51+Q2X7RbuTmXLCjhLTAWGbPvGjTrfnIle4zdnpbLyuFQbbL9ft6jZ63E6Xzuqf9sOk0rvi3vGq8XyfdfLpPJmtZsm8lf55YeJvNtkO02krSWZJ67h+9uql1AAAAAAAAAAAwP+W/wA5rEutfvF8eAAAAABJRU5ErkJggg==">
+</head>
+  <body>
+    <header>
+      <img src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png">
+      <h1>Javascript - Les variables</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+      <nav>
+        <ul>
+          <li>
+            <a href="typesjs.html">Types de Données</a>
+            <ul class="sub-menu">
+              <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
+              <li><a href="typesjs.html#numbers">Nombres</a></li>
+              <li><a href="typesjs.html#booleans">Booléens</a></li>
+              <li><a href="typesjs.html#undefined">undefined (Indéfini)</a></li>
+              <li><a href="typesjs.html#null">null (valeur vide)</a></li>
+              <li><a href="typesjs.html#arrays">Tableaux (Arrays)</a></li>
+              <li><a href="typesjs.html#objects">Objets (Object)</a></li>
+              <li><a href="typesjs.html#typeof">L'opérateur typeof</a></li>
+            </li>
+            </ul>
+
+          <li>
+            <a href="variablesjs.html">Variables et Assignation</a>
+          <ul class="sub-menu">
+            <li><a href="variables.html#const">Créer une variable const</a></li>
+            <li><a href="variables.html#let">Créer une variable let</a></li>
+            <li><a href="variables.html#var">Créer une variable var</a></li>
+
+          </li>
+        </ul>
+
+          <li>
+            <a href="operateursjs.html">Opérateurs Arithmétiques</a>
+            <ul class="sub-menu">
+                <li><a href="operateurs.html#addition">L'opérateur d'addition</a></li>
+                <li><a href="operateurs.html#soustraction">L'opérateur de soustraction</a></li>
+                <li><a href="operateurs.html#multiplication">L'opérateur de multiplication</a></li>
+                <li><a href="operateurs.html#division">L'opérateur de division</a></li>
+                <li><a href="operateurs.html#modulo">L'opérateur de modulo</a></li>
+                <li><a href="operateurs.html#puissance">L'opérateur de puissance</a></li>
+                <li><a href="operateurs.html#assignation-combinee">Les assignations combinées</a></li>
+            </li>
+        </ul>
+
+          <li><a href="typesconversions.html">Conversions de Types</a>
+            <ul class="sub-menu">
+                <li><a href="conversionstypes.html#tonumber">Conversion en Nombre</a></li>
+                <li><a href="conversionstypes.html#tostring">Conversion en String</a></li>
+                <li><a href="conversionstypes.html#toboolean">Conversion en Booléen</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a>
+            <ul class="sub-menu">
+                <li><a href="mathsfunctions.html#mathpi">Math.PI()</a></li>
+                <li><a href="mathsfunctions.html#mathe">Math.E()</a></li>
+                <li><a href="mathsfunctions.html#mathround">Math.round()</a></li>
+                <li><a href="mathsfunctions.html#mathfloor">Math.floor()</a></li>
+                <li><a href="mathsfunctions.html#mathceil">Math.ceil()</a></li>
+                <li><a href="mathsfunctions.html#mathtrunc">Math.trunc()</a></li>
+                <li><a href="mathsfunctions.html#mathabs">Math.abs()</a></li>
+                <li><a href="mathsfunctions.html#mathsign">Math.sign()</a></li>
+                <li><a href="mathsfunctions.html#mathpow">Math.pow()</a></li>
+                <li><a href="mathsfunctions.html#mathsqrt">Math.sqrt()</a></li>
+                <li><a href="mathsfunctions.html#mathsin">Math.sin()</a></li>
+                <li><a href="mathsfunctions.html#mathcos">Math.cos()</a></li>
+                <li><a href="mathsfunctions.html#mathtan">Math.tan()</a></li>
+                <li><a href="mathsfunctions.html#mathrandom">Math.random()</a></li>
+                <li><a href="mathsfunctions.html#matmin">Math.min()</a></li>
+                <li><a href="mathsfunctions.html#mathmax">Math.max()</a></li>
+            </ul>
+        </li>
+          <li>
+            <a href="instructionscondis.html">Les instructions conditionnelles</a>
+                <ul class="sub-menu">
+                    <li><a href="instructionscondis.html#if">L'instruction "if"</a><li>
+                    <li><a href="instructionscondis.html#else">L'instruction "else"</a></li>
+                    <li><a href="instructionscondis.html#elseif">L'instruction else if</a></li>
+                </ul>
+          </li>
+          <li>
+            <a href="stringmethodsjs.html">Les méthodes des chaînes de caractères</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="container">
+        <section class="types">
+          <h2>Les variables en Javascript</h2>
+          <p>En JavaScript, il existe trois façons de déclarer une variable, chacune peut stocker n'importe quel type de données :</p>
+          <ul>
+            <li><b>const</b> : C'est une variable à laquelle nous ne pourrons jamais changer sa valeur.</li>
+            <li><b>let</b> : C'est une variable à laquelle nous pourrons changer sa valeur dans le futur.</li>
+            <li><b>var</b> : Elle combine en quelque sortes les deux autres variables, elle peut changer sa valeur ou non dans le futur..</li>
+          </ul>
+        </section>
+
+        <section id="utils">
+            <h2>La création d'une variable :</h2>
+            <ol>
+                <li>
+                    <strong>Ajout du mot clé de la variable :</strong>
+                    <ul>
+                        <br>
+                        <li><strong>const :</strong> Déclare une variable avec une valeur constante.</li>
+                        <div class="container1">
+        
+                            <div class="code-box">
+                                <div class="toolbar" style="display:none;">
+                                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                 
+                                </div>
+                                    <pre class="code-content">
+<span class="token-keyword">const</span> nomDeVariable = valeur;</pre>
+                            </div>
+                        </div>
+                        <li><strong>let :</strong> Déclare une variable avec une valeur modifiable.</li>
+                        <div class="container1">
+        
+                            <div class="code-box">
+                                <div class="toolbar" style="display:none;">
+                                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                 
+                                </div>
+                                    <pre class="code-content">
+<span class="token-keyword">let</span> nomDeVariable = valeur;</pre>
+                            </div>
+                        </div>
+                        <li><strong>var :</strong> Déclare une variable avec une portée globale ou de fonction.</li>
+                        <div class="container1">
+        
+                            <div class="code-box">
+                                <div class="toolbar" style="display:none;">
+                                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                 
+                                </div>
+                                    <pre class="code-content">
+<span class="token-keyword">var</span> nomDeVariable = valeur;</pre>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <strong>Le nom de la variable :</strong>
+                    <ul>
+                        <br>
+                        <li><strong>camelCase :</strong> Notation où la première lettre de chaque mot (sauf le premier) est en majuscule.</li>     
+                            <div class="code-box">
+                                <div class="toolbar" style="display:none;">
+                                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                 
+                                </div>
+                                    <pre class="code-content">
+<span class="token-keyword">let</span><span class="token-variable"> produitVaisselle</span> = valeur;
+<span class="token-keyword">const</span><span class="token-variable"> ordinateurPortable</span>;
+                            </pre>
+                        </div>
+                        
+                        <li><strong>snake_case :</strong> Notation où les mots sont séparés par des underscores "_".</li>
+                        <div class="container1">
+        
+                            <div class="code-box">
+                                <div class="toolbar" style="display:none;">
+                                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                 
+                                </div>
+                                    <pre class="code-content">
+<span class="token-keyword">const</span> <span class="token-variable">nom_de_variable</span> = valeur;
+                            </pre>
+                            </div>
+                            <li><strong>Autres façons</strong> d'écrire un nom de variable  :</li>                            <div class="code-box">
+                                <div class="toolbar" style="display:none;">
+                                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                 
+                                </div>
+                                    <pre class="code-content">
+<span class="token-keyword">let</span><span class="token-variable"> $profession</span> = valeur;
+<span class="token-keyword">let</span><span class="token-variable"> _reseau_social</span> = valeur; 
+<span class="token-keyword">let</span><span class="token-variable"> VIANDE</span> = valeur;         
+<span class="token-keyword">let</span><span class="token-variable"> JEU_VIDEO</span> = valeur;                      
+</pre>
+                        </div>
+                        <ul>
+                          <li><strong style="color:red">Règles :</strong></li>
+                          <li>- Un nom de variable JavaScript ne doit pas commencer par un chiffre.</li>
+                          <li>- Un nom de variable Javascript ne doit pas contenir d'espaces</li>
+                          <li>- Un nom de variable JavaScript n'autorise pas les caractères spéciaux à l'exception du signe dollar ($) et du trait de soulignement(_).</li>
+                          <li>- Les noms de variables en Javascript sont sensibles à la casse.</li>
+                        </ul>
+                </li>
+                <br>
+                <li>
+                    <strong>La valeur de la variable :</strong>
+                    <ul>
+                        <br>
+                        <li><strong>données :</strong> Peut être un tableau, un nombre, un booléen, une chaîne de caractères, etc.</li> 
+                            <div class="code-box">
+                                <div class="toolbar" style="display:none;">
+                                    <button class="play-btn"><i class="fas fa-play"></i> Exécuter</button>
+                                    <button id="copy-btn"><i class="fas fa-copy"></i> Copier</button>                 
+                                </div>
+                                    <pre class="code-content">
+<span class="token-keyword">const</span> firstProgram = <span class="token-string">"Hello World"</span>;
+<span class="token-keyword">const</span> secondProgram = <span class="token-number">56</span>;</pre>
+</pre>
+                            </div>
+                    </ul>
+                </li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        <section id="const">
+            <h2>Le déclaration de variable : const</h2>
+            <p>Une variable déclarée avec "const" est utilisée pour stocker une valeur constante qui ne peut pas être réassignée une fois définie.</p>
+            <p>-> Les constantes sont souvent utilisés pour définir une valeur à laquelle nous sommes sûr qu'elles n'auront pas besoin d'une nouvelle valeur, ça améliore la lisiblité du code.</p>
+            <div class="code-box">
+                <div class="toolbar">
+                      <button class="play-btn" onclick="alert('Le Coca-Cola')"><i class="fas fa-play"></i> Exécuter</button>
+                      <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                      <pre class="code-content">
+<span class="token-keyword">const</span> <span class="token-variable">boisson</span> <span class="token-operator">=</span> <span class="token-string">"Le Coca-Cola"</span>;
+<span class="token-keyword">const</span> <span class="token-variable">nombre_ventes</span> <span class="token-operator">=</span> <span class="token-number">150</span>;
+<span class="token-keyword">const</span> <span class="token-variable">marqueDeVoiture</span> <span class="token-operator">=</span> <span class="token-string">"Mercedes"</span>;
+
+<span class="token-function">console.log</span>(<span class="token-variable">boisson</span>) <span class="token-comment">// Console : Le Coca-Cola</span>
+                  </pre>
+              </div>
+<br>
+<p>Si jamais vous tentez de réassigner une variable constante, vous allez recevoir une erreur dans votre code, comme le montre l'exemple ci-dessous.</p>
+<div class="code-box">
+    <div class="toolbar">
+          <button class="play-btn" onclick="alert('TypeError: Assignment to constant variable.')"><i class="fas fa-play"></i> Exécuter</button>
+          <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+        </div>
+          <pre class="code-content">
+<span class="token-keyword">const</span> <span class="token-variable">telephone</span> <span class="token-operator">=</span> <span class="token-string">"Iphone"</span>;
+<span class="token-variable">telephone</span> <span class="token-operator">=</span> <span class="token-string">"Android"</span>;
+
+<span class="token-function">console.log</span>(<span class="token-variable">telephone</span>) <span class="token-comment">// Console : TypeError: Assignment to constant variable.</span>
+      </pre>
+  </div>
+
+          </section>
+
+          <section id="let">
+            <h2>La déclaration de variable : let</h2>
+            <p>La déclaration de variable avec <code>let</code> permet de créer une variable dont la portée est limitée au bloc dans lequel elle est déclarée. Cette variable peut être réassignée avec de nouvelles valeurs au sein du même bloc.</p>
+            <p>Par exemple :</p>
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert('Nicolas')"><i class="fas fa-play"></i> Exécuter</button>
+                    <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                  </div>
+              <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">prenom</span> <span class="token-operator">=</span> <span class="token-string">"Rafael"</span>;<span class="token-comment"> // Création d'une variable "prenom" qui stocke le prénom "Rafael"</span>
+<span class="token-variable">prenom</span> <span class="token-operator">=</span> <span class="token-string">"Nicolas"</span>; <span class="token-comment">// Réassigne la variable "prenom" au prénom "Nicolas".</span>
+          
+<span class="token-function">console.log</span>(<span class="token-variable">prenom</span>); <span class="token-comment">// Affiche : Nicolas</span>
+              </pre>
+            </div>
+          
+            <p>Utilisez <code>let</code> lorsque vous avez besoin de réassigner des valeurs à une variable dans le même bloc de code. Si la valeur de la variable doit rester constante, utilisez plutôt <code>const</code>.</p>
+          </section>
+          
+          
+
+          <section id="var">
+            <h2>La déclaration de variable : var</h2>
+            <p>La déclaration de variable avec <code>var</code> crée une variable dont la portée est limitée à la fonction ou au contexte global dans lequel elle est déclarée. Cette variable peut être réassignée avec de nouvelles valeurs à tout moment.</p>
+            
+            <p>Par exemple :</p>
+            <div class="code-box">
+              <div class="toolbar">
+                <button class="play-btn" onclick="alert('Nicolas')"><i class="fas fa-play"></i> Exécuter</button>
+                <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+              </div>
+              <pre class="code-content">
+<span class="token-keyword">var</span> <span class="token-variable">prenom</span> <span class="token-operator">=</span> <span class="token-string">"Rafael"</span>;<span class="token-comment"> // Création d'une variable "prenom" qui stocke le prénom "Rafael"</span>
+<span class="token-variable">prenom</span> <span class="token-operator">=</span> <span class="token-string">"Nicolas"</span>; <span class="token-comment">// Réassigne la variable "prenom" au prénom "Nicolas".</span>
+                    
+<span class="token-function">console.log</span>(<span class="token-variable">prenom</span>); <span class="token-comment">// Affiche : Nicolas</span>
+              </pre>
+            </div>
+            
+            <p>Utilisez <code>var</code> lorsque vous avez besoin d'une variable dont la portée est limitée à la fonction ou au contexte global, et que vous souhaitez pouvoir la réassigner à tout moment. Cependant, il est recommandé d'utiliser <code>let</code> ou <code>const</code> pour des déclarations plus précises et sécurisées.</p>
+<br>
+            <p>La déclaration <code>var</code> était un ancien moyen avec l'arrivée de <code>let</code> et <code>const</code> en 2015, <code>var</code> peut effectuer les deux déclarations <code>const</code> et <code>let</code>, juste il est <span style="font-weight: bold;color:red;">déconseillé</span> de l'utiliser à l'heure actuelle.</p>
+<br>
+            <p>Contrairement au <code>let</code>, on peut réemployer la déclaration de variable lorsque l'on veut réassigner la variable à une nouvelle valeur : </p>
+            <div class="code-box">
+                <div class="toolbar">
+                  <button class="play-btn" onclick="alert('Tokyo')"><i class="fas fa-play"></i> Exécuter</button>
+                  <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                </div>
+                <pre class="code-content">
+<span class="token-keyword">var</span> <span class="token-variable">nomDeCapitale</span> <span class="token-operator">=</span> <span class="token-string">"Paris"</span>;<span class="token-comment"> // Création d'une variable "nomdDCapitale" qui stocke le string "Paris"</span>
+<span class="token-keyword">var</span> <span class="token-variable">nomDeCapitale</span> <span class="token-operator">=</span> <span class="token-string">"Tokyo"</span>; <span class="token-comment">// Réassigne la variable "nomDeCapitale" en stockant le string "Tokyo".</span>
+                      
+<span class="token-function">console.log</span>(<span class="token-variable">nomDeCapitale</span>); <span class="token-comment">// Affiche : Tokyo</span>
+                </pre>
+              </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+  // Sélectionnez tous les éléments <li> de la navigation
+  const menuItems = document.querySelectorAll("nav ul > li");
+
+  // Parcourir tous les éléments <li> et ajouter un gestionnaire d'événements clic
+  menuItems.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      // Trouver le sous-menu (ul.sub-menu) à l'intérieur de l'élément <li>
+      const subMenu = item.querySelector(".sub-menu");
+
+      // Vérifiez si le clic a été effectué sur le sous-menu lui-même
+      const isSubMenuClick = event.target.closest(".sub-menu") !== null;
+
+      // Si le clic n'a pas été effectué sur le sous-menu
+      if (!isSubMenuClick) {
+        // Empêcher le comportement par défaut du lien principal
+        event.preventDefault();
+
+        // Vérifiez si le sous-menu existe et basculez sa visibilité
+        if (subMenu) {
+          subMenu.classList.toggle("show-sub-menu");
+        }
+      }
+    });
+  });
+});
+
+function copyButton() {
+    // Trouver l'élément pre (contenant le code) à partir du bouton de copie
+    const codeBox = event.target.closest(".code-box");
+    const codeContent = codeBox.querySelector("pre");
+
+    // Extraire le texte à partir de l'élément pre
+    const textToCopy = codeContent.innerText.trim();
+
+    // Copier le texte dans le presse-papiers
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        alert("Code copié dans le presse-papiers !");
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie du texte : ', err);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const darkModeCookie = document.cookie.split("; ").find(row => row.startsWith("darkMode="));
+
+  if (darkModeCookie) {
+    const darkModeEnabled = darkModeCookie.split("=")[1] === "true";
+    if (darkModeEnabled) {
+      enableDarkMode();
+    }
+  }
+
+  // Ajouter l'événement de clic au bouton de bascule
+  toggleButton.addEventListener("click", toggleDarkMode);
+});
+
+    </script>
+  </body>
+</html>
+
+

@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Gris clair */
+}
+
+tr:hover {
+    background-color: #ddd; /* Gris foncé au survol */
+    cursor: pointer;
+}

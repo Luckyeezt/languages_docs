@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types de Données</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="icon" href="logo-php.png">
+    <style>
+        .section-nav li a:hover {
+             color: rgb(157, 13, 183);;
+         }
+
+         #menu-nav li a:hover {
+             background-color: rgb(157, 13, 183);
+             color:white;
+             transform: translateX(-10px);
+         }
+ </style>
+</head>
+<body>
+    <header style="background-color:  rgb(157, 13, 183)">
+        <img src="logo-php.png" alt="logo">
+        <h1 style="color:white">Types de Données - PHP</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>PHP</h2>
+                <hr><br>
+                <li><a href="php-home.html">Introduction au PHP</a></li>
+                <li><a href="php-datatypes.html">Types de données</a></li>
+                <li><a href="php-variables.html">Les Variables</a></li>
+                <li><a href="php-date_time.html">Date et Heure</a></li>
+            </ul>
+        </nav>
+
+        <nav class="section-nav">
+            <ul>
+                <li><a href="php-datatypes.html#string">Chaines de caractères</a></li><hr>
+                <li><a href="php-datatypes.html#integers">Nombres entiers</a></li><hr>
+                <li><a href="php-datatypes.html#float">Nombres décimaux</a></li><hr>
+                <li><a href="php-datatypes.html#bool">Booléens</a></li><hr>
+            <ul>
+        </nav>
+        <main>
+            <section id="intro">
+                <h2>Les Types de Données en PHP</h2>
+                <ul>
+                    <li>Les chaines de caractères (string) : </li>
+                    <li>Les nombres entiers (int) : </li>
+                    <li>Les nombres décimaux / flottants (float) : </li>
+                    <li>Les booléens (bool) : </li>
+            </section>
+
+            <section id="string">
+                <h2>Les chaines de caractères (string)</h2>
+            </section>
+
+            <section id="integers">
+                <h2>Les nombres entiers (int)</h2>
+            </section>
+
+            <section id="float">
+                <h2>Les nombres décimaux / flottants (float)</h2>
+            </section>
+
+            <section id="bool">
+                <h2>Les booléens (bool)</h2>
+            </section>
+
+        </main>
+    </div>
+        <script src="../script.js"></script>
+
+</body>
+</html>

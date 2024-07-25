@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica", sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+header {
+    padding: 15px;
+    text-align: center;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+header button {
+    padding: 10px 20px;
+    border-radius: 50px; /* Coins arrondis */
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 16px; /* Taille du texte */
+    transition: opacity 0.3s, background-color 0.3s, color 0.3s; /* Transition plus rapide */
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+header button:hover {
+    opacity: 0.8;
+}
+
+header img {
+    width: 150px;
+}
+
+header h1 {
+    font-size: 36px; /* Taille du titre */
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    overflow-y: auto; /* Permet le défilement du contenu principal */
+    margin-top: 122px; /* Ajustez cette valeur en fonction de la hauteur de votre header */
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 100px;
+    height: 100vh; /* Calcul de la hauteur maximale moins la hauteur du header */
+    overflow-y: auto; /* Ajoute un défilement vertical si nécessaire */
+  }
+
+  nav ul {
+    list-style: none;
+  }
+
+  nav ul a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px; /* Espacement intérieur */
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #666; /* Ligne de séparation entre les liens */
+  }
+
+  nav ul a:hover {
+    background-color: #555;
+    border-radius: 5px; /* Coins arrondis au survol */
+    border-right: 5px solid white;
+  }
+
+  h3 {
+    margin-bottom: 8px;
+    font-family: sans-serif;
+  }
+
+nav ul .submenu li a {
+    border-bottom: 5px solid white;
+}
+
+.sub-menu {
+  display: none;
+  background-color: #444;
+  padding-left: 20px;
+  border-radius: 5px;
+  overflow-y: auto; /* Utiliser le défilement vertical si nécessaire */
+  max-height: 300px; /* Définir une hauteur maximale pour le sous-menu */
+}
+
+.sub-menu a {
+  color: #fff;
+  display: block;
+}
+
+.sub-menu a:hover {
+  background-color: #666;
+  border-radius: 5px;
+}
+
+.sub-menu.show-sub-menu {
+  display: block;
+}
+
+nav.show-nav {
+    display: block; /* Afficher le menu de navigation lorsqu'il est activé */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 20px;
+}
+
+.container {
+    margin-left: 30%;
+    margin-top: 20px;
+    padding: 0 20px;
+    width: 60%;
+    border-radius: 10px;
+  }
+
+  .container section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid black;
+  }
+.container section li {
+    margin-bottom: 7px;
+    line-height: 1.4;
+}
+.container section ul,ol {
+    padding: 20px
+}
+  .container section h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50; /* Vert */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Gris clair */
+}
+
+tr:hover {
+    background-color: #ddd; /* Gris foncé au survol */
+    cursor: pointer;
+}
+
+
+
+ol.sqltypes {
+    margin-left: 75px;
+}
+  section button .copy{
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  section button:hover {
+    opacity: 0.6;
+  }
+
+  .container section p {
+    line-height: 1.6;
+  }
+
+  .types p {
+    margin-bottom: 8px;
+  }
+
+  .types {
+    margin-bottom: 10px;
+  }
+  .dark-mode {
+    background-color: #333; /* Couleur de fond sombre */
+    color: #ccc; /* Couleur du texte en mode sombre */
+}
+
+.dark-mode header {
+    background-color: #222; /* Couleur de fond du header en mode sombre */
+}
+
+.dark-mode nav {
+    background-color: #444; /* Couleur de fond de la barre de navigation en mode sombre */
+}
+
+.dark-mode nav ul a {
+    color: #ccc; /* Couleur du texte des liens en mode sombre */
+}
+
+.dark-mode section {
+    background-color: #2c2c2c; /* Couleur de fond sombre pour les sections */
+    color: #ccc; /* Couleur du texte en mode sombre pour les sections */
+    box-shadow: 0 1px 4px rgba(255, 255, 255, 0.3); /* Ombre légère en mode sombre */
+    border:none;
+}
+
+.dark-mode section h2 {
+    color: #eee; /* Couleur du titre en mode sombre */
+}
+
+.dark-mode section ul li {
+    color: #ddd; /* Couleur du texte des éléments de liste en mode sombre */
+}
+
+.dark-mode section ul li button {
+    color: #000; /* Couleur du texte des boutons en mode sombre */
+}
+
+.dark-mode table td {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+/* Boîte de code */
+
+    /* Styles pour le mode sombre */
+    .toggleDarkButton {
+        background-color: black;
+        color: white;
+      }
+
+      .toggleLightButton {
+        background-color: white;
+        color: black;
+      }
+
+      .toggleDarkButton::after {
+        content: "\2600"; /* Symbole du soleil (code Unicode complet) */
+        margin-left: 5px;
+      }
+
+      .toggleLightButton::after {
+        content: "\1F319"; /* Symbole de la lune (code Unicode complet) */
+        margin-left: 5px;
+      }
+
+.bold {
+  font-weight: bold;
+}

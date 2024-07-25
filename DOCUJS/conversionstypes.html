@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les conversions de types en Javascript</title>
+    <style>
+          .toolbar {
+    color: white;
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    display: flex;
+    justify-content: flex-end;
+          }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/png;base64,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">
+
+</head>
+  <body>
+    <header>
+      <img src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png">
+      <h1>Introduction au Javascript</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+      <nav>
+        <ul>
+          <li>
+            <a href="typesjs.html">Types de Données</a>
+            <ul class="sub-menu">
+              <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
+              <li><a href="typesjs.html#numbers">Nombres</a></li>
+              <li><a href="typesjs.html#booleans">Booléens</a></li>
+              <li><a href="typesjs.html#undefined">undefined (Indéfini)</a></li>
+              <li><a href="typesjs.html#null">null (valeur vide)</a></li>
+              <li><a href="typesjs.html#arrays">Tableaux (Arrays)</a></li>
+              <li><a href="typesjs.html#objects">Objets (Object)</a></li>
+              <li><a href="typesjs.html#typeof">L'opérateur typeof</a></li>
+            </li>
+            </ul>
+
+          <li>
+            <a href="variablesjs.html">Variables et Assignation</a>
+          <ul class="sub-menu">
+            <li><a href="variables.html#const">Créer une variable const</a></li>
+            <li><a href="variables.html#let">Créer une variable let</a></li>
+            <li><a href="variables.html#var">Créer une variable var</a></li>
+
+          </li>
+        </ul>
+
+          <li>
+            <a href="operateursjs.html">Opérateurs Arithmétiques</a>
+            <ul class="sub-menu">
+                <li><a href="operateurs.html#addition">L'opérateur d'addition</a></li>
+                <li><a href="operateurs.html#soustraction">L'opérateur de soustraction</a></li>
+                <li><a href="operateurs.html#multiplication">L'opérateur de multiplication</a></li>
+                <li><a href="operateurs.html#division">L'opérateur de division</a></li>
+                <li><a href="operateurs.html#modulo">L'opérateur de modulo</a></li>
+                <li><a href="operateurs.html#puissance">L'opérateur de puissance</a></li>
+                <li><a href="operateurs.html#assignation-combinee">Les assignations combinées</a></li>
+            </li>
+        </ul>
+
+          <li><a href="typesconversions.html">Conversions de Types</a>
+            <ul class="sub-menu">
+                <li><a href="conversionstypes.html#tonumber">Conversion en Nombre</a></li>
+                <li><a href="conversionstypes.html#tostring">Conversion en String</a></li>
+                <li><a href="conversionstypes.html#toboolean">Conversion en Booléen</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a>
+            <ul class="sub-menu">
+                <li><a href="mathsfunctions.html#mathpi">Math.PI()</a></li>
+                <li><a href="mathsfunctions.html#mathe">Math.E()</a></li>
+                <li><a href="mathsfunctions.html#mathround">Math.round()</a></li>
+                <li><a href="mathsfunctions.html#mathfloor">Math.floor()</a></li>
+                <li><a href="mathsfunctions.html#mathceil">Math.ceil()</a></li>
+                <li><a href="mathsfunctions.html#mathtrunc">Math.trunc()</a></li>
+                <li><a href="mathsfunctions.html#mathabs">Math.abs()</a></li>
+                <li><a href="mathsfunctions.html#mathsign">Math.sign()</a></li>
+                <li><a href="mathsfunctions.html#mathpow">Math.pow()</a></li>
+                <li><a href="mathsfunctions.html#mathsqrt">Math.sqrt()</a></li>
+                <li><a href="mathsfunctions.html#mathsin">Math.sin()</a></li>
+                <li><a href="mathsfunctions.html#mathcos">Math.cos()</a></li>
+                <li><a href="mathsfunctions.html#mathtan">Math.tan()</a></li>
+                <li><a href="mathsfunctions.html#mathrandom">Math.random()</a></li>
+                <li><a href="mathsfunctions.html#matmin">Math.min()</a></li>
+                <li><a href="mathsfunctions.html#mathmax">Math.max()</a></li>
+            </ul>
+        </li>
+          <li>
+            <a href="instructionscondis.html">Les instructions conditionnelles</a>
+                <ul class="sub-menu">
+                    <li><a href="instructionscondis.html#if">L'instruction "if"</a><li>
+                    <li><a href="instructionscondis.html#else">L'instruction "else"</a></li>
+                    <li><a href="instructionscondis.html#elseif">L'instruction else if</a></li>
+                </ul>
+          </li>
+          <li>
+            <a href="stringmethodsjs.html">Les méthodes des chaînes de caractères</a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <div class="container">
+        <section class="conversions">
+          <h2>Les conversions de types en Javascript</h2>
+          <p style="margin-bottom: 10px;">En Javascript, il existe trois fonctions qui permettent de convertir un type en un autre :</p>
+          <ul>
+            <li><b>Number()</b> : C'est une fonction intégrée au Javascript, elle permet de transformer n'importe quelle valeur en un nombre.</li>
+            <li><b>String()</b> : C'est une fonction intégrée au Javascript, elle permet de transformer n'importe quelle valeur en une chaine de caractères.</li>
+            <li><b>Boolean()</b> : C'est une fonction intégrée au Javascript, elle permet de transformer n'importe quelle valeur en un booléen.</li>
+            <li>Conversions de chaînes de caractères en nombre : </li>
+            <ul>
+              <li><b>parseInt()</b> : Convertit une chaine de caractères en un nombre entier.</li>
+              <li><b>parseFloat()</b> : Convertit une chaine de caractères en un nombre décimal.</li>
+          </ul>
+        </section>
+
+       <section id="tonumber">
+        <h2>La fonction Number() </h2>
+        <p>La fonction <code>Number()</code> est utilisée en Javascript pour convertir n'importe quelle valeur en un nombre. Elle peut convertir n'importe quel type en sa représentation numérique.</p>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de la conversion d'une chaîne de caractères (String) en un nombre (Number) : </h3>
+        <p>Lorsque vous convertissez un mot ou une phrase comportant des symboles, des lettres, cela va afficher "Nan" (Not a Number).</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(Number('Bonbons'))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">phrase</span> <span class="token-operator">=</span> <span class="token-string">"Bonbons"</span>; <span class="token-comment">// Création d'une variable qui stocke un String</span>
+<span class="token-variable">phrase</span> = <span class="token-function">Number</span>(<span class="token-variable">phrase</span>); <span class="token-comment">// Convertis la variable "phrase" en un Nombre.</span>
+<span class="token-function">console.log</span>(<span class="token-variable">phrase</span>); <span class="token-comment">// Affiche : NaN (Not a Number)</span>
+                </pre>
+            </div>
+          </div>
+          <p><span class="bold">==> </span>Si vous convertissez un String qui contient un nombre comme : "56", elle va être immédiatement convertie en un nombre entier 56 qui va permettre les opérations.</p>
+          <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <p style="margin-right: 550px;">Sans conversion</p>
+                    <button class="play-btn" onclick="alert('100'+250)"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">nombrestr</span> <span class="token-operator">=</span> <span class="token-string">"100"</span>; <span class="token-comment">// Création d'une variable qui stocke un nombre sous String</span>
+<span class="token-keyword">let</span> <span class="token-variable">nombre</span> <span class="token-operator">=</span> <span class="token-number">250</span>; <span class="token-comment">// Création d'une variable qui stocke un nombre entier</span>
+<span class="token-keyword">let</span> <span class="token-variable">resultat</span> <span class="token-operator">=</span> <span class="token-variable">nombrestr</span> + <span class="token-variable">nombre</span>; <span class="token-comment">// Création d'une variable qui stocke le résultat</span>
+<span class="token-function">console.log</span>(<span class="token-variable">resultat</span>); <span class="token-comment">// Affiche : 100250</span>
+                </pre>
+            </div>
+          </div>
+
+          <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <p style="margin-right: 550px;">Avec conversion</p>
+                    <button class="play-btn" onclick="alert(Number('100')+250)"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">nombrestr</span> <span class="token-operator">=</span> <span class="token-string">"100"</span>; <span class="token-comment">// Création d'une variable qui stocke un nombre sous String</span>
+<span class="token-keyword">let</span> <span class="token-variable">nombre</span> <span class="token-operator">=</span> <span class="token-number">250</span>; <span class="token-comment">// Création d'une variable qui stocke un nombre entier</span>
+<span class="token-keyword">let</span> <span class="token-variable">resultat</span> <span class="token-operator">=</span> <span class="token-function">Number</span>(<span class="token-variable">nombrestr</span>) + <span class="token-variable">nombre</span>; <span class="token-comment">// Création d'une variable qui stocke le résultat avec la conversion en nombre</span>
+<span class="token-function">console.log</span>(<span class="token-variable">resultat</span>); <span class="token-comment">// Affiche : 350</span>
+                </pre>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <h3>Exemple de la conversion d'un booléen (Boolean) en un nombre (Number) : </h3>
+          <p>Lorsque vous convertissez un booléen en un nombre, true corresponderait au nombre 1 et false au nombre 0. </p>
+          <div class="container1">
+            <div class="code-box">
+                <div class="toolbar" style="display:none;">
+                    <button class="play-btn" onclick="alert(Number('100')+250)"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">Number</span>(<span class="token-bool">true</span>)); <span class="token-comment">// Console : 1</span>
+<span class="token-function">console.log</span>(<span class="token-function">Number</span>(<span class="token-bool">false</span>)); <span class="token-comment">// Console : 0</span>
+                </pre>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <h3>Exemple de la conversion d'un null (pas de valeur) en un nombre (Number) : </h3>
+          <p>Lorsque vous convertissez null en un nombre, une absence de valeur sera considérée comme le chiffre 0.</p>
+          <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(Number(null))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">Number</span>(<span class="token-bool">null</span>)); <span class="token-comment">// Console : 0</span>
+                </pre>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <h3>Exemple de la conversion d'une valeur undefined (indéfini) en un nombre (Number) : </h3>
+          <p>Lorsque vous convertissez undefined en un nombre, la valeur indéfini sera considérée comme le chiffre 0.</p>
+          <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(Number(undefined))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                    <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">Number</span>(<span class="token-bool">undefined</span>)); <span class="token-comment">// Console : NaN</span>
+                </pre>
+            </div>
+          </div>
+    </section>
+
+       <section id="tostring">
+        <h2>La fonction String() </h2>
+        <p>La fonction <code>String()</code> est utilisée en JavaScript pour convertir n'importe quelle valeur en une chaîne de caractères. Elle peut convertir n'importe quel type en sa représentation sous forme de chaîne de caractères.</p>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de la conversion d'un nombre (Number) en une chaîne de caractères (String) : </h3>
+        <p>Lorsque vous convertissez un nombre en une chaîne de caractères, il sera représenté comme du texte.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(String(42))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">chaine</span> <span class="token-operator">=</span> <span class="token-function">String</span>(<span class="token-number">42</span>); <span class="token-comment">// Convertit le nombre en une chaîne de caractères</span>
+<span class="token-function">console.log</span>(<span class="token-variable">chaine</span>); <span class="token-comment">// Affiche : '42' (en tant que chaîne de caractères)</span>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de la conversion d'un booléen (Boolean) en une chaîne de caractères (String) : </h3>
+        <p>Lorsque vous convertissez un booléen en une chaîne de caractères, true sera représenté comme 'true' et false comme 'false'.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar" style="display:none">
+                    <button class="play-btn" onclick="alert(String(true))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">String</span>(<span class="token-bool">true</span>)); <span class="token-comment">// Affiche : 'true' (en tant que chaîne de caractères)</span>
+<span class="token-function">console.log</span>(<span class="token-function">String</span>(<span class="token-bool">false</span>)); <span class="token-comment">// Affiche : 'false' (en tant que chaîne de caractères)</span>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de la conversion d'une valeur null en une chaîne de caractères (String) : </h3>
+        <p>Lorsque vous convertissez <code>null</code> en une chaîne de caractères, il sera représenté comme 'null'.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(String(null))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">String</span>(<span class="token-bool">null</span>)); <span class="token-comment">// Affiche : 'null' (en tant que chaîne de caractères)</span>
+            </pre>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h3>Exemple de la conversion d'une valeur undefined en une chaîne de caractères (String) : </h3>
+    <p>Lorsque vous convertissez <code>undefined</code> en une chaîne de caractères, il sera représenté comme 'undefined'.</p>
+    <div class="container1">
+        <div class="code-box">
+            <div class="toolbar">
+                <button class="play-btn" onclick="alert(String(undefined))"><i class="fas fa-play"></i> Exécuter</button>
+                <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+            </div>
+            <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">String</span>(<span class="token-bool">undefined</span>)); <span class="token-comment">// Affiche : 'undefined' (en tant que chaîne de caractères)</span>
+            </pre>
+        </div>
+    </div>
+    </section>
+
+    <section id="toboolean">
+        <h2>La fonction Boolean()</h2>
+        <p>La fonction <code>Boolean()</code> est utilisée en JavaScript pour convertir n'importe quelle valeur en un booléen.</p>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de la conversion d'une chaîne de caractères (String) en un booléen (Boolean) :</h3>
+        <p>La conversion en booléen renvoie <code>true</code> pour toute chaîne de caractères non vide, sinon elle renvoie <code>false</code>.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar" style="display:none;">
+                    <button class="play-btn" onclick="alert(Boolean('Hello'))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">Boolean</span>((<span class="token-string">"Bonjour"</span>)); <span class="token-comment">// Affiche : true</span>
+<span class="token-function">console.log</span>(<span class="token-function">Boolean</span>(<span class="token-string">" "</span>)); <span class="token-comment">// Affiche : false</span>
+                </pre>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de la conversion d'un nombre (Number) en un booléen (Boolean) :</h3>
+        <p>La conversion en booléen renvoie <code>false</code> pour <code>0</code> et <code>NaN</code>, sinon elle renvoie <code>true</code>.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar" style="display:none;">
+                    <button class="play-btn" onclick="alert(Boolean(0))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">Boolean</span>(<span class="token-number">0</span>)); <span class="token-comment">// Affiche : false</span>
+<span class="token-function">console.log</span>(<span class="token-function">Boolean</span>(<span class="token-number">42</span>)); <span class="token-comment">// Affiche : true</span>
+    </pre>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de la conversion d'une valeur null en un booléen (Boolean): </h3>
+        <p>Lorsque vous convertissez <code>null</code> en un booléen, il sera représenté comme étant <code>false</code>.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(Boolean(null))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">Boolean</span>(<span class="token-bool">null</span>)); <span class="token-comment">// Affiche : false</span>
+            </pre>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h3>Exemple de la conversion d'une valeur undefined en un booléen (Boolean) : </h3>
+    <p>Lorsque vous convertissez <code>undefined</code> en un booléen, il sera représenté comme étant <code>false</code>.</p>
+    <div class="container1">
+        <div class="code-box">
+            <div class="toolbar">
+                <button class="play-btn" onclick="alert(Boolean(undefined))"><i class="fas fa-play"></i> Exécuter</button>
+                <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+            </div>
+            <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-function">Boolean</span>(<span class="token-bool">undefined</span>)); <span class="token-comment">// Affiche : false</span>
+            </pre>
+        </div>
+    </div>
+    </section>
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Sélectionnez tous les éléments <li> de la navigation
+        const menuItems = document.querySelectorAll("nav ul > li");
+
+        // Parcourir tous les éléments <li> et ajouter un gestionnaire d'événements clic
+        menuItems.forEach((item) => {
+          item.addEventListener("click", (event) => {
+            // Trouver le sous-menu (ul.sub-menu) à l'intérieur de l'élément <li>
+            const subMenu = item.querySelector(".sub-menu");
+
+            // Vérifiez si le clic a été effectué sur le sous-menu lui-même
+            const isSubMenuClick = event.target.closest(".sub-menu") !== null;
+
+            // Si le clic n'a pas été effectué sur le sous-menu
+            if (!isSubMenuClick) {
+              // Empêcher le comportement par défaut du lien principal
+              event.preventDefault();
+
+              // Vérifiez si le sous-menu existe et basculez sa visibilité
+              if (subMenu) {
+                subMenu.classList.toggle("show-sub-menu");
+              }
+            }
+          });
+        });
+      });
+
+      function copyButton() {
+    // Trouver l'élément pre (contenant le code) à partir du bouton de copie
+    const codeBox = event.target.closest(".code-box");
+    const codeContent = codeBox.querySelector("pre");
+
+    // Extraire le texte à partir de l'élément pre
+    const textToCopy = codeContent.innerText.trim();
+
+    // Copier le texte dans le presse-papiers
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        alert("Code copié dans le presse-papiers !");
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie du texte : ', err);
+    });
+}
+    </script>
+  </body>
+</html>

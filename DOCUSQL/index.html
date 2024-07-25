@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction - Le SQL</title>
+    <style>
+          .toolbar {
+    color: white;
+    background-color: #282a36; /* Couleur de fond de la barre d'outils */
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    position: relative;
+    left: 500px;
+display: none;
+  }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo_sql.png">
+
+</head>
+  <body>
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png">
+      <h1>SQL - Introduction</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+      <nav>
+        <ul>
+            <li><a href="index.html">C'est quoi le SQL ?</a></li>
+            <li><a href="typesql.html">Les Types de Données - SQL</a></li>
+            <br><hr><br>
+            <li style="text-align:center;"> -> Passons aux intructions SQL ! <-</li>
+            <br><hr>
+            <li style="text-align:center;"><a href="create-mysql.html">SQL -- CREATE</a></li>
+            <li style="text-align:center;"><a href="insertinto-mysql.html">SQL -- INSERT INTO</a></li>
+            <li style="text-align:center;"><a href="select-mysql.html">SQL -- SELECT</a></li>
+            <li style="text-align:center;"><a href="altertable-mysql.html">SQL -- ALTER TABLE</a></li>
+            <li style="text-align:center;"><a href="update-mysql.html">SQL -- UPDATE</a></li>
+        </ul>
+      </nav>
+
+
+      <div class="container">
+        <section id="introduction">
+            <h2>Introduction au SQL</h2>
+        <ul>
+            <li>Une base de données est un ensemble de données qui ont été stockées sur un support informatique, organisées et structurées de manière à pouvoir modifier et consulter leurs données facilement.</li>
+            <li>Dans SQL, le langage de requête structuré, les données sont manipulées à l'aide de différentes instructions telles que <b>SELECT</b>, <b>INSERT</b>, <b>UPDATE</b>, <b>DELETE</b>, etc.</li>
+            <li>Dans un système de gestion de base de données (SGBD) comme mySQL, les données sont organisées dans des tables. Chaque table est un ensemble de données structurées sous forme de lignes et de colonnes.</li>
+            <li>Par exemple, nous pourrions avoir une <b>TABLE</b> appelée "Employés" qui contient des informations sur les employés d'une entreprise :</li>
+        </ul>
+            <table border="1">
+                <caption>TABLE : Employés</caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Âge</th>
+                        <th>Poste</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>35</td>
+                        <td>Ingénieur logiciel</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>28</td>
+                        <td>Analyste financier</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Michael Johnson</td>
+                        <td>42</td>
+                        <td>Directeur des ventes</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Dans cette table, chaque ligne représente un employé avec des informations telles que son identifiant (ID), son nom, son âge et son poste.</p>
+            <ul>
+                <li style="list-style-type: none;"><h3 style="color:red">Les règles de nommage des noms de la <b>TABLE</b> :</h4></li>
+                <li>Utilisez le snake_case si vous prévoyez un nom avec plusieurs mots : <i>user_name_id</i></li>
+                <li>Ne mettez pas d'espaces pour séparer les mots de votre <b>TABLE</b> / colonne</li>
+                <li>Ne pas utiliser de mots réservés aux propriétés sql pour les noms de vos colonnes : <i>date</i> => <i>date_inscription</i></li>
+        </section>
+        
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+
+      function goTo(section) {
+    switch (section) {
+        case '1':
+            window.location.href = "#strings";
+            break;
+        case '2':
+            window.location.href = "#numbers";
+            break;
+        case '3':
+            window.location.href = "#booleans";
+            break;
+        case '4':
+            window.location.href = "#arrays";
+            break;
+        case '5':
+            window.location.href = "#objects";
+            break;
+        case '6':
+            window.location.href = "#undefined";
+            break;
+        case '7':
+            window.location.href = "#null";
+            break;
+        default:
+            break;
+    }
+}
+
+// Sélectionnez le bouton avec la classe "copy"
+const copyButton = document.querySelector('.copy');
+
+// Ajoutez un gestionnaire d'événements au clic sur le bouton "copy"
+copyButton.addEventListener('click', () => {
+    // Récupérez le texte contenu dans le bouton
+    const buttonText = copyButton.textContent;
+
+    // Créez un nouvel élément textarea dans le document
+    const textArea = document.createElement('textarea');
+    textArea.value = buttonText; // Définissez la valeur du textarea avec le texte du bouton
+
+    // Ajoutez le textarea au document (il n'est pas visible à l'écran)
+    document.body.appendChild(textArea);
+
+    // Sélectionnez le texte dans le textarea
+    textArea.select();
+    
+    // Copiez le texte sélectionné dans le presse-papiers du système
+    document.execCommand('copy');
+
+    // Supprimez le textarea du document
+    document.body.removeChild(textArea);
+
+    // Facultatif : Affichez une confirmation à l'utilisateur
+    alert('Texte copié : ' + buttonText);
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+/* CSS dans languagescolor.css */
+
+li.html:hover,
+li.html:active {
+    border-bottom: 2px solid red;
+}
+
+li.typescript:hover{
+    border-bottom: 2px solid rgb(0, 89, 255);
+}
+
+li.javascript:hover,
+li.javascript:active {
+    border-bottom: 2px solid yellow;
+}
+
+li.python:hover,
+li.python:active {
+    border-bottom: 2px solid yellowgreen;
+}
+
+li.php:hover,
+li.php:active {
+    border-bottom: 2px solid rgb(157, 13, 183);
+}
+
+li.mysql:hover,
+li.mysql:active {
+    border-bottom: 2px solid white;
+}
+
+li.html:hover {
+    border-bottom: 2px solid rgb(247, 52, 52);
+}
+
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALTER TABLE - SQL</title>
+    <style>
+          .toolbar {
+    color: white;
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    display: flex;
+    justify-content: flex-end;
+          }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="codebox.css">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo_sql.png">
+
+</head>
+  <body>
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png">
+      <h1>SQL -- Instruction ALTER TABLE</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="index.html">C'est quoi le SQL ?</a></li>
+                <li><a href="typesql.html">Les Types de Données - SQL</a></li>
+                <br><hr><br>
+                <li style="text-align:center;"> -> Passons aux intructions SQL ! <-</li>
+                <br><hr>
+                <li style="text-align:center;"><a href="create-mysql.html">SQL -- CREATE</a></li>
+                <li style="text-align:center;"><a href="insertinto-mysql.html">SQL -- INSERT INTO</a></li>
+                <li style="text-align:center;"><a href="select-mysql.html">SQL -- SELECT</a></li>
+                <li style="text-align:center;"><a href="altertable-mysql.html">SQL -- ALTER TABLE</a></li>
+                <li style="text-align:center;"><a href="update-mysql.html">SQL -- UPDATE</a></li>
+            </ul>
+          </nav>
+
+
+      <div class="container">
+        <section id="mysql-select">
+            <h2>Instruction - ALTER TABLE</h2>
+            <ul>
+                <li>L'instruction <b>ALTER TABLE/alter table</b> est utilisé pour ajouter,supprimer ou modifier des colonnes dans une table existante.</li>
+                <li>Elle est aussi utilisée pour ajouter ou supprimer différentes contraintes à une <b>TABLE</b>
+
+                </ul>
+        </section>
+
+        <section id="select-values">
+    <h2>Ajouter une ou des colonnes à une <b>TABLE</b> avec <b>ALTER TABLE</b></h2>
+    <ul>
+        <li>L'instruction <b>ALTER TABLE</b> permet de définir sur quel <b>TABLE</b> nous allons effectuer les modifications.</li>
+        <li>L'instruction <b>ADD COLUMN</b> permet d'ajouter une colonne à la <b>TABLE</b>.</li>
+        <li>Il faut spécifier le nom de la colonne et le type de données (<a href="typesql.html">types de données</a>)
+    </ul>
+    <br><hr><br>
+    <h3>Ajout d'une colonne "nationalité" dans la TABLES "celebrities"</h3>
+    <div class="container1">
+        <div class="code-box">
+            <div class="toolbar">
+                <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+            </div>
+            <pre class="code-content">
+<span class="token-instruc">ALTER TABLE</span> celebrities
+    <span class="token-instruc">ADD COLUMN</span> nationalité TEXT;
+            </pre>
+        </div>
+    </div>
+    <ol>
+        <li>L'instruction <b>ALTER TABLE</b> indique sur quelle <b>TABLE</b> on va effectuer les modifications</li>
+        <li>L'instruction <b>ADD COLUMN</b> permet d'ajouter <b>ADD</b> une colonne <b>COLUMN</b> dans la <b>TABLE</b> spécifiée</li>
+        <li>Une fois l'instruction exécutée, une nouvelle colonne sans données sera ajoutée.</li>
+    </ol>
+    <br><hr><br>
+    <h3>Résultat de la requête ALTER TABLE :</h3>
+    <br>
+    <table>
+        <thead>
+            <th>nom</th>
+            <th>age</th>
+            <th>profession</th>
+            <th>nationalité</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jordan</td>
+                <td>25</td>
+                <td>Formateur en SQL</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Emma</td>
+                <td>30</td>
+                <td>Développeur Web</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Alex</td>
+                <td>28</td>
+                <td>Data Scientist</td>
+                <td></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br><hr><br>
+    <h3>Ajout d'une colonne "nationalité", "ville_de_naissance", et "twitter" dans la TABLE "celebrities"</h3>
+    <div class="container1">
+        <div class="code-box">
+            <div class="toolbar">
+                <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+            </div>
+            <pre class="code-content">
+<span class="token-instruc">ALTER TABLE</span> celebrities
+    <span class="token-instruc">ADD COLUMN</span> nationalité TEXT,
+    <span class="token-instruc">ADD COLUMN</span> ville_de_naissance TEXT,
+    <span class="token-instruc">ADD COLUMN</span> twitter TEXT;
+            </pre>
+        </div>
+    </div>
+    <ol>
+        <li>L'instruction <b>ALTER TABLE</b> indique sur quelle <b>TABLE</b> on va effectuer les modifications</li>
+        <li>L'instruction <b>ADD COLUMN</b> permet d'ajouter <b>ADD</b> une colonne <b>COLUMN</b> dans la <b>TABLE</b> spécifiée</li>
+        <li>Une fois l'instruction exécutée, trois nouvelles colonnes sans données seront ajoutées.</li>
+    </ol>
+    <br><hr><br>
+    <h3>Résultat de la requête ALTER TABLE :</h3>
+    <br>
+    <table>
+        <thead>
+            <th>nom</th>
+            <th>age</th>
+            <th>profession</th>
+            <th>nationalité</th>
+            <th>ville_de_naissance</th>
+            <th>twitter</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jordan</td>
+                <td>25</td>
+                <td>Formateur en SQL</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Emma</td>
+                <td>30</td>
+                <td>Développeur Web</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Alex</td>
+                <td>28</td>
+                <td>Data Scientist</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</section>
+
+
+        
+
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+
+// Sélectionnez le bouton avec la classe "copy"
+
+function copyButton() {
+    // Trouver l'élément pre (contenant le code) à partir du bouton de copie
+    const codeBox = event.target.closest(".code-box");
+    const codeContent = codeBox.querySelector("pre");
+
+    // Extraire le texte à partir de l'élément pre
+    const textToCopy = codeContent.innerText.trim();
+
+    // Copier le texte dans le presse-papiers
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        alert("Code copié dans le presse-papiers !");
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie du texte : ', err);
+    });
+}
+    </script>
+  </body>
+</html>

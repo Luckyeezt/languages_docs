@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types de Données</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="stylesheet" href="sql-tables.css">
+    <link rel="icon" href="logo-sql.png">
+    <style>
+        .dark-mode header h1{
+            color: black;
+        }
+        .section-nav li a:hover {
+                color: black;
+            }
+
+            #menu-nav li a:hover {
+                background-color: black;
+                color:white;
+                transform: translateX(-10px);
+            }
+    </style>
+</head>
+<body>
+    <header style="background-color: whitesmoke;">
+        <img src="logo-sql.png" alt="logo">
+        <h1>Types de Données - MySQL</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>MySQL</h2>
+                <hr><br>
+                <li><a href="sql-home.html">Introduction au MySQL</a></li>
+                <li><a href="sql-datatypes.html">Types de Données - SQL</a></li>
+                <br><hr><br><h2>Instructions SQL</h2><hr><br>
+                <li><a href="sql-create.html">CREATE - SQL</a></li>
+            </ul>
+        </nav>
+
+        <nav class="section-nav">
+            <ul>
+                <li><a href="sql-datatypes.html#numbertypes">Nombres</a></li><hr>
+                <li><a href="sql-datatypes.html#textetypes">Textes</a></li><hr>
+                <li><a href="sql-datatypes.html#datetypes">Temporels</a></li><hr>
+            <ul>
+        </nav>
+
+        <main>
+            <section id="sqltypes">
+                <h2>Les Types de Données en SQL :</h2>
+    <p>Le type de données d'une colonne définit la valeur que la colonne peut contenir : entier, caractère, argent, date et heure, binaire, etc.</p>
+    <ul>
+        <li><strong>Les nombres :</strong> Représentent les valeurs numériques, tels que les entiers et les décimaux.</li>
+        <ol class="sqltypes">
+            <li style="margin-left: 75px;">Les types de nombres décimaux : représentent les nombres à virgules</li>
+            <li style="margin-left: 75px;">&nbspLes types de nombres entiers : représentent les nombres normaux, sans virgules</li>
+        </ol>
+        <li><strong>Les textes :</strong> Représentent les chaînes de caractères, permettant de stocker et manipuler du texte.</li>
+        <li><strong>Les types temporels :</strong> Représentent les données liées au temps et aux dates, comme les timestamps et les dates.</li>
+    </ul>
+    
+            </section>
+    
+            <section id="numbertypes">
+                <h2>Les types de données : Nombres</h2>
+                <h3>-> Pour les nombres entiers : </h3>
+                    <table>
+                        <thead>
+                            <th>Type de données pour les nombres ENTIERS :</th>
+                            <th>Description :</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TINYINT(size)</td>
+                                <td>Donnée qui comprendra un tout petit nombre entier, qui peut commencer de <b>-127</b> à <b>128</b>, le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.<td>
+                            </tr>
+                            <tr>
+                                <td>SMALLINT(size)</td>
+                                <td>Donnée qui comprendra un petit nombre entier, qui peut commencer de <b>-32 768</b> à <b>32 767</b>, le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                            </tr>
+                            <tr>
+                                <td>MEDIUMINT(size)</td>
+                                <td>Donnée qui comprendra un nombre entier moyen, qui peut commencer de <b>-8 388 608</b> à <b>8 388 607</b> le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                            </tr>
+                            <tr>
+                                <td>INT(size)</td>
+                                <td> Donnée qui comprendra un nombre entier, qui peut commencer de <b>-2 147 483 648</b> à <b>2 147 483 647</b> le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                            </tr>
+                            <tr>
+                                <td>BIGINT(size)</td>
+                                <td>Donnée qui comprendra un grand nombre entier, qui peut commencer de <b>-9 223 372 036 854 775 808</b> à <b>9 223 372 036 854 775 807</b> le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        <br>
+                        <hr>
+                        <br>
+                        <h3>-> Pour les nombres décimaux : </h3>
+                            <table>
+                                <thead>
+                                    <th>Type de données pour les nombres décimaux :</th>
+                                    <th>Description :</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>DECIMAL(size , d)</td>
+                                        <td>Donnée qui représente un nombre décimal à virgule fixe. La taille spécifiée (size) n'affecte pas la plage de valeurs autorisées, mais elle détermine le nombre total de chiffres pouvant être stockés, y compris ceux à gauche et à droite de la virgule. Le paramètre 'd' spécifie le nombre de chiffres à droite de la virgule.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FLOAT</td>
+                                        <td>Donnée qui représente un nombre décimal à virgule flottante simple précision. Il peut stocker des valeurs avec une précision inférieure par rapport à DECIMAL, mais il utilise moins d'espace de stockage.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DOUBLE</td>
+                                        <td>Donnée qui représente un nombre décimal à virgule flottante double précision. Il offre une plus grande précision que FLOAT, mais il utilise également plus d'espace de stockage.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+            </section>
+    
+            <section id="textetypes">
+                            <h2>Les types de données : Textes</h2>
+                            <p>Les textes peuvent contenir des lettres, des nombres, des symboles & et des caractères spéciaux.</p>
+                                <table>
+                                    <thead>
+                                        <th>Type de données pour TEXTES:</th>
+                                        <th>Description :</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CHAR(size)</td>
+                                            <td>Donnée qui comprendra une chaîne de caractères FIXE pouvant aller de <b>0</b> à <b>255</b> caractères. Le paramètre <b>(size)</b> définit la longueur maximale de caractères qui peuvent être dans la donnée.
+                                        </tr>
+                                        <tr>
+                                            <td>VARCHAR(size)</td>
+                                            <td>Donnée qui comprendra une chaine de caractères dont on a défini la limite, pouvant aller de <b>0</b> à <b>65 535</b> caractères. Le paramètre <b>(size)</b> définit la longueur maximale de caractères pouvant être dans la donnée.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TINYTEXT</td>
+                                            <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>255</b> caractères.
+                                        </tr>
+                                        <tr>
+                                            <td>TEXT</td>
+                                            <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>65 535</b> caractères.
+                                        </tr>
+                                        <tr>
+                                            <td>MEDIUMTEXT</td>
+                                            <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>16 777 215</b> caractères.
+                                        </tr>
+                                        <tr>
+                                            <td>LONGTEXT</td>
+                                            <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>4 294 967 295</b> caractères.
+                                        </tr>
+                                    </tbody>
+                                </table>
+            </section>
+    
+            <section id="datetypes">
+                        <h2>Les types de données : Temporels</h2>
+                            <table>
+                                <thead>
+                                    <th>Type de données pour TEMPS:</th>
+                                    <th>Description :</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>DATETIME</td>
+                                        <td>Donnée qui stockera une date dont le format est de <b>"YYYY-MM-DD HH:MM:SS"</b> ("Année-Mois-Jour / Heures:Minutes:Secondes")
+                                    </tr>
+                                    <tr>
+                                        <td>DATE</td>
+                                        <td>Donnée qui stockera une date sous la forme : jour,mois,année ("YYYY-MM-DD")</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TIME</td>
+                                        <td>Donnée qui stockera une heure précise : heure, minutes, secondes ("HH:MM:SS")</td>
+                                    </tr>
+                                    <tr>
+                                        <td>YEAR</td>
+                                        <td>Donnée qui stockera une année seulement entre <b>1901</b> et <b>2155</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>TIMESTAMP</td>
+                                        <td>Un horodatage. Les valeurs TIMESTAMP sont stockées sous forme de nombre de secondes depuis l'époque Unix ('1970-01-01 00:00:00' UTC). Format : AAAA-MM-JJ hh:mm:ss. La plage prise en charge va de « 1970-01-01 00:00:01 » UTC à « 2038-01-09 03:14:07 » UTC.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                </section>
+        </main>
+    </div>
+        <script src="../script.js"></script>
+</body>
+</html>

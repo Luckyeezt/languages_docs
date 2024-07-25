@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les opérateurs arithmétiques en Javascript</title>
+    <style>
+          .toolbar {
+    color: white;
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    display: flex;
+    justify-content: flex-end;
+          }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/png;base64,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">
+
+</head>
+  <body>
+    <header>
+      <img src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png">
+      <h1>Javascript - Les opérateurs arithmétiques</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+      <nav>
+        <ul>
+          <li>
+            <a href="typesjs.html">Types de Données</a>
+            <ul class="sub-menu">
+              <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
+              <li><a href="typesjs.html#numbers">Nombres</a></li>
+              <li><a href="typesjs.html#booleans">Booléens</a></li>
+              <li><a href="typesjs.html#undefined">undefined (Indéfini)</a></li>
+              <li><a href="typesjs.html#null">null (valeur vide)</a></li>
+              <li><a href="typesjs.html#arrays">Tableaux (Arrays)</a></li>
+              <li><a href="typesjs.html#objects">Objets (Object)</a></li>
+              <li><a href="typesjs.html#typeof">L'opérateur typeof</a></li>
+            </li>
+            </ul>
+
+          <li>
+            <a href="variablesjs.html">Variables et Assignation</a>
+          <ul class="sub-menu">
+            <li><a href="variables.html#const">Créer une variable const</a></li>
+            <li><a href="variables.html#let">Créer une variable let</a></li>
+            <li><a href="variables.html#var">Créer une variable var</a></li>
+
+          </li>
+        </ul>
+
+          <li>
+            <a href="operateursjs.html">Opérateurs Arithmétiques</a>
+            <ul class="sub-menu">
+                <li><a href="operateurs.html#addition">L'opérateur d'addition</a></li>
+                <li><a href="operateurs.html#soustraction">L'opérateur de soustraction</a></li>
+                <li><a href="operateurs.html#multiplication">L'opérateur de multiplication</a></li>
+                <li><a href="operateurs.html#division">L'opérateur de division</a></li>
+                <li><a href="operateurs.html#modulo">L'opérateur de modulo</a></li>
+                <li><a href="operateurs.html#puissance">L'opérateur de puissance</a></li>
+                <li><a href="operateurs.html#assignation-combinee">Les assignations combinées</a></li>
+            </li>
+        </ul>
+
+          <li><a href="typesconversions.html">Conversions de Types</a>
+            <ul class="sub-menu">
+                <li><a href="conversionstypes.html#tonumber">Conversion en Nombre</a></li>
+                <li><a href="conversionstypes.html#tostring">Conversion en String</a></li>
+                <li><a href="conversionstypes.html#toboolean">Conversion en Booléen</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a>
+            <ul class="sub-menu">
+                <li><a href="mathsfunctions.html#mathpi">Math.PI()</a></li>
+                <li><a href="mathsfunctions.html#mathe">Math.E()</a></li>
+                <li><a href="mathsfunctions.html#mathround">Math.round()</a></li>
+                <li><a href="mathsfunctions.html#mathfloor">Math.floor()</a></li>
+                <li><a href="mathsfunctions.html#mathceil">Math.ceil()</a></li>
+                <li><a href="mathsfunctions.html#mathtrunc">Math.trunc()</a></li>
+                <li><a href="mathsfunctions.html#mathabs">Math.abs()</a></li>
+                <li><a href="mathsfunctions.html#mathsign">Math.sign()</a></li>
+                <li><a href="mathsfunctions.html#mathpow">Math.pow()</a></li>
+                <li><a href="mathsfunctions.html#mathsqrt">Math.sqrt()</a></li>
+                <li><a href="mathsfunctions.html#mathsin">Math.sin()</a></li>
+                <li><a href="mathsfunctions.html#mathcos">Math.cos()</a></li>
+                <li><a href="mathsfunctions.html#mathtan">Math.tan()</a></li>
+                <li><a href="mathsfunctions.html#mathrandom">Math.random()</a></li>
+                <li><a href="mathsfunctions.html#matmin">Math.min()</a></li>
+                <li><a href="mathsfunctions.html#mathmax">Math.max()</a></li>
+            </ul>
+        </li>
+          <li>
+            <a href="instructionscondis.html">Les instructions conditionnelles</a>
+                <ul class="sub-menu">
+                    <li><a href="instructionscondis.html#if">L'instruction "if"</a><li>
+                    <li><a href="instructionscondis.html#else">L'instruction "else"</a></li>
+                    <li><a href="instructionscondis.html#elseif">L'instruction else if</a></li>
+                </ul>
+          </li>
+          <li>
+            <a href="stringmethodsjs.html">Les méthodes des chaînes de caractères</a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <div class="container">
+        <section class="operators">
+          <h2>Les différents opérateurs arithmétiques en Javascript</h2>
+          <ul>
+            <li><b>L'opérateur d'addition (+)</b> : C'est une séquence de caractères comme des lettres, chiffres, symboles pour représenter un texte en Javascript.</li>
+            <li><b>L'opérateur de soustraction (-)</b> : Permet de représenter une valeur logique avec les booléens true(vrai) et false(faux).</li>
+            <li><b>L'opérateur de multiplication (*)</b> : Permet de réprésenter des valeurs numériques comme un nombre entier ou un nombre décimal.</li>
+            <li><b>L'opérateur de division (/)</b> : Permet de stocker une collection ordonnée d'élements, offre une manipulation de données efficace telle qu'une liste.</li>
+            <li><b>L'opérateur de puissance (**)</b> : Permet de regrouper des données et des fonctionnalités dans une seule unité.</li>
+            <li><b>L'opérateur modulo (%)</b> : Valeur par défaut si une variable à été déclarée mais aucune valeur lui à été assignée.</li>
+          </ul>
+        </section>
+
+        <section id="addition">
+            <h2>L'opérateur d'addition</h2>
+            <p>L'opérateur d'addition (+) permet de combiner plusieurs valeurs entre elles, elles peuvent être des nombres, des chaînes de caractères, des variables contenant des valeurs etc...</p>
+            <br>
+            <hr>
+            <br>
+            <h3>Exemple d'addition de deux nombres : </h3>
+            <p>Lorque l'on additionne seulement des nombres, le résultat attendu sera la somme des nombres additionnés.
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" onclick="alert(50+25)"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                        <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">calcul</span> <span class="token-operator">=</span> <span class="token-number">50</span> <span class="token-operator">+</span> <span class="token-number">25</span> <span class="token-punctuation">;</span> <span class="token-comment">// Création d'une variable qui stocke une addition</span>
+<span class="token-function">console.log</span>(<span class="token-variable">calcul</span>); <span class="token-comment">// Affiche : 75</span>
+                    </pre>
+                </div>
+              </div>
+              <br>
+              <hr>
+              <br>
+              <h3>Exemple d'addition avec une chaîne de caractères et un nombre : </h3>
+              <p>Lorsque l'on additionne des chaines de caractères avec des nombres on appelle ca une <span style="font-weight: bold;color:red;">concaténation</span>, le résultat attendu sera que le nombre va être ajouté à la chaîne de caractères.</p>
+              <div class="container1">
+                  <div class="code-box">
+                      <div class="toolbar">
+                          <button class="play-btn" onclick="alert('Chocolat' + 558)"><i class="fas fa-play"></i> Exécuter</button>
+                          <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                          <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">concat</span> <span class="token-operator">=</span> <span class="token-string">"Chocolat"</span> <span class="token-operator">+</span> <span class="token-number">558</span> <span class="token-punctuation">;</span> <span class="token-comment">// Création d'une variable "concat" qui stocke une concaténation de strings et de nombres.</span>
+<span class="token-function">console.log</span>(<span class="token-variable">concat</span>); <span class="token-comment">// Affiche : Chocolat558.</span>
+                      </pre>
+                  </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <h3>Exemple d'addition avec deux chaines de caractères :  </h3>
+                <p>Lorsque l'on additionne des chaines de caractères, on appelle ca également une <span style="font-weight: bold;color:red;">concaténation</span>, le résultat attendu sera que les chaines de caractères vont se suivre en se collant.</p>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" onclick="alert('Chocolat' + 'Croissant' + 'Beurre')"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                            <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">concat2</span> <span class="token-operator">=</span> <span class="token-string">"Chocolat"</span> <span class="token-operator">+</span> <span class="token-string">"Croissant"</span> <span class="token-operator">+</span> <span class="token-string">"Beurre"</span><span class="token-punctuation">;</span> <span class="token-comment">// Création d'une variable "concat2" qui stocke une concaténation de strings.</span>
+<span class="token-function">console.log</span>(<span class="token-variable">concat2</span>); <span class="token-comment">// Affiche : ChocolatCroissantBeurre.</span>
+                        </pre>
+                    </div>
+                  </div>
+        </section>          
+
+        <section id="soustraction">
+          <h2>L'opérateur de soustraction (-)</h2>
+          <p>L'opérateur de soustraction permet de soustraire une valeur à une autre.</p>
+          <br>
+          <hr>
+          <br>
+          <h3>Exemple de soustraction de deux nombres :</h3>
+          <p>Lorsque l'on soustrait des nombres, le résultat attendu sera la différence entre les deux nombres.</p>
+          <div class="container1">
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn" onclick="alert(10000 - 3500)"><i class="fas fa-play"></i> Exécuter</button>
+                      <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                  </div>
+                  <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">difference</span> <span class="token-operator">=</span> <span class="token-number">10000</span> <span class="token-operator">-</span> <span class="token-number">3500</span><span class="token-punctuation">;</span> <span class="token-comment">// Création d'une variable qui stocke le résultat de la soustraction</span>
+<span clas="token-function">console.log</span>(<span class="token-variable">difference</span>); <span class="token-comment">// Affiche : 6500</span>
+                  </pre>
+              </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <h3>Exemple de soustraction avec des variables :</h3>
+          <p>On peut aussi soustraire des variables contenant des valeurs numériques.</p>
+          <div class="container1">
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn" onclick="alert(500 - 250)"><i class="fas fa-play"></i> Exécuter</button>
+                      <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                  </div>
+                  <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">nombre1</span> <span class="token-operator">=</span> <span class="token-number">100</span>; <span class="token-comment">// Création d'une variable "nombre1" qui stocke le nombre 100</span>
+<span class="token-keyword">let</span> <span class="token-variable">nombre2</span> <span class="token-operator">=</span> <span class="token-number">75</span>; <span class="token-comment">// Création d'une variable "nombre2" qui stocke le nombre 75</span>
+<span class="token-keyword">let</span> <span class="token-variable">resultat</span> <span class="token-operator">=</span> <span class="token-variable">nombre1</span> <span class="token-operator">-</span> <span class="token-variable">nombre2</span><span class="token-punctuation">;</span> <span class="token-comment">// Création d'une variable qui stocke le résultat de la soustraction</span>
+<span class="token-function">console.log</span>(<span class="token-variable">resultat</span>); <span class="token-comment">// Console : 25</span>
+                  </pre>
+              </div>
+          </div>
+      </section>
+
+      <section id="multiplication">
+        <h2>L'opérateur de multiplication (*)</h2>
+        <p>L'opérateur de multiplication permet de multiplier deux nombres entre eux.</p>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de multiplication de deux nombres :</h3>
+        <p>Lorsque l'on multiplie des nombres, le résultat attendu sera le produit de la multiplication.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(10 * 5)"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">produit</span> = <span class="token-number">10</span> * <span class="token-number">5</span>; <span class="token-comment">// Création d'une variable qui stocke le résultat de la multiplication</span>
+<span class="token-function">console.log</span>(<span class="token-variable">produit</span>); <span class="token-comment">// Console : 50</span>
+    </pre>
+    </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <h3>Exemple de multiplication avec des variables :</h3>
+    <p>On peut également multiplier des variables contenant des valeurs numériques.</p>
+      <div class="container1">
+        <div class="code-box">
+          <div class="toolbar">
+            <button class="play-btn" onclick="alert(20 * 3)"><i class="fas fa-play"></i> Exécuter</button>
+            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+          </div>
+    <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">nombre1</span> <span class="token-operator">=</span> <span class="token-number">20</span>; <span class="token-comment">// Création d'une variable "nombre1" qui stocke le nombre 20</span>
+<span class="token-keyword">let</span> <span class="token-variable">nombre2</span> <span class="token-operator">=</span> <span class="token-number">3</span>; <span class="token-comment">// Création d'une variable "nombre2" qui stocke le nombre 3</span>
+<span class="token-keyword">let</span> <span class="token-variable">produit2</span> <span class="token-operator">=</span> <span class="token-variable">nombre1</span> <span class="token-operator">*</span> <span class="token-variable">nombre2</span><span class="token-punctuation">;</span> <span class="token-comment">// Création d'une variable qui stocke le résultat de la multiplication (produit)</span>
+<span class="token-function">console.log</span>(<span class="token-variable">produit2</span>); <span class="token-comment">// Console : 60</span>
+    </pre>
+    </div>
+    </div>
+    
+    </section>
+
+          <section id="division">
+            <h2>L'opérateur de division (/)</h2>
+            <p>L'opérateur de division permet de diviser un nombre par un autre.</p>
+            <br>
+            <hr>
+            <br>
+            <h3>Exemple de division de deux nombres :</h3>
+            <p>Lorsque l'on divise des nombres, le résultat attendu sera le quotient de la division.</p>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" onclick="alert(100 / 5)"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">quotient</span> = <span class="token-number">100</span> / <span class="token-number">5</span>; <span class="token-comment">// Création d'une variable qui stocke le résultat de la division</span>
+<span class="token-function">console.log</span>(<span class="token-variable">quotient</span>); <span class="token-comment">// Console : 20</span>
+                    </pre>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <h3>Exemple de division avec des variables :</h3>
+            <p>On peut aussi diviser des variables contenant des valeurs numériques.</p>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" onclick="alert(1000 / 5)"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">nombre1</span> <span class="token-operator">=</span> <span class="token-number">1000</span>; <span class="token-comment">// Création d'une variable "nombre1" qui stocke le nombre 1000</span>
+<span class="token-keyword">let</span> <span class="token-variable">nombre2</span> <span class="token-operator">=</span> <span class="token-number">5</span>; <span class="token-comment">// Création d'une variable "nombre2" qui stocke le nombre 5</span>
+<span class="token-keyword">let</span> <span class="token-variable">quotient2</span> <span class="token-operator">=</span> <span class="token-variable">nombre1</span> <span class="token-operator">/</span> <span class="token-variable">nombre2</span><span class="token-punctuation">;</span> <span class="token-comment">// Création d'une variable qui stocke le résultat de la division (quotient)</span>
+<span class="token-function">console.log</span>(<span class="token-variable">quotient2</span>); <span class="token-comment">// Console : 200</span>
+                                        </pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="puissance">
+          <h2>L'opérateur de puissance (**)</h2>
+          <p>L'opérateur de puissance permet d'élever un nombre à la puissance d'un exposant.</p>
+          <br>
+          <hr>
+          <br>
+          <h3>Exemple de calcul de puissance :</h3>
+          <p>Lorsque l'on utilise l'opérateur de puissance, le résultat attendu sera le nombre élevé à la puissance de l'exposant.</p>
+          <div class="container1">
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn" onclick="alert(5 ** 3)"><i class="fas fa-play"></i> Exécuter</button>
+                      <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                  </div>
+                  <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">resultatPuissance</span> = <span class="token-number">5</span> <span class="token-operator">**</span> <span class="token-number">3</span>; <span class="token-comment">// Création d'une variable qui stocke le résultat de la puissance</span>
+<span class="token-function">console.log</span>(<span class="token-variable">resultatPuissance</span>); <span class="token-comment">// Console : 125 (car 5^3 = 125)</span>
+      </pre>
+              </div>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <h3>Exemple de calcul de puissance avec des variables :</h3>
+          <p>On peut également utiliser des variables pour effectuer des calculs de puissance.</p>
+          <div class="container1">
+              <div class="code-box">
+                  <div class="toolbar">
+                      <button class="play-btn" onclick="alert(nombre1 ** nombre2)"><i class="fas fa-play"></i> Exécuter</button>
+                      <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                  </div>
+                  <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">nombre1</span> <span class="token-operator">=</span> <span class="token-number">2</span>; <span class="token-comment">// Définition d'une variable "nombre1"</span>
+<span class="token-keyword">let</span> <span class="token-variable">nombre2</span> <span class="token-operator">=</span> <span class="token-number">4</span>; <span class="token-comment">// Définition d'une variable "nombre2"</span>
+<span class="token-keyword">let</span> <span class="token-variable">resultatPuissance2</span> <span class="token-operator">=</span> <span class="token-variable">nombre1</span> <span class="token-operator">**</span> <span class="token-variable">nombre2</span>; <span class="token-comment">// Calcul de puissance avec des variables</span>
+<span class="token-function">console.log</span>(<span class="token-variable">resultatPuissance2</span>); <span class="token-comment">// Console : 16 (car 2^4 = 16)</span>
+      </pre>
+              </div>
+          </div>
+      
+      </section>
+
+      <section id="modulo">
+        <h2>L'opérateur de modulo (%)</h2>
+        <p>L'opérateur de modulo (%) permet d'obtenir le reste de la division entre deux nombres.</p>
+        <br>
+        <hr>
+        <br>
+        <h3>Exemple de modulo :</h3>
+        <p>En utilisant l'opérateur de modulo (%), on obtient le reste de la division entre deux nombres.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(10 % 3)"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">resteDivision</span> <span class="token-operator">=</span> <span class="token-number">10</span> <span class="token-operator">%</span> <span class="token-number">3</span>; <span class="token-comment">// Calcul du reste de la division</span>
+<span class="token-function">console.log</span>(<span class="token-variable">resteDivision</span>); <span class="token-comment">// Console : 1 (car 10 % 3 = 1)</span>
+    </pre>
+            </div>
+        </div>
+    
+    </section>
+
+    <section id="assignation-combinee">
+      <h2>Opérateurs d'Assignation Combinés</h2>
+      <p>En JavaScript, les opérateurs d'assignation combinés permettent de raccourcir les expressions en combinant une opération arithmétique avec une opération d'assignation.</p>
+      <br>
+      <hr>
+      <br>
+      <p>Voici les différents opérateurs d'assignation combinés :</p>
+      <ul>
+          <li><code>+=</code> : Ajoute et assigne</li>
+          <li><code>-=</code> : Soustrait et assigne</li>
+          <li><code>*=</code> : Multiplie et assigne</li>
+          <li><code>/=</code> : Divise et assigne</li>
+          <li><code>**=</code> : Exponentiation et assigne</li>
+          <li><code>%=</code> : Modulo et assigne</li>
+      </ul>
+      <br>
+      <h3>Exemples d'utilisation :</h3>
+      <div class="container1">
+          <div class="code-box">
+              <div class="toolbar">
+                  <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter les exemples</button>
+                  <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+              </div>
+              <pre class="code-content">
+  <span class="token-keyword">let</span> <span class="token-variable">value</span> <span class="token-operator">=</span> <span class="token-number">10</span><span class="token-punctuation">;</span>
+  
+<span class="token-comment">// Opérateurs d'assignation combinés</span>
+<span class="token-variable">value</span> <span class="token-operator">+=</span> <span class="token-number">5</span><span class="token-punctuation">;</span> <span class="token-comment">// value devient 15</span>
+<span class="token-variable">value</span> <span class="token-operator">-=</span> <span class="token-number">3</span><span class="token-punctuation">;</span> <span class="token-comment">// value devient 12</span>
+<span class="token-variable">value</span> <span class="token-operator">*=</span> <span class="token-number">2</span><span class="token-punctuation">;</span> <span class="token-comment">// value devient 24</span>
+<span class="token-variable">value</span> <span class="token-operator">/=</span> <span class="token-number">4</span><span class="token-punctuation">;</span> <span class="token-comment">// value devient 6</span>
+<span class="token-variable">value</span> <span class="token-operator">**=</span> <span class="token-number">2</span><span class="token-punctuation">;</span> <span class="token-comment">// value devient 36</span>
+<span class="token-variable">value</span> <span class="token-operator">%=</span> <span class="token-number">5</span><span class="token-punctuation">;</span> <span class="token-comment">// value devient 1</span>
+
+<span class="token-variable">value</span>++ <span class="token-comment">// Incrémentation (augmente de 1)</span>
+<span class="token-variable">value</span>-- <span class="token-comment">// Décrémentation (diminue de 1)</span>
+
+</pre>
+  </div>
+  </div>
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Sélectionnez tous les éléments <li> de la navigation
+        const menuItems = document.querySelectorAll("nav ul > li");
+
+        // Parcourir tous les éléments <li> et ajouter un gestionnaire d'événements clic
+        menuItems.forEach((item) => {
+          item.addEventListener("click", (event) => {
+            // Trouver le sous-menu (ul.sub-menu) à l'intérieur de l'élément <li>
+            const subMenu = item.querySelector(".sub-menu");
+
+            // Vérifiez si le clic a été effectué sur le sous-menu lui-même
+            const isSubMenuClick = event.target.closest(".sub-menu") !== null;
+
+            // Si le clic n'a pas été effectué sur le sous-menu
+            if (!isSubMenuClick) {
+              // Empêcher le comportement par défaut du lien principal
+              event.preventDefault();
+
+              // Vérifiez si le sous-menu existe et basculez sa visibilité
+              if (subMenu) {
+                subMenu.classList.toggle("show-sub-menu");
+              }
+            }
+          });
+        });
+      });
+
+      function copyButton() {
+    // Trouver l'élément pre (contenant le code) à partir du bouton de copie
+    const codeBox = event.target.closest(".code-box");
+    const codeContent = codeBox.querySelector("pre");
+
+    // Extraire le texte à partir de l'élément pre
+    const textToCopy = codeContent.innerText.trim();
+
+    // Copier le texte dans le presse-papiers
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        alert("Code copié dans le presse-papiers !");
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie du texte : ', err);
+    });
+}
+    </script>
+  </body>
+</html>

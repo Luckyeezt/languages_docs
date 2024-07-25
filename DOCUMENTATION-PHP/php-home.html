@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le PHP</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="icon" href="logo-php.png">
+    <style>
+        .section-nav li a:hover {
+             color: rgb(157, 13, 183);;
+         }
+
+         #menu-nav li a:hover {
+             background-color: rgb(157, 13, 183);
+             color:white;
+             transform: translateX(-10px);
+         }
+ </style>
+</head>
+<body>
+    <header style="background-color:  rgb(157, 13, 183)">
+        <img src="logo-php.png" alt="logo">
+        <h1 style="color:white">Documentation - PHP</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>PHP</h2>
+                <hr><br>
+                <li><a href="php-home.html">Introduction au PHP</a></li>
+                <li><a href="php-datatypes.html">Types de données</a></li>
+                <li><a href="php-variables.html">Les Variables</a></li>
+                <li><a href="php-date_time.html">Date et Heure</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="intro">
+                <h2>C'est quoi le langage PHP ?</h2>
+                <p>Le PHP est un langage "back-end" qui va gérer tout ce qui est du côté du <b>serveur</b> avec du HTML, Ce langage permet aux développeurs
+                    webs de créer des sites internet dynamiques et nous permet d'interagir avec une base de données.
+                </p>
+                <br>
+                <p>C'est un langage qui est connu pour sa simplicité, sa flexibilité et sa rapidité qui ont fait de ce langage un des plus utilisés dans le monde.</p>
+            </section>
+        </main>
+    </div>
+        <script src="../script.js"></script>
+
+</body>
+</html>

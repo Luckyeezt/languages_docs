@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Python</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="icon" href="logo-py.png"> 
+
+    <style>
+            .section-nav li a:hover {
+                color: yellowgreen;
+            }
+
+            #menu-nav li a:hover {
+                background-color: yellowgreen;
+                transform: translateX(-10px);
+            }
+
+            .dark-mode #menu-nav li a:hover {
+                color:black
+            }
+    </style>
+</head>
+<body>
+    <header style="background-color: yellowgreen;">
+        <img src="logo-py.png" alt="logo">
+        <h1>Documentation - Python</h1>
+        <button id="darkmode-button" onclick="toggleDarkMode()">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+    <nav id="menu-nav">
+        <ul>
+            <h2>Python</h2>
+            <hr><br>
+            <li><a href="py-home.html">Introduction au Python</a></li>
+            <li><a href="py-datatypes.html">Types de Données</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="intro">
+            <h2>C'est quoi le langage Python ?</h2>
+        </section>
+    </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

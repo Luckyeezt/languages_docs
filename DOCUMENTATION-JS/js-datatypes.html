@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types de Données</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languagescolor.css">
+    <link rel="stylesheet" href="../codebox.css">
+    <link rel="stylesheet" href="../tokens.css">     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="icon" href="logo-javascript.png">
+
+    <style>
+        .dark-mode #menu-nav li a:hover {
+            color:black
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: yellow;">
+        <img src="logo-javascript.png" alt="logo">
+        <h1>Types de Données - Javascript</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>Javascript</h2>
+                <hr><br>
+                <li><a href="js-home.html">Introduction au Javascript</a></li>
+                <li><a href="js-datatypes.html">Types de Données</a></li>
+                <li><a href="js-variables.html">Variables</a></li>
+                <li><a href="js-arithmetic.html">Opérateurs arithmétiques</a></li>
+            </ul>
+        </nav>
+
+            
+    <nav class="section-nav">
+        <ul>
+            <li><a href="js-datatypes.html#string">String</a></li><hr>
+            <li><a href="js-datatypes.html#number">Nombre</a></li><hr>
+            <li><a href="js-datatypes.html#boolean">Booléen</a></li><hr>
+            <li><a href="js-datatypes.html#arrays">Tableau (array)</a></li><hr>
+            <li><a href="js-datatypes.html#object">Objet (object)</a></li><hr>
+            <li><a href="js-datatypes.html#undefined">Undefined</a></li><hr>
+            <li><a href="js-datatypes.html#null">Null</a></li><hr>
+            <li><a href="js-datatypes.html#typeof">La fonction typeof()</a></li><hr>
+
+        <ul>
+    </nav>
+</div>
+
+    <main>
+        <section id="intro">
+            <h2>Les types de données en Javascript : </h2>
+            <ul>
+                <li><b>Chaînes de caractères (string)</b> : C'est une séquence de caractères comme des lettres, chiffres, symboles pour représenter un texte en Javascript.</li>
+                <li><b>Nombre (number)</b> : Permet de réprésenter des valeurs numériques comme un nombre entier ou un nombre décimal</li>
+                <li><b>Booléen (boolean)</b></li>
+                <li><b>Tableau (array)</b></li>
+                <li><b>Objet (object)</b></li>
+                <li><b>Undefined (undefined)</b></li>
+                <li><b>Null (null)</b></li>
+                <li><b>La fonction typeof()</b></li>
+
+            </ul>
+        </section>
+
+            <section id="string">
+                <h2>Les chaines de caractères (String)</h2>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                    <pre class="code-content">
+<span class="token-string">"J'apprends le Javascript !"</span> <span class="token-comment">// Ici on utilise les guillemets doubles.</span>
+<span class="token-string">'J'apprends le Javascript !'</span> <span class="token-comment">// Ici on utilise les guillemets simples.</span>
+                </pre>
+            </div>
+
+            </section>
+        
+            <section id="number">
+                <h2>Les nombres (Number)</h2>
+            </section>
+        
+            <section id="boolean">
+                <h2>Les booléens (Boolean)</h2>
+            </section>
+        
+            <section id="arrays">
+                <h2>Les Tableaux (array)</h2>
+            </section>
+    
+            <section id="object">
+                <h2>Les Objets (object)</h2>
+            </section>
+
+            <section id="undefined">
+                <h2>Undefined</h2>
+            </section>
+
+            <section id="null">
+                <h2>Null</h2>
+            </section>
+
+            <section id="typeof">
+                <h2>La fonction typeof()</h2>
+            </section>
+    </main>
+<script src="../script.js"></script>
+</body>
+</html>

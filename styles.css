@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Helvetica;
+}
+
+/* Stylisation du HEADER */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        position: fixed;
+        top: 0; /* Position en haut de la fenêtre */
+        width: 100%; /* Assure que le header occupe toute la largeur */
+        z-index: 1000; /* Assure que le header soit au-dessus du reste du contenu */
+    }
+    header button {
+        margin-right: 50px;
+        padding: 10px;
+        cursor: pointer;
+        }
+    header img {
+        width: 150px;
+        }
+
+/* Stylisation barre de navigation */
+    #languages-nav {
+        background-color: #333;
+        padding: 10px 0;
+        position: fixed;
+        top: 100px; /* Position juste en dessous du header */
+        width: 100%; /* Assure que la nav occupe toute la largeur */
+        z-index: 1000; /* Assure que la nav soit au-dessus du contenu */
+    }
+    #languages-nav ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #languages-nav li a {
+        margin-right: 10px;
+        padding: 8px 16px;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+    }
+    .container {
+        display: flex;
+    }
+
+/* Stylisation barre de nav - MENU LANGUAGE */
+    #menu-nav {
+        background-color: #f4f4f4;
+        height: 1000px;
+        margin-top: 138px;
+        position: fixed;
+        padding: 20px 0;
+        width: 250px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    #menu-nav li {
+        margin-left: 20px;
+        list-style: none;
+    }
+
+    #menu-nav li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        display: block;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    #menu-nav li a:hover {
+        background-color: yellow;
+        transform: translateX(-10px);
+    }
+
+    #menu-nav h2 {
+        margin-left: 20px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        color: #444;
+        transition: color 0.3s ease-in-out;
+    }
+
+/* Stylisation section-nav */
+    .section-nav {
+        background-color: #444;
+        height: 1000px;
+        margin-top: 138px;
+        position: fixed;
+        padding: 20px 0;
+        width: 220px;
+        margin-left: 1280px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        transition: background-color 0.3s ease-in-out;;
+    }
+
+    .section-nav:hover {
+        background-color: #555;
+    }
+
+    .section-nav li {
+        margin: 10px 0;
+        margin-left: 10px;
+        list-style-type: none;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;;
+    }
+
+    .section-nav li:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    .section-nav li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .section-nav li a:hover {
+        color: #ffcc00;
+    }
+
+
+
+/* Le contenu principal */
+    main {
+        margin-top: 130px; /* Ajustement pour l'espace occupé par le header et la barre de navigation */
+        padding: 20px;
+    }
+
+    section {
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        width: 950px;
+        margin-left: 250px; /* Espace occupé par le menu */
+        border: 1px solid black;
+    }
+
+    section h2 {
+        margin-bottom: 10px;
+        color: #000000;
+        text-align: center;
+    }
+
+    section ul li {
+        margin-left: 10px;
+        line-height: 1.6;
+    }
+
+    /* Styles pour le mode sombre */
+.dark-mode {
+    background-color: #1a1818;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+.dark-mode nav#languages-nav {
+    background-color: #555;
+}
+
+.dark-mode nav#languages-nav li a {
+    color: #fff;
+}
+
+.dark-mode #menu-nav {
+    background-color: #333;
+}
+
+.dark-mode #menu-nav a {
+    color: #eee;
+}
+
+.dark-mode section {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode section h2{
+    color: white;
+}
+
+.dark-mode #menu-nav h2 {
+    color: white;
+}

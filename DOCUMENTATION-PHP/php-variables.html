@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le PHP</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel^="stylesheet" href="tokens-php.css">
+    <link rel="icon" href="logo-php.png">
+    <style>
+        .section-nav li a:hover {
+             color: rgb(157, 13, 183);;
+         }
+
+         #menu-nav li a:hover {
+             background-color: rgb(157, 13, 183);
+             color:white;
+             transform: translateX(-10px);
+         }
+ </style>
+</head>
+<body>
+    <header style="background-color:  rgb(157, 13, 183)">
+        <img src="logo-php.png" alt="logo">
+        <h1 style="color:white">Documentation - PHP</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>PHP</h2>
+                <hr><br>
+                <li><a href="php-home.html">Introduction au PHP</a></li>
+                <li><a href="php-datatypes.html">Types de données</a></li>
+                <li><a href="php-variables.html">Les Variables</a></li>
+                <li><a href="php-date_time.html">Date et Heure</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <hr style="margin-left: 250px;"><br>
+            <p style="margin-left: 250px;">Une <b>variable</b> est comme un "conteneur" qui va stocker une ou des données qui peuvent être modifiées au cours du programme et peut être re-exploitée plus tard dans un code.</p>
+        <br><hr style="margin-left: 250px;"><br>
+
+            <section id="start">
+                <h2>Construction de variables</h2>
+                <p>La syntaxe de la création d'une <b>variable</b> en PHP : </p>
+                <ol style="margin-left: 40px;margin-top: 10px;">
+                    <li>Le signe "dollar" avant le nom de la variable : <b>$</b></li>
+                    <li>Le nom de la variable : <b>prenom</b></li>
+                    <li>Le signe "égal" après le nom de la variable afin de lui assigner une valeur: <b>=</b></li>
+                    <li>La valeur de la variable (<a href=php-datatypes.html>Types de données</a>) : <b>"Fréderic"</b></li>
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                    <pre class="code-content">
+<span class="function">echo</span> <span class="function">date</span>(<span class="string">"H:i:s"</span>) <span class="comment">// Console : 03:46:50</span>
+                    </pre>
+                </div>
+
+                </ol>
+            </section>
+        </main>
+    </div>
+        <script src="../script.js"></script>
+
+</body>
+</html>

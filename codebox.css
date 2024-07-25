@@ -1,0 +1,40 @@
+/* Boîte de code */
+.code-box {
+    background-color: #282a36; /* Couleur de fond de la boîte de code */
+    color: #ffffff; /* Couleur du texte */
+    padding: 10px;
+    line-height: 1.6;
+    width: 95%;
+    border-radius: 0 5px 5px 0; /* Coins arrondis à droite */
+    margin-bottom: 14px;
+    height: auto;
+    margin-top: 14px;
+  }
+  
+  
+  /* Boutons de la barre d'outils */
+  .toolbar button {
+    background: #282a38;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: white !important;
+    padding: 8px;
+    border-radius: 5px;
+  }
+
+
+  
+  .toolbar button:hover {
+    opacity: 0.5;
+  }
+
+.code-content {
+    font-family: 'Lucida Console', monospace;
+    font-size: 15px; /* Taille de police pour le code */
+    white-space: pre-wrap;
+    overflow-x: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+

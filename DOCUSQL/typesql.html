@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATATYPES - SQL</title>
+    <style>
+          .toolbar {
+    color: white;
+    background-color: #282a36; /* Couleur de fond de la barre d'outils */
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    position: relative;
+    left: 500px;
+display: none;
+  }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo_sql.png">
+
+</head>
+  <body>
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png">
+      <h1>SQL - Introduction</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="index.html">C'est quoi le SQL ?</a></li>
+                <li><a href="typesql.html">Les Types de Données - SQL</a></li>
+                <br><hr><br>
+                <li style="text-align:center;"> -> Passons aux intructions SQL ! <-</li>
+                <br><hr>
+                <li style="text-align:center;"><a href="create-mysql.html">SQL -- CREATE</a></li>
+                <li style="text-align:center;"><a href="insertinto-mysql.html">SQL -- INSERT INTO</a></li>
+                <li style="text-align:center;"><a href="select-mysql.html">SQL -- SELECT</a></li>
+                <li style="text-align:center;"><a href="altertable-mysql.html">SQL -- ALTER TABLE</a></li>
+                <li style="text-align:center;"><a href="update-mysql.html">SQL -- UPDATE</a></li>
+            </ul>
+          </nav>
+
+
+      <div class="container">
+        <section id="sqltypes">
+            <h2>Les Types de Données en SQL :</h2>
+<p>Le type de données d'une colonne définit la valeur que la colonne peut contenir : entier, caractère, argent, date et heure, binaire, etc.</p>
+<ul>
+    <li><strong>Les nombres :</strong> Représentent les valeurs numériques, tels que les entiers et les décimaux.</li>
+    <ol class="sqltypes">
+        <li>Les types de nombres décimaux : représentent les nombres à virgules</li>
+        <li>Les types de nombres entiers : représentent les nombres normaux, sans virgules</li>
+    </ol>
+    <li><strong>Les textes :</strong> Représentent les chaînes de caractères, permettant de stocker et manipuler du texte.</li>
+    <li><strong>Les types temporels :</strong> Représentent les données liées au temps et aux dates, comme les timestamps et les dates.</li>
+</ul>
+
+        </section>
+
+        <section id="numbertypes">
+            <h2>Les types de données : Nombres</h2>
+            <h3>-> Pour les nombres entiers : </h3>
+                <table>
+                    <thead>
+                        <th>Type de données pour les nombres ENTIERS :</th>
+                        <th>Description :</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TINYINT(size)</td>
+                            <td>Donnée qui comprendra un tout petit nombre entier, qui peut commencer de <b>-127</b> à <b>128</b>, le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.<td>
+                        </tr>
+                        <tr>
+                            <td>SMALLINT(size)</td>
+                            <td>Donnée qui comprendra un petit nombre entier, qui peut commencer de <b>-32 768</b> à <b>32 767</b>, le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                        </tr>
+                        <tr>
+                            <td>MEDIUMINT(size)</td>
+                            <td>Donnée qui comprendra un nombre entier moyen, qui peut commencer de <b>-8 388 608</b> à <b>8 388 607</b> le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                        </tr>
+                        <tr>
+                            <td>INT(size)</td>
+                            <td> Donnée qui comprendra un nombre entier, qui peut commencer de <b>-2 147 483 648</b> à <b>2 147 483 647</b> le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                        </tr>
+                        <tr>
+                            <td>BIGINT(size)</td>
+                            <td>Donnée qui comprendra un grand nombre entier, qui peut commencer de <b>-9 223 372 036 854 775 808</b> à <b>9 223 372 036 854 775 807</b> le paramètre <b>(size)</b> n'a pas d'effet sur la plage de valeurs autorisées. Il spécifie simplement le nombre de chiffres à afficher lors de l'affichage de la valeur.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <br>
+                    <hr>
+                    <br>
+                    <h3>-> Pour les nombres décimaux : </h3>
+                        <table>
+                            <thead>
+                                <th>Type de données pour les nombres décimaux :</th>
+                                <th>Description :</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DECIMAL(size , d)</td>
+                                    <td>Donnée qui représente un nombre décimal à virgule fixe. La taille spécifiée (size) n'affecte pas la plage de valeurs autorisées, mais elle détermine le nombre total de chiffres pouvant être stockés, y compris ceux à gauche et à droite de la virgule. Le paramètre 'd' spécifie le nombre de chiffres à droite de la virgule.</td>
+                                </tr>
+                                <tr>
+                                    <td>FLOAT</td>
+                                    <td>Donnée qui représente un nombre décimal à virgule flottante simple précision. Il peut stocker des valeurs avec une précision inférieure par rapport à DECIMAL, mais il utilise moins d'espace de stockage.</td>
+                                </tr>
+                                <tr>
+                                    <td>DOUBLE</td>
+                                    <td>Donnée qui représente un nombre décimal à virgule flottante double précision. Il offre une plus grande précision que FLOAT, mais il utilise également plus d'espace de stockage.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+        </section>
+
+        <section id="textetypes">
+                        <h2>Les types de données : Textes</h2>
+                        <p>Les textes peuvent contenir des lettres, des nombres, des symboles & et des caractères spéciaux.</p>
+                            <table>
+                                <thead>
+                                    <th>Type de données pour TEXTES:</th>
+                                    <th>Description :</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CHAR(size)</td>
+                                        <td>Donnée qui comprendra une chaîne de caractères FIXE pouvant aller de <b>0</b> à <b>255</b> caractères. Le paramètre <b>(size)</b> définit la longueur maximale de caractères qui peuvent être dans la donnée.
+                                    </tr>
+                                    <tr>
+                                        <td>VARCHAR(size)</td>
+                                        <td>Donnée qui comprendra une chaine de caractères dont on a défini la limite, pouvant aller de <b>0</b> à <b>65 535</b> caractères. Le paramètre <b>(size)</b> définit la longueur maximale de caractères pouvant être dans la donnée.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TINYTEXT</td>
+                                        <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>255</b> caractères.
+                                    </tr>
+                                    <tr>
+                                        <td>TEXT</td>
+                                        <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>65 535</b> caractères.
+                                    </tr>
+                                    <tr>
+                                        <td>MEDIUMTEXT</td>
+                                        <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>16 777 215</b> caractères.
+                                    </tr>
+                                    <tr>
+                                        <td>LONGTEXT</td>
+                                        <td>Donnée qui comprendra une chaine de caractères dont la limite est de <b>4 294 967 295</b> caractères.
+                                    </tr>
+                                </tbody>
+                            </table>
+        </section>
+
+        <section id="datetypes">
+                    <h2>Les types de données : Temporels</h2>
+                        <table>
+                            <thead>
+                                <th>Type de données pour TEMPS:</th>
+                                <th>Description :</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DATETIME</td>
+                                    <td>Donnée qui stockera une date dont le format est de <b>"YYYY-MM-DD HH:MM:SS"</b> ("Année-Mois-Jour / Heures:Minutes:Secondes")
+                                </tr>
+                                <tr>
+                                    <td>DATE</td>
+                                    <td>Donnée qui stockera une date sous la forme : jour,mois,année ("YYYY-MM-DD")</td>
+                                </tr>
+                                <tr>
+                                    <td>TIME</td>
+                                    <td>Donnée qui stockera une heure précise : heure, minutes, secondes ("HH:MM:SS")</td>
+                                </tr>
+                                <tr>
+                                    <td>YEAR</td>
+                                    <td>Donnée qui stockera une année seulement entre <b>1901</b> et <b>2155</b></td>
+                                </tr>
+                                <tr>
+                                    <td>TIMESTAMP</td>
+                                    <td>Un horodatage. Les valeurs TIMESTAMP sont stockées sous forme de nombre de secondes depuis l'époque Unix ('1970-01-01 00:00:00' UTC). Format : AAAA-MM-JJ hh:mm:ss. La plage prise en charge va de « 1970-01-01 00:00:01 » UTC à « 2038-01-09 03:14:07 » UTC.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </section>
+        
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+
+      function goTo(section) {
+    switch (section) {
+        case '1':
+            window.location.href = "#strings";
+            break;
+        case '2':
+            window.location.href = "#numbers";
+            break;
+        case '3':
+            window.location.href = "#booleans";
+            break;
+        case '4':
+            window.location.href = "#arrays";
+            break;
+        case '5':
+            window.location.href = "#objects";
+            break;
+        case '6':
+            window.location.href = "#undefined";
+            break;
+        case '7':
+            window.location.href = "#null";
+            break;
+        default:
+            break;
+    }
+}
+
+// Sélectionnez le bouton avec la classe "copy"
+const copyButton = document.querySelector('.copy');
+
+// Ajoutez un gestionnaire d'événements au clic sur le bouton "copy"
+copyButton.addEventListener('click', () => {
+    // Récupérez le texte contenu dans le bouton
+    const buttonText = copyButton.textContent;
+
+    // Créez un nouvel élément textarea dans le document
+    const textArea = document.createElement('textarea');
+    textArea.value = buttonText; // Définissez la valeur du textarea avec le texte du bouton
+
+    // Ajoutez le textarea au document (il n'est pas visible à l'écran)
+    document.body.appendChild(textArea);
+
+    // Sélectionnez le texte dans le textarea
+    textArea.select();
+    
+    // Copiez le texte sélectionné dans le presse-papiers du système
+    document.execCommand('copy');
+
+    // Supprimez le textarea du document
+    document.body.removeChild(textArea);
+
+    // Facultatif : Affichez une confirmation à l'utilisateur
+    alert('Texte copié : ' + buttonText);
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction - Le PHP</title>
+    <style>
+          .toolbar {
+    color: white;
+    background-color: #282a36; /* Couleur de fond de la barre d'outils */
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    position: relative;
+    left: 500px;
+display: none;
+  }
+    </style>
+    <link rel="stylesheet" href="../accueil.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../Remove-bg.ai_1720312053002.png">
+
+</head>
+  <body>
+    <header>
+      <img src="../Remove-bg.ai_1720311973464.png">
+      <h1>SQL - Introduction</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+              <li>
+                <a href="typesphp.html">Types de Données</a>
+                <ul class="sub-menu">
+                  <li><a href="typesphp.html#strings">Chaînes de caractères</a></li>
+                  <li><a href="typesphp.html#numbers">Nombres</a></li>
+                  <li><a href="typesphp.html#booleans">Booléens</a></li>
+                  <li><a href="typesphp.html#undefined">undefined (Indéfini)</a></li>
+                  <li><a href="typesphp.html#null">null (valeur vide)</a></li>
+                  <li><a href="typesphp.html#arrays">Tableaux (Arrays)</a></li>
+                  <li><a href="typesphp.html#objects">Objets (Object)</a></li>
+                  <li><a href="typesphp.html#typeof">L'opérateur typeof</a></li>
+                </li>
+                </ul>
+                <li><a href="string_methodsphp.html">Méthodes de chaines de caractères</a></li>
+            </ul>
+          </nav>
+
+
+      <div class="container">
+        
+        
+      </div>
+    </main>
+
+    <script>
+        const toggleButton = document.getElementById("toggle");
+        const sections = document.querySelectorAll("section");
+  
+        toggleButton.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+  
+          // Récupérer le texte actuel du bouton
+          const currentText = toggleButton.textContent.trim();
+  
+          // Modifier le texte du bouton en fonction du mode actuel
+          if (currentText === "Mode clair") {
+            toggleButton.textContent = "Mode sombre";
+          } else if (currentText === "Mode sombre") {
+            toggleButton.textContent = "Mode clair";
+          }
+          // Ajouter ou supprimer les classes de style en fonction du mode actuel
+          toggleButton.classList.toggle("toggleLightButton");
+          toggleButton.classList.toggle("toggleDarkButton");
+        });
+  
+        document.addEventListener("DOMContentLoaded", () => {
+          // Sélectionnez tous les éléments <li> de la navigation
+          const menuItems = document.querySelectorAll("nav ul > li");
+  
+          // Parcourir tous les éléments <li> et ajouter un gestionnaire d'événements clic
+          menuItems.forEach((item) => {
+            item.addEventListener("click", (event) => {
+              // Trouver le sous-menu (ul.sub-menu) à l'intérieur de l'élément <li>
+              const subMenu = item.querySelector(".sub-menu");
+  
+              // Vérifiez si le clic a été effectué sur le sous-menu lui-même
+              const isSubMenuClick = event.target.closest(".sub-menu") !== null;
+  
+              // Si le clic n'a pas été effectué sur le sous-menu
+              if (!isSubMenuClick) {
+                // Empêcher le comportement par défaut du lien principal
+                event.preventDefault();
+  
+                // Vérifiez si le sous-menu existe et basculez sa visibilité
+                if (subMenu) {
+                  subMenu.classList.toggle("show-sub-menu");
+                }
+              }
+            });
+          });
+        });
+  
+  // Sélectionnez le bouton avec la classe "copy"
+  const copyButton = document.querySelector('.copy');
+  
+  // Ajoutez un gestionnaire d'événements au clic sur le bouton "copy"
+  copyButton.addEventListener('click', () => {
+      // Récupérez le texte contenu dans le bouton
+      const buttonText = copyButton.textContent;
+  
+      // Créez un nouvel élément textarea dans le document
+      const textArea = document.createElement('textarea');
+      textArea.value = buttonText; // Définissez la valeur du textarea avec le texte du bouton
+  
+      // Ajoutez le textarea au document (il n'est pas visible à l'écran)
+      document.body.appendChild(textArea);
+  
+      // Sélectionnez le texte dans le textarea
+      textArea.select();
+      
+      // Copiez le texte sélectionné dans le presse-papiers du système
+      document.execCommand('copy');
+  
+      // Supprimez le textarea du document
+      document.body.removeChild(textArea);
+  
+      // Facultatif : Affichez une confirmation à l'utilisateur
+      alert('Texte copié : ' + buttonText);
+  });
+      </script>
+  </body>
+</html>

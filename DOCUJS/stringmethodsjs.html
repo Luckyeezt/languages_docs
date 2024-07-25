@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les fonctions Math en Javascript</title>
+    <style>
+          .toolbar {
+    color: white;
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    display: flex;
+    justify-content: flex-end;
+          }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../tokens.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/png;base64,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">
+
+</head>
+  <body>
+    <header>
+      <img src="https://talks.freelancerepublik.com/wp-content/uploads/2021/12/banner_js.png">
+      <h1>Javascript - Les fonctions Math()</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+              <li>
+                <a href="typesjs.html">Types de Données</a>
+                <ul class="sub-menu">
+                    <li><a href="typesjs.html#strings">Chaînes de caractères</a></li>
+                    <li><a href="typesjs.html#numbers">Nombres</a></li>
+                    <li><a href="typesjs.html#booleans">Booléens</a></li>
+                    <li><a href="typesjs.html#undefined">undefined (Indéfini)</a></li>
+                    <li><a href="typesjs.html#null">null (valeur vide)</a></li>
+                    <li><a href="typesjs.html#arrays">Tableaux (Arrays)</a></li>
+                    <li><a href="typesjs.html#objects">Objets (Object)</a></li>
+                    <li><a href="typesjs.html#typeof">L'opérateur typeof</a></li>
+                  </li>
+                </ul>
+    
+              <li>
+                <a href="variablesjs.html">Variables et Assignation</a>
+              <ul class="sub-menu">
+                <li><a href="variables.html#const">Créer une variable const</a></li>
+                <li><a href="variables.html#let">Créer une variable let</a></li>
+                <li><a href="variables.html#var">Créer une variable var</a></li>
+    
+              </li>
+            </ul>
+    
+              <li>
+                <a href="operateursjs.html">Opérateurs Arithmétiques</a>
+                <ul class="sub-menu">
+                    <li><a href="operateurs.html#addition">L'opérateur d'addition</a></li>
+                    <li><a href="operateurs.html#soustraction">L'opérateur de soustraction</a></li>
+                    <li><a href="operateurs.html#multiplication">L'opérateur de multiplication</a></li>
+                    <li><a href="operateurs.html#division">L'opérateur de division</a></li>
+                    <li><a href="operateurs.html#modulo">L'opérateur de modulo</a></li>
+                    <li><a href="operateurs.html#puissance">L'opérateur de puissance</a></li>
+                    <li><a href="operateurs.html#assignation-combinee">Les assignations combinées</a></li>
+                </li>
+            </ul>
+    
+              <li><a href="typesconversions.html">Conversions de Types</a>
+                <ul class="sub-menu">
+                    <li><a href="conversionstypes.html#tonumber">Conversion en Nombre</a></li>
+                    <li><a href="conversionstypes.html#tostring">Conversion en String</a></li>
+                    <li><a href="conversionstypes.html#toboolean">Conversion en Booléen</a></li>
+                </ul>
+              </li>
+              
+              <li><a href="mathsfunctionsjs.html">Les fonctions Math()</a>
+                <ul class="sub-menu">
+                    <li><a href="mathsfunctions.html#mathpi">Math.PI()</a></li>
+                    <li><a href="mathsfunctions.html#mathe">Math.E()</a></li>
+                    <li><a href="mathsfunctions.html#mathround">Math.round()</a></li>
+                    <li><a href="mathsfunctions.html#mathfloor">Math.floor()</a></li>
+                    <li><a href="mathsfunctions.html#mathceil">Math.ceil()</a></li>
+                    <li><a href="mathsfunctions.html#mathtrunc">Math.trunc()</a></li>
+                    <li><a href="mathsfunctions.html#mathabs">Math.abs()</a></li>
+                    <li><a href="mathsfunctions.html#mathsign">Math.sign()</a></li>
+                    <li><a href="mathsfunctions.html#mathpow">Math.pow()</a></li>
+                    <li><a href="mathsfunctions.html#mathsqrt">Math.sqrt()</a></li>
+                    <li><a href="mathsfunctions.html#mathsin">Math.sin()</a></li>
+                    <li><a href="mathsfunctions.html#mathcos">Math.cos()</a></li>
+                    <li><a href="mathsfunctions.html#mathtan">Math.tan()</a></li>
+                    <li><a href="mathsfunctions.html#mathrandom">Math.random()</a></li>
+                    <li><a href="mathsfunctions.html#matmin">Math.min()</a></li>
+                    <li><a href="mathsfunctions.html#mathmax">Math.max()</a></li>
+                </ul>
+            </li>
+              <li>
+                <a href="instructionscondis.html">Les instructions conditionnelles</a>
+                    <ul class="sub-menu">
+                        <li><a href="instructionscondis.html#if">L'instruction "if"</a><li>
+                        <li><a href="instructionscondis.html#else">L'instruction "else"</a></li>
+                        <li><a href="instructionscondis.html#elseif">L'instruction else if</a></li>
+                    </ul>
+              </li>
+              <li>
+                <a href="stringmethodsjs.html">Les méthodes des chaînes de caractères</a>
+                    <ul class="sub-menu">
+                        <li><a href="stringmethodsjs.html#length">La propriété .length</a></li>
+                        <li><a href="stringmethodsjs.html#charat">La méthode charAt()</a></li>
+                        <li><a href="stringmethodsjs.html#indexof">La méthod indexOf()</a></li>
+                    </ul>
+              </li>
+            </ul>
+          </nav>
+
+      <div class="container">
+        <section id="stringMethods">
+            <h2>Méthodes de Manipulation de Chaînes</h2>
+            <p>Voici les méthodes les plus couramment utilisées pour manipuler des chaînes de caractères en JavaScript :</p>
+            <ul>
+                <li><strong>length</strong> : Retourne la longueur d'une chaîne de caractères.</li>
+                <li><strong>charAt()</strong> : Retourne le caractère à l'index spécifié.</li>
+                <li><strong>indexOf()</strong> : Retourne l'index de la première occurrence de la chaîne spécifiée.</li>
+                <li><strong>lastIndexOf()</strong> : Retourne l'index de la dernière occurrence de la chaîne spécifiée.</li>
+                <li><strong>toLowerCase()</strong> : Convertit une chaîne de caractères en minuscules.</li>
+                <li><strong>toUpperCase()</strong> : Convertit une chaîne de caractères en majuscules.</li>
+                <li><strong>trim()</strong> : Supprime les espaces blancs au début et à la fin d'une chaîne de caractères.</li>
+                <li><strong>repeat()</strong> : </li>
+                <li><strong>includes()</strong> : </li>
+                <li><strong>startsWith()</strong> : </li>
+                <li><strong>endsWith()</strong> : </li>
+                <li><strong>substring()</strong> : Retourne une sous-chaîne en fonction des index de début et de fin spécifiés.</li>
+                <li><strong>substr()</strong> : Il faut deux arguments, l'index de départ et le nombre de caractères à découper.</li>
+                <li><strong>replace()</strong> : Remplace une partie d'une chaîne par une autre.</li>
+                <li><strong>split()</strong> : Divise une chaîne en un tableau de sous-chaînes en utilisant un séparateur spécifié.</li>
+                <li><strong>slice()</strong> : 
+                <li><strong>concat()</strong> : Concatène deux chaînes de caractères.</li>
+            </ul>
+        </section>
+
+        <section id="length">
+                <h2>La propriété .length</h2>
+                <p>La propriété <b>.length</b> est une propriété des chaînes de caractères en JavaScript qui renvoie la longueur de la chaîne. Elle compte le nombre de caractères dans la chaîne, y compris les espaces et les caractères spéciaux.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .length</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">"Bonjour"</span>.<span class="token-methode">length</span>); <span class="token-comment">// Console : 7</span>
+<span class="token-function">console.log</span>(<span class="token-string">"Salut tout le monde"</span>.<span class="token-methode">length</span>); <span class="token-comment">// Console : 19</span>
+<span class="token-function">console.log</span>(<span class="token-string">"Bonsoir DOCUMENTATion"</span>.<span class="token-methode">length</span>); <span class="token-comment">// Console : 21</span>
+
+
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : </p>
+                <ul>
+                    <li><h4>"abc".length</h4></li>
+                </ul><br><hr><br>
+                <p>La propriété <b>.length</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Valider la longueur d'une chaîne avant de la traiter.</li>
+                    <li>Boucler à travers chaque caractère d'une chaîne.</li>
+                    <li>Déterminer la longueur d'un tableau (pour les tableaux).</li>
+                    <li>Effectuer des opérations basées sur la longueur de la chaîne.</li>
+                    <li>La propriété .length compte même les espaces en tant que caractère !</li>
+                </ul>
+                <br><hr><br>
+                <li><b>Traduction :</b> length veut dire "longueur" en français => la longueur du string.
+            </section>
+            
+
+            <section id="charat">
+                <h2>La méthode .charAt()</h2>
+                <p>La méthode <b>.charAt()</b> est une méthode des chaînes de caractères en JavaScript qui renvoie le caractère à la position spécifiée dans la chaîne. Les positions commencent à partir de zéro (0) pour le premier caractère.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .charAt()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">"Bonjour"</span>.<span class="token-method">charAt</span>(<span class="token-number">0</span>)); <span class="token-comment">// Console : b</span>
+<span class="token-function">console.log</span>(<span class="token-string">"Documentation Javascript"</span>.<span class="token-method">charAt</span>(<span class="token-number">7</span>)); <span class="token-comment">// Console : t</span>
+<span class="token-function">console.log</span>(<span class="token-string">" Youtube"</span>.<span class="token-method">charAt</span>(<span class="token-number">0</span>)); <span class="token-comment">// Console :  (vide)</span>
+<span class="token-function">console.log</span>(<span class="token-string">"@123@clash54"</span>.<span class="token-method">charAt</span>(<span class="token-number">4</span>)); <span class="token-comment">// Console : @ </span>
+
+
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".charAt(nombre)</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.charAt()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Accéder à un caractère spécifique dans une chaîne de caractères.</li>
+                    <li>Itérer à travers chaque caractère d'une chaîne.</li>
+                    <li>Vérifier ou manipuler des caractères individuels dans une chaîne.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : charAt => CHARacter AT => La place du caractère.</li>
+            </section>
+            
+
+            <section id="indexof">
+                <h2>La méthode .indexOf()</h2>
+                <p>La méthode <b>.indexOf()</b> est une méthode des chaînes de caractères en JavaScript qui renvoie l'index de la première occurrence d'un caractère ou d'une sous-chaîne dans une chaîne. Si la sous-chaîne n'est pas trouvée, la méthode renvoie -1.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .indexOf()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">"Bonjour"</span>.<span class="token-method">indexOf</span>(<span class="token-string">'o'</span>)); <span class="token-comment">// Console : 1</span>
+<span class="token-function">console.log</span>(<span class="token-string">"Documentation Javascript"</span>.<span class="token-method">indexOf</span>(<span class="token-string">'script'</span>)); <span class="token-comment">// Console : 13</span>
+<span class="token-function">console.log</span>(<span class="token-string">"Youtube"</span>.<span class="token-method">indexOf</span>(<span class="token-string">'T'</span>)); <span class="token-comment">// Console : -1 (car la casse est différente)</span>
+<span class="token-function">console.log</span>(<span class="token-string">"JavaScript"</span>.<span class="token-method">indexOf</span>(<span class="token-string">'Java'</span>)); <span class="token-comment">// Console : 0</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".indexOf('caractère')</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.indexOf()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Rechercher la première occurrence d'un caractère ou d'une sous-chaîne dans une chaîne.</li>
+                    <li>Déterminer si une chaîne contient une sous-chaîne spécifique.</li>
+                    <li>Trouver la position d'un caractère ou d'une sous-chaîne dans une chaîne.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : indexOf => Index Of => Indice de la position.</li>
+            </section>
+            
+            <section id="lastindexof">
+                <h2>La méthode .lastIndexOf()</h2>
+                <p>La méthode <b>.lastIndexOf()</b> est une méthode des chaînes de caractères en JavaScript qui renvoie l'index de la dernière occurrence d'un caractère ou d'une sous-chaîne dans une chaîne. La recherche commence à partir de la fin de la chaîne. Si la sous-chaîne n'est pas trouvée, la méthode renvoie -1.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .lastIndexOf()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">"Bonjour"</span>.<span class="token-method">lastIndexOf</span>(<span class="token-string">'o'</span>)); <span class="token-comment">// Console : 3</span>
+<span class="token-function">console.log</span>(<span class="token-string">"Documentation Javascript"</span>.<span class="token-method">lastIndexOf</span>(<span class="token-string">'script'</span>)); <span class="token-comment">// Console : 14</span>
+<span class="token-function">console.log</span>(<span class="token-string">"Youtube"</span>.<span class="token-method">lastIndexOf</span>(<span class="token-string">'T'</span>)); <span class="token-comment">// Console : -1 (car la casse est différente)</span>
+<span class="token-function">console.log</span>(<span class="token-string">"JavaScript"</span>.<span class="token-method">lastIndexOf</span>(<span class="token-string">'a'</span>)); <span class="token-comment">// Console : 3</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".lastIndexOf('caractère')</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.lastIndexOf()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Rechercher la dernière occurrence d'un caractère ou d'une sous-chaîne dans une chaîne.</li>
+                    <li>Déterminer si une chaîne contient une sous-chaîne spécifique à partir de la fin.</li>
+                    <li>Trouver la position de la dernière occurrence d'un caractère ou d'une sous-chaîne dans une chaîne.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : lastIndexOf => Last Index Of => Dernier indice de la position.</li>
+            </section>
+            
+
+            <section id="tolowercase">
+                <h2>La méthode .toLowerCase()</h2>
+                <p>La méthode <b>.toLowerCase()</b> est une méthode des chaînes de caractères en JavaScript qui convertit tous les caractères d'une chaîne en minuscules.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .toLowerCase()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">'Bonjour'</span>.<span class="token-method">toLowerCase</span>()); <span class="token-comment">// Console : bonjour</span>
+<span class="token-function">console.log</span>(<span class="token-string">'HELLO'</span>.<span class="token-method">toLowerCase</span>()); <span class="token-comment">// Console : hello</span>
+<span class="token-function">console.log</span>(<span class="token-string">'JavaScript'</span>.<span class="token-method">toLowerCase</span>()); <span class="token-comment">// Console : javascript</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".toLowerCase()</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.toLowerCase()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Normaliser le texte en minuscules pour la comparaison.</li>
+                    <li>Assurer une saisie cohérente en minuscules.</li>
+                    <li>Convertir des mots-clés ou des identifiants en minuscules pour la recherche.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : toLowerCase => To Lower Case => En minuscules.</li>
+            </section>            
+
+            <section id="touppercase">
+                <h2>La méthode .toUpperCase()</h2>
+                <p>La méthode <b>.toUpperCase()</b> est une méthode des chaînes de caractères en JavaScript qui convertit tous les caractères d'une chaîne en majuscules.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .toUpperCase()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">'Bonjour'</span>.<span class="token-method">toUpperCase</span>()); <span class="token-comment">// Console : BONJOUR</span>
+<span class="token-function">console.log</span>(<span class="token-string">'HELLO'</span>.<span class="token-method">toUpperCase</span>()); <span class="token-comment">// Console : HELLO</span>
+<span class="token-function">console.log</span>(<span class="token-string">'JavaScript'</span>.<span class="token-method">toUpperCase</span>()); <span class="token-comment">// Console : JAVASCRIPT</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".toUpperCase()</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.toUpperCase()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Normaliser le texte en majuscules pour la comparaison.</li>
+                    <li>Assurer une saisie cohérente en majuscules.</li>
+                    <li>Convertir des mots-clés ou des identifiants en majuscules pour la recherche.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : toUpperCase => To Upper Case => En majuscules.</li>
+            </section> 
+            
+            <section id="trim">
+                <h2>La méthode .trim()</h2>
+                <p>La méthode <b>.trim()</b> est une méthode des chaînes de caractères en JavaScript qui supprime les espaces blancs inutiles au début et à la fin d'une chaîne.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .trim()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">'    Bonjour    '</span>.<span class="token-method">trim</span>()); <span class="token-comment">// Console : 'Bonjour'</span>
+<span class="token-function">console.log</span>(<span class="token-string">'   HELLO   '</span>.<span class="token-method">trim</span>()); <span class="token-comment">// Console : 'HELLO'</span>
+<span class="token-function">console.log</span>(<span class="token-string">'   JavaScript   '</span>.<span class="token-method">trim</span>()); <span class="token-comment">// Console : 'JavaScript'</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"   abc   ".trim()</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.trim()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Supprimer les espaces inutiles autour des entrées de l'utilisateur dans les formulaires web.</li>
+                    <li>Nettoyer les données importées ou récupérées pour éviter les erreurs dues aux espaces inutiles.</li>
+                    <li>Faciliter le traitement et la comparaison des chaînes de caractères.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : trim => Trim => Couper.</li>
+            </section>
+            
+
+            <section id="repeat">
+                <h2>La méthode .repeat()</h2>
+                <p>La méthode <b>.repeat()</b> est une méthode des chaînes de caractères en JavaScript qui renvoie une nouvelle chaîne composée du nombre de copies spécifié de la chaîne d'origine concaténées ensemble.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .repeat()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">'A'</span>.<span class="token-method">repeat</span>(5)); <span class="token-comment">// Console : 'AAAAA'</span>
+<span class="token-function">console.log</span>(<span class="token-string">'Hello '</span>.<span class="token-method">repeat</span>(3)); <span class="token-comment">// Console : 'Hello Hello Hello '</span>
+<span class="token-function">console.log</span>(<span class="token-string">'123'</span>.<span class="token-method">repeat</span>(2)); <span class="token-comment">// Console : '123123'</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".repeat(nombre de répétitions)</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.repeat()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Créer une chaîne répétée un certain nombre de fois.</li>
+                    <li>Construire des chaînes de caractères pour les tests et la génération de données.</li>
+                    <li>Formater des chaînes de caractères avec des motifs répétés.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : repeat => Repeat => Répéter.</li>
+            </section>
+            
+
+            <section id="substring">
+                <h2>La méthode .substring()</h2>
+                <p>La méthode <b>.substring()</b> est une méthode des chaînes de caractères en JavaScript qui extrait une sous-chaîne de caractères d'une chaîne d'origine, en fonction des indices de début et de fin spécifiés.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .substring()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">'abcdef'</span>.<span class="token-method">substring</span>(2, 4)); <span class="token-comment">// Console : 'cd'</span>
+<span class="token-function">console.log</span>(<span class="token-string">'Hello, world!'</span>.<span class="token-method">substring</span>(7)); <span class="token-comment">// Console : 'world!'</span>
+<span class="token-function">console.log</span>(<span class="token-string">'JavaScript'</span>.<span class="token-method">substring</span>(4)); <span class="token-comment">// Console : 'Script'</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".substring(2, 4)</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.substring()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Extraire des sous-chaînes de caractères d'une chaîne d'origine pour la manipulation et l'affichage.</li>
+                    <li>Tronquer ou découper une partie d'une chaîne en fonction des besoins de traitement.</li>
+                    <li>Manipuler des chaînes de caractères pour obtenir des portions spécifiques de texte.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : substring => Substring => Sous-chaîne.</li>
+            </section>
+            
+
+            <section id="replace">
+                <h2>La méthode .replace()</h2>
+                <p>La méthode <b>.replace()</b> est une méthode des chaînes de caractères en JavaScript qui remplace une partie d'une chaîne par une autre chaîne ou une valeur spécifiée.</p>
+                <br><hr><br>
+                <h3>Exemple d'utilisation de .replace()</h3>
+                <div class="container1">
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-string">'Hello, world!'</span>.<span class="token-method">replace</span>(<span class="token-regexp">/world/</span>, <span class="token-string">'friend'</span>)); <span class="token-comment">// Console : 'Hello, friend!'</span>
+<span class="token-function">console.log</span>(<span class="token-string">'I like apples and oranges.'</span>.<span class="token-method">replace</span>(<span class="token-regexp">/apples and oranges/</span>, <span class="token-string">'bananas'</span>)); <span class="token-comment">// Console : 'I like bananas.'</span>
+<span class="token-function">console.log</span>(<span class="token-string">'Hello, world!'</span>.<span class="token-method">replace</span>(<span class="token-regexp">/hello/i</span>, <span class="token-string">'Hi'</span>)); <span class="token-comment">// Console : 'Hi, world!'</span>
+                        </pre>
+                    </div>
+                </div>
+                <br><hr><br>
+                <p>Syntaxe : <p>
+                <ul>
+                    <li><h4>"abc".replace("a", "b")</h4></li>
+                </ul><br><hr><br>
+                <p>La méthode <b>.replace()</b> est souvent utilisée pour :</p>
+                <br>
+                <ul>
+                    <li>Modifier des portions de texte dans une chaîne selon des critères spécifiques.</li>
+                    <li>Effectuer des remplacements de chaînes de manière conditionnelle.</li>
+                    <li>Effectuer des substitutions de texte pour le traitement des données.</li>
+                </ul><br><hr><br>
+                <li><b>Traduction</b> : replace => Replace => Remplacer.</li>
+            </section>
+            
+
+        <section id="mathsin">
+            <h2>La fonction Math.sin()</h2>
+            <p>La fonction <b>Math.sin()</b> est une méthode de l'objet Math en JavaScript qui permet de calculer le sinus d'un nombre. Elle prend un seul argument, qui est l'angle en radians dont vous souhaitez calculer le sinus, et retourne le sinus de cet angle.</p>
+            <br>
+            <ul>
+                <li><b><u>Rappel Mathématique :</u></b> Le sinus (sin) en mathématiques est une fonction trigonométrique qui associe à un angle dans un triangle rectangle le rapport entre la longueur du côté opposé à cet angle et l'hypoténuse du triangle.</li>
+            </ul>
+            <br><hr><br>
+            <h3>Exemples de l'utilisation de Math.sin() sur des nombres : </h3>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-comment">// Exemple de l'utilisation de Math.sin() sur des nombres positifs :</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.sin</span>(<span class="token-number">90</span>)); <span class="token-comment">// Console : 0.8939966636005579</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.sin</span>(<span class="token-number">180</span>)); <span class="token-comment">// Console : -0.8011526357338304</span>
+
+<span class="token-comment">// Exemple de l'utilisation de Math.sin() sur un nombre négatif :</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.sin</span>(<span class="token-number">-360</span>)); <span class="token-comment">// Console : -0.9589157234143065</span>
+                    </pre>
+                </div>
+            </div>
+            <br><hr><br>
+            <ul>
+                <li>L'argument passé à Math.sin() est l'angle en radians pour lequel vous souhaitez calculer le sinus</li>
+                <li>Le sinus d'un angle dans un triangle rectangle est défini comme le rapport de la longueur du côté opposé à l'angle sur l'hypoténuse du triangle.</li>
+                <li>Trad : "sin" est l'abbréviation de "sine" qui veut dire "sinus" en français.</li>
+            </ul>
+        </section>
+
+        <section id="mathcos">
+            <h2>La fonction Math.cos()</h2>
+            <p>La fonction <b>Math.cos()</b> est une méthode de l'objet Math en JavaScript qui permet de calculer le cosinus d'un angle en radians. Elle prend un seul argument, qui est l'angle en radians dont vous souhaitez calculer le cosinus, et retourne le cosinus de cet angle.</p>
+            <br>
+            <ul>
+                <li><b><u>Rappel Mathématique :</u></b> Le cosinus (cos) en mathématiques est une fonction trigonométrique qui associe à un angle dans un triangle rectangle le rapport entre la longueur du côté adjacent à cet angle et l'hypoténuse du triangle.</li>
+            </ul>
+            <br><hr><br>
+            <h3>Exemples de l'utilisation de Math.cos() sur des nombres : </h3>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-comment">// Exemple de l'utilisation de Math.cos() sur des nombres positifs :</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.cos</span>(<span class="token-number">90</span>)); <span class="token-comment">// Console : -0.4480736161291702</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.cos</span>(<span class="token-number">180</span>)); <span class="token-comment">// Console : -0.5984600690578581</span>
+
+<span class="token-comment">// Exemple de l'utilisation de Math.cos() sur un nombre négatif :</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.cos</span>(<span class="token-number">-360</span>)); <span class="token-comment">// Console : -0.2836910914865273</span>
+                    </pre>
+                </div>
+            </div>
+            <br><hr><br>
+            <ul>
+                <li>L'argument passé à <b>Math.cos()</b> est l'angle en radians pour lequel vous souhaitez calculer le cosinus.</li>
+                <li>Le cosinus d'un angle dans un triangle rectangle est défini comme le rapport de la longueur du côté adjacent à l'angle sur l'hypoténuse du triangle.</li>
+                <li>Trad : "cos" est l'abbréviation de "cosine" qui veut dire "cosinus" en français.</li>
+            </ul>
+        </section>
+
+        <section id="mathtan">
+            <h2>La fonction Math.tan()</h2>
+            <p>La fonction <b>Math.tan()</b> est une méthode de l'objet Math en JavaScript qui permet de calculer la tangente d'un angle en radians. Elle prend un seul argument, qui est l'angle en radians dont vous souhaitez calculer la tangente, et retourne la tangente de cet angle.</p>
+            <br>
+            <ul>
+                <li><b><u>Rappel Mathématique :</u></b> La tangente (tan) en mathématiques est une fonction trigonométrique qui associe à un angle dans un triangle rectangle le rapport entre la longueur du côté opposé à cet angle et la longueur du côté adjacent à cet angle.</li>
+            </ul>
+            <br><hr><br>
+            <h3>Exemples de l'utilisation de Math.tan() sur des nombres : </h3>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-comment">// Exemple de l'utilisation de Math.tan() sur des nombres positifs :</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.tan</span>(<span class="token-number">90</span>)); <span class="token-comment">// Console : -1.995200412208242</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.tan</span>(<span class="token-number">180</span>)); <span class="token-comment">// Console : 1.3386902103511544</span>
+
+<span class="token-comment">// Exemple de l'utilisation de Math.tan() sur un nombre négatif :</span>
+<span class="token-function">console.log</span>(<span class="token-method">Math.tan</span>(<span class="token-number">-360</span>)); <span class="token-comment">// Console : 3.380140413960958</span>
+                    </pre>
+                </div>
+            </div>
+            <br><hr><br>
+            <ul>
+                <li>L'argument passé à <b>Math.tan()</b> est l'angle en radians pour lequel vous souhaitez calculer la tangente.</li>
+                <li>La tangente d'un angle est le rapport de la longueur du côté opposé à l'angle sur la longueur du côté adjacent dans un triangle rectangle.</li>
+                <li>Trad : "tan" est l'abbréviation de "tangent" qui veut dire "tangente" en français.</li>
+            </ul>
+        </section>
+
+        <section id="mathrandom">
+            <h2>La fonction Math.random()</h2>
+            <p>La fonction <b>Math.random()</b> en JavaScript est une fonction intégrée qui génère un nombre aléatoire compris dans l'intervalle [0, 1). Cela signifie que Math.random() retourne un nombre décimal pseudo-aléatoire qui peut être égal ou supérieur à 0 (inclus) et strictement inférieur à 1 (exclus).</p>
+        <br><hr><br>
+        <h3>Exemple qui génère un nombre aléatoire entre 0 et 10 :</h3>
+        <p>L'utilisation de la fonction <b>Math.floor</b> permet de retirer la partie décimale en retournant le plus grand entier inférieur et génère ainsi un nombre aléatoire entier au lieu d'un nombre décimal.</p>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(Math.floor(Math.random()*10))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">num</span> = <span class="token-number">10</span>; <span class="token-comment">// Création de la variable "num" qui stocke le nombre "10".</span>
+<span class="token-keyword">const</span> <span class="token-variable">gen</span> = <span class="token-method">Math.floor</span>(<span class="token-method">Math.random</span>() * <span class="token-variable">number</span>); <span class="token-comment">// Création de la variable "gen" qui emploie la fonction Math.random() sur la variable "num".</span>
+<span class="token-function">console.log</span>(<span class="token-variable">gen</span>); <span class="token-comment">// Console : Un nombre aléatoire entre 0 et 10.</span>
+                </pre>
+            </div>
+        </div>
+        <br><hr><br>
+        <h3>Exemple qui génère un nombre entre 1 et 100 :</h3>
+        <div class="container1">
+            <div class="code-box">
+                <div class="toolbar">
+                    <button class="play-btn" onclick="alert(Math.floor(Math.random()*100+1))"><i class="fas fa-play"></i> Exécuter</button>
+                    <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+                <pre class="code-content">
+<span class="token-keyword">let</span> <span class="token-variable">randomNum</span> = <span class="token-method">Math.floor</span>(<span class="token-method">Math.random</span>() * <span class="token-number">100</span> + <span class="token-number">1</span>); <span class="token-comment">// La plage de nombres aléatoires sera de 1 (inclus) à 101 (exclus), couvrant ainsi les nombres entiers de 1 à 100.</span>
+<span class="token-function">console.log</span>(<span class="token-variable">randomNum</span>); <span class="token-comment">// Console : Un nombre aléatoire entre 1 et 100.</span>
+                </pre>
+            </div>
+        </div>
+        <ul>
+            <li>La fonction <b>Math.random()</b> ne prend aucun argument.</li>
+            <li>Trad : "random" veut dire "aléatoire" en français.</li>
+        </ul>
+        </section>
+        
+        <section id="mathmin">
+            <h2>La fonction Math.min()</h2>
+            <p>La fonction <b>Math.min()</b> est une méthode de l'objet Math en JavaScript qui permet de trouver le plus petit nombre parmi un ensemble d'arguments ou d'éléments. Elle peut être utilisée pour retourner le nombre le plus petit dans une liste d'arguments ou dans un tableau.</p>
+            <br><hr><br>
+            <h3>Exemples qui cherche et affiche le nombre minimum : </h3>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" onclick="alert(Math.min(5, 10, 2, 100))"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-method">Math.min</span>(<span class="token-number">5</span>, <span class="token-number">10</span>, <span class="token-number">2</span>, <span class="token-number">100</span>)) <span class="token-comment">// Console : 2</span>
+                    </pre>
+                </div>
+            </div>
+            <br><hr><br>
+            <ul>
+                <li>La fonction <b>Math.min()</b> peut prendre autant d'arguments numériques qu'elle veut.</li>
+                <li>Elle retourne le plus petit nombre parmi les valeurs fournies en argument.</li>
+                <li>Si vous fournissez à la fonction <b>Math.min()</b> des valeurs non numériques, elle tentera de les convertir en nombres avant de les comparer.</li>
+                <li>Trad : "min" est l'abbréviation de "minimum" en français.</li>
+        </section>
+
+        <section id="mathmax">
+            <h2>La fonction Math.max()</h2>
+            <p>La fonction <b>Math.max()</b> est une méthode de l'objet Math en JavaScript qui permet de trouver le plus grand nombre parmi un ensemble d'arguments ou d'éléments. Elle peut être utilisée pour retourner le nombre le plus grand dans une liste d'arguments ou dans un tableau.</p>
+            <br><hr><br>
+            <h3>Exemples qui cherche et affiche le nombre minimum : </h3>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" onclick="alert(Math.max(5, 10, 2, 100))"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-function">console.log</span>(<span class="token-method">Math.max</span>(<span class="token-number">5</span>, <span class="token-number">10</span>, <span class="token-number">2</span>, <span class="token-number">100</span>)) <span class="token-comment">// Console : 100</span>
+                    </pre>
+                </div>
+            </div>
+            <br><hr><br>
+            <ul>
+                <li>La fonction <b>Math.max()</b> peut prendre autant d'arguments numériques qu'elle veut.</li>
+                <li>Elle retourne le plus grand nombre parmi les valeurs fournies en argument.</li>
+                <li>Si vous fournissez à la fonction <b>Math.max()</b> des valeurs non numériques, elle tentera de les convertir en nombres avant de les comparer.</li>
+                <li>Trad : "max" est l'abbréviation de "maximmum" en français.</li>
+        </section>
+
+
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Sélectionnez tous les éléments <li> de la navigation
+        const menuItems = document.querySelectorAll("nav ul > li");
+
+        // Parcourir tous les éléments <li> et ajouter un gestionnaire d'événements clic
+        menuItems.forEach((item) => {
+          item.addEventListener("click", (event) => {
+            // Trouver le sous-menu (ul.sub-menu) à l'intérieur de l'élément <li>
+            const subMenu = item.querySelector(".sub-menu");
+
+            // Vérifiez si le clic a été effectué sur le sous-menu lui-même
+            const isSubMenuClick = event.target.closest(".sub-menu") !== null;
+
+            // Si le clic n'a pas été effectué sur le sous-menu
+            if (!isSubMenuClick) {
+              // Empêcher le comportement par défaut du lien principal
+              event.preventDefault();
+
+              // Vérifiez si le sous-menu existe et basculez sa visibilité
+              if (subMenu) {
+                subMenu.classList.toggle("show-sub-menu");
+              }
+            }
+          });
+        });
+      });
+
+      function copyButton() {
+    // Trouver l'élément pre (contenant le code) à partir du bouton de copie
+    const codeBox = event.target.closest(".code-box");
+    const codeContent = codeBox.querySelector("pre");
+
+    // Extraire le texte à partir de l'élément pre
+    const textToCopy = codeContent.innerText.trim();
+
+    // Copier le texte dans le presse-papiers
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        alert("Code copié dans le presse-papiers !");
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie du texte : ', err);
+    });
+}
+    </script>
+  </body>
+</html>

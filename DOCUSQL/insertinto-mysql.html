@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INSERT INTO - SQL</title>
+    <style>
+          .toolbar {
+    color: white;
+    padding: 3px; /* Ajouter un peu de marge intérieure */
+    border-radius: 0 0 5px 5px; /* Coins arrondis en bas */
+    display: flex;
+    justify-content: flex-end;
+          }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="codebox.css">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo_sql.png">
+
+</head>
+  <body>
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png">
+      <h1>SQL -- Instruction INSERT INTO</h1>
+      <button id="toggle" class="toggleLightButton">Mode sombre</button>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="index.html">C'est quoi le SQL ?</a></li>
+                <li><a href="typesql.html">Les Types de Données - SQL</a></li>
+                <br><hr><br>
+                <li style="text-align:center;"> -> Passons aux intructions SQL ! <-</li>
+                <br><hr>
+                <li style="text-align:center;"><a href="create-mysql.html">SQL -- CREATE</a></li>
+                <li style="text-align:center;"><a href="insertinto-mysql.html">SQL -- INSERT INTO</a></li>
+                <li style="text-align:center;"><a href="select-mysql.html">SQL -- SELECT</a></li>
+                <li style="text-align:center;"><a href="altertable-mysql.html">SQL -- ALTER TABLE</a></li>
+                <li style="text-align:center;"><a href="update-mysql.html">SQL -- UPDATE</a></li>
+            </ul>
+          </nav>
+
+      <div class="container">
+        <section id="mysql-create">
+            <h2>Instruction - INSERT INTO</h2>
+            <ul>
+                <li>L'instruction <b>INSERT INTO/insert into</b> nous permet de créer une nouvelle ligne (nouvel enregistrement de donnée) dans la base de données.</li>
+                <li>Si vous souhaitez ajouter de nouveaux enregistrements avec <b>INSERT INTO</b> vous devrez utiliser <b>VALUES/values</b> afin d'y ajouter des valeurs.</li>
+                </ul>
+        </section>
+
+        <section id="insert-values">
+            <h2>Comment ajouter des valeurs dans une table <b>TABLE</b> avec l'instruction <b>INSERT INTO</b> ?</h2>
+            <ul>
+                <li>L'instruction <b>INSERT INTO</b> permet de créer un nouvel enregistrement dans la <b>TABLE</b>.</li>
+                <li>L'instruction <b>TABLE</b> désigne une quelconque <b>TABLE</b> dans la base de données</li>
+                <li>La combinaison des deux instructions <b>CREATE</b> <b>TABLE</b> permet de créer une nouvelle <b>TABLE</b> dans la base de données.</li>
+            </ul>
+            <br><hr><br>
+            <h3>Insertion (INSERT INTO) de valeurs (VALUES) dans la table nommée "celebrities": </h3>
+            <p>/!\ -- Les valeurs doivent être au même emplacement que les noms des colonnes.</p>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  </div>
+                        <pre class="code-content">
+<span class="token-instruc">INSERT INTO</span> celebrities (nom,age,profession) 
+    <span class="token-instruc">VALUES</span>("Jordan",25,"Formateur en SQL")
+                    </pre>
+                </div>
+            </div>
+            <ol>
+                <li>Ajout des instructions <b>INSERT INTO</b> afin d'indiquer que l'on insère des valeurs dans une <b>TABLE</b>.</li>
+                <li>A la suite, on ajoute le nom de la <b>TABLE</b> que l'on souhaite, ici j'ai choisi "celebrities".</li>
+                <li>Ensuite, on utiliser l'instruction <b>VALUES</b> en ouvrant les parenthèses afin d'indiquer l'entrée de leurs valeurs respectives.</li>
+                <li>("Jordan",25,"Formateur en SQL") sont un paramètre qui contiennent les valeurs.</li>
+                <ul>
+                    <li>"Jordan" est une valeur de type TEXT qui correspond à la colonne nom.</li>
+                    <li>25 est une valeur de type INT qui correspond à la colonne age.</li>
+                    <li>"Formateur en SQL" est une valeur de type TEXT qui correspond à la colonne profession.</li>
+                </ul>
+            </ol>
+            <br><hr><br>
+            <h3>Résultat de la TABLE crée aussitôt : </h3>
+            <br>
+            <table>
+                <thead>
+                    <th>nom</th>
+                    <th>age</th>
+                    <th>profession</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jordan</td>
+                        <td>25</td>
+                        <td>Formateur en SQL</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><hr>
+        </section>
+
+        <section id="insert-*values">
+            <h2>Comment ajouter plusieurs valeurs dans une table <b>TABLE</b> avec l'instruction <b>INSERT INTO</b> ?</h2>
+            <br><hr><br>
+            <h3>Insertion (INSERT INTO) de plusieurs valeurs (VALUES) dans la table nommée "celebrities": </h3>
+            <p>/!\ -- Les valeurs doivent être au même emplacement que les noms des colonnes.</p>
+            <div class="container1">
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="token-instruc">INSERT INTO</span> celebrities (nom,age,profession) 
+    <span class="token-instruc">VALUES</span>("Jordan",25,"Formateur en SQL"),
+        ("Emma",30,"Développeur Web"),
+        ("Alex",28,"Data Scientist");
+                    </pre>
+                </div>
+            </div>
+            <ol>
+                <li>Ajout des instructions <b>INSERT INTO</b> afin d'indiquer que l'on insère des valeurs dans une <b>TABLE</b>.</li>
+                <li>A la suite, on ajoute le nom de la <b>TABLE</b> que l'on souhaite, ici j'ai choisi "celebrities".</li>
+                <li>Ensuite, on utiliser l'instruction <b>VALUES</b> en ouvrant les parenthèses afin d'indiquer l'entrée de leurs valeurs respectives.</li>
+                <li>("Jordan",25,"Formateur en SQL"), ("Emma",30,"Développeur Web"), et ("Alex",28,"Data Scientist") sont des paramètres qui contiennent les valeurs pour chaque enregistrement.</li>
+                <li>/!\ -- Il faut séparer ces paramètres avec des virgules et pour la dernière avec un point virgule ';'.</li>
+                <ul>
+                    <li>"Jordan", "Emma", et "Alex" sont des valeurs de type TEXT qui correspondent à la colonne nom.</li>
+                    <li>25, 30, et 28 sont des valeurs de type INT qui correspondent à la colonne age.</li>
+                    <li>"Formateur en SQL", "Développeur Web", et "Data Scientist" sont des valeurs de type TEXT qui correspondent à la colonne profession.</li>
+                </ul>
+            </ol>
+            <br><hr><br>
+            <h3>Résultat de la TABLE crée aussitôt : </h3>
+            <br>
+            <table>
+                <thead>
+                    <th>nom</th>
+                    <th>age</th>
+                    <th>profession</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jordan</td>
+                        <td>25</td>
+                        <td>Formateur en SQL</td>
+                    </tr>
+                    <tr>
+                        <td>Emma</td>
+                        <td>30</td>
+                        <td>Développeur Web</td>
+                    </tr>
+                    <tr>
+                        <td>Alex</td>
+                        <td>28</td>
+                        <td>Data Scientist</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><hr>
+        </section>
+        
+
+      </div>
+    </main>
+
+    <script>
+      const toggleButton = document.getElementById("toggle");
+      const sections = document.querySelectorAll("section");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        // Récupérer le texte actuel du bouton
+        const currentText = toggleButton.textContent.trim();
+
+        // Modifier le texte du bouton en fonction du mode actuel
+        if (currentText === "Mode clair") {
+          toggleButton.textContent = "Mode sombre";
+        } else if (currentText === "Mode sombre") {
+          toggleButton.textContent = "Mode clair";
+        }
+        // Ajouter ou supprimer les classes de style en fonction du mode actuel
+        toggleButton.classList.toggle("toggleLightButton");
+        toggleButton.classList.toggle("toggleDarkButton");
+      });
+
+
+// Sélectionnez le bouton avec la classe "copy"
+
+function copyButton() {
+    // Trouver l'élément pre (contenant le code) à partir du bouton de copie
+    const codeBox = event.target.closest(".code-box");
+    const codeContent = codeBox.querySelector("pre");
+
+    // Extraire le texte à partir de l'élément pre
+    const textToCopy = codeContent.innerText.trim();
+
+    // Copier le texte dans le presse-papiers
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        alert("Code copié dans le presse-papiers !");
+    }).catch(function(err) {
+        console.error('Erreur lors de la copie du texte : ', err);
+    });
+}
+    </script>
+  </body>
+</html>

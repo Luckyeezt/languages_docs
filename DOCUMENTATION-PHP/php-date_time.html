@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date & Time</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="stylesheet" href="../codebox.css">
+    <link rel="stylesheet" href="tokens-php.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="logo-php.png">
+    <style>
+        .section-nav li a:hover {
+             color: rgb(157, 13, 183);;
+         }
+
+         #menu-nav li a:hover {
+             background-color: rgb(157, 13, 183);
+             color:white;
+             transform: translateX(-10px);
+         }
+ </style>
+</head>
+<body>
+    <header style="background-color:  rgb(157, 13, 183)">
+        <img src="logo-php.png" alt="logo">
+        <h1 style="color:white">Date & Time - PHP</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>PHP</h2>
+                <hr><br>
+                <li><a href="php-home.html">Introduction au PHP</a></li>
+                <li><a href="php-datatypes.html">Types de données</a></li>
+                <li><a href="php-variables.html">Les Variables</a></li>
+                <li><a href="php-date_time.html">Date et Heure</a></li>
+            </ul>
+        </nav>
+
+        <nav class="section-nav">
+            <ul>
+                <li><a href="php-date_time.html#dates">Date</a></li><hr>
+                <li><a href="php-date_time.html#times">Heures</a></li><hr>
+
+            <ul>
+        </nav>
+
+        <main>
+            <hr style="margin-left: 250px;"><br>
+                <p style="margin-left: 250px;">La fonction <b>date()</b> en PHP renvoie la date et l'heure actuelles en fonction de la configuration de votre serveur.</p>
+            <br><hr style="margin-left: 250px;"><br>
+
+            <section id="dates">
+                <h2>Fonction date() pour afficher la date</h2>
+                <p>Paramètres pour la date : </p>
+                <ul style="margin-left:50px;">
+                    <li><b>l</b> (L miniscule) : Représente le jour en lettres (Monday-Sunday)</li>
+                    <li><b>d</b> : Représente le jour du mois (0-31)</li>
+                    <li><b>D</b> : Représente les 3 premières lettres du jour de la semaine (Mon-Sun)</li>
+                    <li><b>F</b> : Représente le nom entier du mois (January - December)</li>
+                    <li><b>m</b> : Réprésente le mois sous format numérique (0-12)</li>
+                    <li><b>M</b> : Réprésente les 3 premières lettres du mois (Jan-Dec)</li>
+                    <li><b>y</b> : Représente l'année en deux chiffres</li>
+                    <li><b>Y</b> : Représente l'année en quatres chiffres</li>
+                </ul><br>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                    <pre class="code-content">
+<span class="function">echo</span> <span class="function">date</span>(<span class="string">"d/m/y"</span>) <span class="comment">// Console : 11-07-24</span>
+<span class="function">echo</span> <span class="function">date</span>(<span class="string">"D/M/Y"</span>) <span class="comment">// Console : Thu-Jul-2024</span>
+
+                    </pre>
+                </div>
+            </section>
+
+            <section id="times">
+                <h2>Fonction date() pour afficher le temps</h2>
+                <p>Paramètres pour le temps : </p>
+                <ul style="margin-left:50px;">
+                    <li><b>H</b> : Format 24H d'une heure (00-23)</li>
+                    <li><b>h</b> : Format 12H d'une heure (01-12)</li>
+                    <li><b>i</b> : Représente les minutes (00-59)</li>
+                    <li><b>s</b> : Représente les secondes (00-59)</li>
+                </ul><br>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                    <pre class="code-content">
+<span class="function">echo</span> <span class="function">date</span>(<span class="string">"H:i:s"</span>) <span class="comment">// Console : 03:46:50</span>
+                    </pre>
+                </div>
+            </section>
+        </main>
+    </div>
+        <script src="../script.js"></script>
+
+</body>
+</html>
