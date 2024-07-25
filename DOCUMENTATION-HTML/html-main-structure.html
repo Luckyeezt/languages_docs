@@ -6,6 +6,7 @@
     <title>Le HTML</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../languages-color.css">
+    <link rel="stylesheet" href="../codebox.css">
     <link rel="icon" href="logo-html.png">
     <style>
         header h1 {
@@ -49,7 +50,6 @@
                 <br><hr><br>
                 <h2>Les balises</h2>
                 <hr><br>
-                <li><a href="html-entete-balises.html">Balises de l'entête</a></li>
                 <li><a href="html-structure-balises.html">Balises de Structures</a></li>
                 <li><a href="html-semantique.html">Balises d'HTML Sémantique</a><li>
                 <li><a href="html-contenu-balises.html">Balises de Contenu</a></li>
@@ -61,7 +61,32 @@
 
         <main>
             <section id="intro">
-                <h2>C'est quoi le HTML</h2>
+                <h2>Structure de base - HTML</h2>
+                <p>Pour commencer à créer une page html, il y'a 4 balises primordiales afin de créer une page en règle ! </p><br>
+                <ul>
+                    <li><b>&lt;!DOCTYPE html&gt;</b> : Cette balise est obligatoire pour toutes les pages HTML, elle permet de faire comprendre au navigateur quel type de fichier doit-il afficher, ici en l'occurence c'est du HTML.</li>
+                    <li><b>&lt;html&gt;</b> : L'élément html va contenir toute la page.</li>
+                    <li><b>&lt;head&gt;</b> : L'élément head va contenir les informations qui ne sont pas affichées sur la page, comme les métadonnées, les informations de style, les informations de script, les informations de références, etc...</li>
+                    <li><b>&lt;body&gt;</b> : L'élément body va contenir les informations qui sont affichées sur la page.</li>
+                    <br>
+                    <div class="code-box">
+                        <div class="toolbar">
+                            <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                            <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                        </div>
+                        <pre class="code-content">
+&lt;<span style="color:salmon">!DOCTYPE html</span>&gt;
+    &lt;<span style="color:salmon">html</span>&gt;
+        &lt;<span style="color:salmon">head</span>&gt;
+
+        &lt;<span style="color:salmon">/head</span>&gt;
+        &lt;<span style="color:salmon">body</span>&gt;
+
+        &lt;<span style="color:salmon">/body</span>&gt;
+    &lt;<span style="color:salmon">/html</span>&gt;
+                        </pre>
+                </div>
+                </ul>
             </section>
         </main>
 
