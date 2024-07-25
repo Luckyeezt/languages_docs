@@ -37,3 +37,27 @@
         });
     }
 
+    // script.js
+
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('html-entry');
+    const sections = document.querySelectorAll('main section');
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+
+        sections.forEach(section => {
+            const sectionId = section.id.toLowerCase();
+            if (sectionId.includes(query)) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+    });
+});
+
+
+
