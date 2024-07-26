@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../languages-color.css">
     <link rel="stylesheet" href="../codebox.css">
+    <link rel="stylesheet" href="attributs-html.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="icon" href="logo-html.png">
@@ -59,37 +60,65 @@
                 <li><a href="html-forms-balises.html">Balises de Formulaires</a></li>
                 <li><a href="html-tables-balises.html">Balises de Tableau</a></li>
                 <li><a href="html-listes-balises.html">Balises de Listes</a></li>
+                <li><a href="html-encoded-caracteres.html">Caractères Spéciaux</a></li>
             </ul>
         </nav>
 
         <main>
             <section id="intro">
-                <h2>C'est quoi le HTML</h2>
-                <p>Le HTML est un langage de balisage qui utilise les chevrons ouvrants &lt; & fermants &gt; pour créer des balises, une balise contient une balise d'<b>ouverture</b> & de <b>fermeture</b> avec le slash (/), voici la syntaxe principale :</p>
-                <div class="code-box">
-                    <div class="toolbar">
-                        <button class="play-btn" style="display: none;"><i class="fas fa-play"></i>Exécuter</button>
-                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
-                    </div>
-                    <pre class="code-content">
-&lt;<span style="color:rgb(247, 52, 52)">nom_de_la_balise</span>&gt;.....&lt;/<span style="color:rgb(247, 52, 52)">nom_de_la_balise</span>&gt;
-                    </pre>
-                </div>
-                <p>Il existe également des balises qui n'ont pas de balises de fermetures, on les appellent des <b>balises orphelines</b> ou <b>auto-fermantes</b>, elles ne contiennent pas de textes.</p>
-                <div class="code-box">
-                    <div class="toolbar">
-                        <button class="play-btn" style="display: none;"><i class="fas fa-play"></i>Exécuter</button>
-                        <button class="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
-                    </div>
-                    <pre class="code-content">
-&lt;<span style="color:rgb(247, 52, 52)">nom_de_la_balise</span>/&gt;
-                    </pre>
-                </div>
-                <ul>
-                    <li>Crée en 1991 par <b>Tim Berners-Lee</b></li>
-                    <li>Définit et crée le contenu d'une page web</li>
-                    <li>Gère le texte, vidéos, images, audios, liens vers d'autres pages etc..</li>
-                </ul>
+                <h2>Liste des caractères spéciaux</h2>
+                <table>
+                    <thead>
+                        <th>Caractère spécial</th>
+                        <th>Résultat</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&amp;lt;</td>
+                            <td>Chevron ouvrant : <b><</b></td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;gt;</td>
+                            <td>Chevron fermant: <b>></b></td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;quot;</td>
+                            <td>Guillemets Doubles : <b>"</b></td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;amp;</td>
+                            <td>Et "anglais" : <b>&</b></td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;nbsp;</td>
+                            <td>Espace</td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;eacute;</td>
+                            <td>E accent aigu : <b>é</b></td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;egrave;</td>
+                            <td>E accent grave : <b>è</b></td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;ecirc;</td>
+                            <td>E accent circonflexe : <b>ê</b></td>
+                        </tr>
+
+                        <tr>
+                            <td>&amp;agrave;</td>
+                            <td>A accent grave : <b>à</b></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </main>
 

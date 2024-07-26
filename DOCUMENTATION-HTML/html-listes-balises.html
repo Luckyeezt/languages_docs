@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le HTML</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="icon" href="logo-html.png">
+    <style>
+        header h1 {
+            color:white;
+        }
+        #menu-nav li a:hover {
+            color: white
+        }
+        #menu-nav li a:hover {
+            background-color: rgb(247, 52, 52);
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center; /* Centre horizontalement */
+            margin: 20px;
+}
+
+    #html-entry {
+        width: 100%; /* La largeur du champ d'entrée */
+        max-width: 700px; /* Largeur maximale du champ d'entrée */
+        padding: 10px; /* Espace intérieur */
+        border: 2px solid #ccc; /* Bordure */
+        border-radius: 25px; /* Coins arrondis */
+        font-size: 16px; /* Taille de la police */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée */
+        transition: border-color 0.3s, box-shadow 0.3s; /* Animation lors du survol */
+    }
+
+    #html-entry::placeholder {
+        color: #aaa; /* Couleur du texte de l'espaxce réservé */
+        font-style: italic; /* Style du texte de l'espace réservé */
+    }
+    .dark-mode #html-entry:focus {
+        border-color: white;
+        box-shadow: 0 4px 12px white;
+        outline: none;
+    }
+        </style>
+</head>
+<body>
+    <header style="background-color: rgb(247, 52, 52);">
+        <img src="logo-html.png" alt="logo">
+        <h1>Documentation - HTML</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="html"><a href="../DOCUMENTATION-HTML/html-home.html">HTML</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>HTML</h2>
+                <hr><br>
+                <li><a href="html-home.html">Introduction au HTML</a></li>
+                <br><hr><br>
+                <h2>Les balises</h2>
+                <hr><br>
+                <li><a href="html-structure-balises.html">Balises de Structures</a></li>
+                <li><a href="html-semantique.html">Balises d'HTML Sémantique</a><li>
+                <li><a href="html-contenu-balises.html">Balises de Contenu</a></li>
+                <li><a href="html-forms-balises.html">Balises de Formulaires</a></li>
+                <li><a href="html-tables-balises.html">Balises de Tableau</a></li>
+                <li><a href="html-listes-balises.html">Balises de Listes</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="search-bar">
+                <input type="text" id="html-entry" placeholder="Cherchez une balise de tableau">
+            </div>
+            <section id="ul">
+                <h2>&lt;ul&gt;</h2>
+            </section>
+
+            <section id="ol">
+                <h2>&lt;ol&gt;</h2>
+            </section>
+
+            <section id="li">
+                <h2>&lt;li&gt;</h2>
+            </section>
+        </main>
+
+    </div>
+        <script src="../script.js"></script>
+
+</body>
+</html>

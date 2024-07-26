@@ -8,9 +8,13 @@ table, th, td {
 }
 th, td {
     padding: 10px;
-    text-align: left;
+    text-align: center;
 }
 th {
     background-color: rgb(247, 52, 52);
     color: white;
+}
+
+td li {
+    list-style-type: none;
 }
