@@ -9,3 +9,19 @@
 .comment {
     color: #6272a4;
 }
+
+.variable {
+    color: rgb(255, 100, 100)
+}
+
+.number, .bool {
+    color: orange
+}
+
+.keywords {
+    color: rgb(235, 55, 235)
+}
+
+.fname {
+    color: rgb(0, 170, 255);
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le HTML</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="stylesheet" href="../codebox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="icon" href="logo-html.png">
+    <style>
+        header h1 {
+            color:white;
+        }
+        #menu-nav li a:hover {
+            color: white
+        }
+        #menu-nav li a:hover {
+            background-color: rgb(247, 52, 52);
+
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: rgb(247, 52, 52);">
+        <img src="logo-html.png" alt="logo">
+        <h1>Documentation - HTML</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../index.html">Accueil</a></li>
+            <li class="html"><a href="../DOCUMENTATION-HTML/html-home.html">HTML</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>HTML</h2>
+                <hr><br>
+                <li><a href="html-home.html">Introduction au HTML</a></li>
+                <li><a href="html-main-structure.html">Structure de base</a></li>
+                <br><hr><br>
+                <h2>Les balises</h2>
+                <hr><br>
+                <li><a href="html-entete-balises.html">Balises de l'entête</a></li>
+                <li><a href="html-structure-balises.html">Balises de Structures</a></li>
+                <li><a href="html-semantique.html">Balises d'HTML Sémantique</a><li>
+                <li><a href="html-contenu-balises.html">Balises de Contenu</a></li>
+                <li><a href="html-forms-balises.html">Balises de Formulaires</a></li>
+                <li><a href="html-tables-balises.html">Balises de Tableau</a></li>
+                <li><a href="html-listes-balises.html">Balises de Listes</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="h1">
+                <h2>Balise &lt;h1&gt; à &lt;h6&gt;</h2>
+            </section>
+
+            <section id="para">
+                <h2>Balise &lt;p&gt;</h2>
+            </section>
+
+            <section id="hr">
+                <h2>Balise &lt;hr&gt;</h2>
+            </section>
+
+            <section id="br">
+                <h2>Balise &lt;br&gt;</h2>
+            </section>
+        </main>
+
+    </div>
+        <script src="../script.js"></script>
+
+</body>
+</html>

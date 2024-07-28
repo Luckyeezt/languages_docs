@@ -1,0 +1,43 @@
+------ STRUCTURE DE BASE ------
+<!DOCTYPE html> --> Permet de dire au navigateur quel type de fichier afficher
+<html> </html> --> Permet de débuter le squelette du document HTML
+<head> </head> --> Créer la partie qui sera cachée qui va contenir les métadonnées & autres
+<body> </body> --> Créer le corps du document qui va accueilir les balises qui seront visibles aux utilisateurs
+
+<h1> </h1> -> Créer un titre de niveau 1
+<h2> </h2> -> Créer un titre de niveau 2
+<h3> </h3> -> Créer un titre de niveau 3
+<h4> </h4> -> Créer un titre de niveau 4
+<h5> </h5> -> Créer un titre de niveau 5
+<h6> </h6> -> Créer un titre de niveau 6
+<p> </p> -> Permet de créer un paragraphe
+
+------ BALISE FORMATAGE DE TEXTE ------
+<b> </b> -> Permet de mettre du texte en gras (bold)
+<strong> </strong> -> Permet de mettre du texte en gras (bold)
+<em> </em> -> Permet de mettre du texte en italic (emphasize)
+<i> </i> -> Permet de mettre du texte en italic (italic)
+<u> </u> -> Permet de souligner du texte (underline)
+<s> </s>
+
+
+<a> </a> -> Créer un lien (ancre)
+    href -> Le nouveau lien en cliquant dessus
+    target -> 
+        _blank -> Ouvre le lien dans une nouvelle fenêtre
+
+------ BALISES DE LISTES ------
+<ol> </ol> -> Créer une liste ordonné (Ordered List)
+    type -> Change le type de la liste
+        1 -> Liste numérotée à partir de 1
+        A -> Liste numérotée avec lettres majuscules (A-Z)
+        a -> Liste numérotée avec lettres miniscules (a-z)
+        I -> Liste numérotée avec lettres romains majuscules
+        i -> Liste numérotée avec lettres romains miniscules
+<ul> </ul> -> Créer une liste non-ordonnée (Unordered List)
+<li> </li> -> Créer un nouvel élement de liste (List Item)
+
+<img>
+    src -> Le chemin d'accès ou le lien de l'image qui sera affiché (source)
+    width -> Définis la largeur de l'image
+    alt -> Lorsque l'on survole l'image, affiche un texte de ce que l'image représente (utile si l'image est indisponible)

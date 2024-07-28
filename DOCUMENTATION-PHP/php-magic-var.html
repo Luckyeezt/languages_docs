@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constantes Magiques</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../languages-color.css">
+    <link rel="stylesheet" href="tokens-php.css">
+    <link rel="stylesheet" href="../codebox.css">
+    <link rel="icon" href="logo-php.png">
+    <style>
+        .section-nav li a:hover {
+             color: rgb(157, 13, 183);;
+         }
+
+         #menu-nav li a:hover {
+             background-color: rgb(157, 13, 183);
+             color:white;
+             transform: translateX(-10px);
+         }
+ </style>
+</head>
+<body>
+    <header style="background-color:  rgb(157, 13, 183)">
+        <img src="logo-php.png" alt="logo">
+        <h1 style="color:white">Constantes Magiques - PHP</h1>
+        <button id="darkmode-button">Mode Sombre</button>
+    </header>
+
+    <nav id="languages-nav">
+        <ul>
+            <li class="home"><a href="../index.html">Accueil</a></li>
+            <li class="html"><a href="../DOCUMENTATION-HTML/html-home.html">HTML</a></li>
+            <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
+            <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
+            <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
+            <li class="mysql"><a href="../DOCUMENTATION-SQL/sql-home.html">MySQL</a></li>
+            <li class="typescript"><a href="../DOCUMENTATION-TS/ts-home.html">TypeScript</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <nav id="menu-nav">
+            <ul>
+                <h2>PHP</h2>
+                <hr><br>
+                <li><a href="php-home.html">Introduction au PHP</a></li>
+                <li><a href="php-datatypes.html">Types de données</a></li>
+                <li><a href="php-variables.html">Les Variables</a></li>
+                <li><a href="php-magic-var.html">Les Constantes Magiques</a></li>
+                <li><a href="php-date_time.html">Date et Heure</a></li>
+            </ul>
+        </nav>
+
+        <nav class="section-nav">
+            <ul>
+                <li><a href="php-magic-var.html#line">__LINE__</a></li><hr>
+                <li><a href="php-magic-var.html#file">__FILE__</a></li><hr>
+                <li><a href="php-magic-var.html#dir">__DIR__</a></li><hr>
+                <li><a href="php-magic-var.html#function">__FUNCTION__</a></li><hr>
+
+            <ul>
+        </nav>
+
+        <main>
+            <hr style="margin-left: 250px;"><br>
+            <p style="margin-left: 250px;">Les <b>"constantes magiques"</b> sont des constantes déjà définies par le langage en lui-même, Elles sont très utiles pour obtenir des informations sur le fichier, la ligne, la fonction, la classe, etc., où elles sont utilisées.<br>En PHP il existe <b>9</b> "constantes magiques".
+            <br><br><hr style="margin-left: 250px;"><br>
+            <section>
+                <h2 id="line">__LINE__</h2>
+                <p>C'est une constante qui retourne le numéro de la ligne sur laquelle la variable est utilisée.</p>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display: none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="function">echo</span> <span class="string">"Le numéro de la ligne est de : "</span> . <span class="variable">__LINE__</span> ;                 
+                    </pre>
+                </div>
+                <p>Celà va produire dans la <b>console</b> : </p><br>
+                <p class="output-js">Console : Le numéro de la ligne est de : 0</p>
+
+                <br><hr><br>
+
+                <h2 id="file">__FILE__</h2>
+                <p>C'est une constante qui renvoie le chemin complet du fichier où la constante est utilisée</p>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display: none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="function">echo</span> <span class="string">"Le chemin de ce fichier est : "</span> . <span class="variable">__FILE__</span> ;                 
+                    </pre>
+                </div>
+                <p>Celà va produire dans la <b>console</b> : </p><br>
+                <p class="output-js">Console : Le chemin de ce fichier est : C:\xampp\htdocs\website\learning.php</p>
+
+                <br><hr><br>
+
+                <h2 id="dir">__DIR__</h2>
+                <p>C'est une constante qui retourne le dossier du répertoire où le fichier utilisé se trouve.</p>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display: none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="function">echo</span> <span class="string">"Le dossier du fichier est : "</span> . <span class="variable">__DIR__</span> ;                 
+                    </pre>
+                </div>
+                <p>Celà va produire dans la <b>console</b> : </p><br>
+                <p class="output-js">Console : Le dossier du fichier est : C:\xampp\htdocs\website</p>
+
+                <br><hr><br>
+
+                <h2 id="function">__FUNCTION__</h2>
+                <p>C'est une constante qui retourne le nom de la fonction où se situe le script.</p>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display: none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="keywords">function</span> <span class="fname">hello</span>() {
+    <span class="function">echo</span> <span class="string">"Ma fonction est : "</span> . <span class="variable">__FUNCTION__</span>;
+}
+<span class="fname">hello</span>();
+                </div>
+                <p>Celà va produire dans la <b>console</b> : </p><br>
+                <p class="output-js">Console : Ma fonction est : test</p>
+
+                <br><hr><br>
+            </section>
+        </main>
+    </div>
+        <script src="../script.js"></script>
+
+</body>
+</html>

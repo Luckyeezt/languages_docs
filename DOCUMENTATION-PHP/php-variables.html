@@ -6,7 +6,8 @@
     <title>Le PHP</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../languages-color.css">
-    <link rel^="stylesheet" href="tokens-php.css">
+    <link rel="stylesheet" href="tokens-php.css">
+    <link rel="stylesheet" href="../codebox.css">
     <link rel="icon" href="logo-php.png">
     <style>
         .section-nav li a:hover {
@@ -29,7 +30,8 @@
 
     <nav id="languages-nav">
         <ul>
-            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="home"><a href="../index.html">Accueil</a></li>
+            <li class="html"><a href="../DOCUMENTATION-HTML/html-home.html">HTML</a></li>
             <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
             <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
             <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
@@ -46,6 +48,7 @@
                 <li><a href="php-home.html">Introduction au PHP</a></li>
                 <li><a href="php-datatypes.html">Types de données</a></li>
                 <li><a href="php-variables.html">Les Variables</a></li>
+                <li><a href="php-magic-var.html">Les Constantes Magiques</a></li>
                 <li><a href="php-date_time.html">Date et Heure</a></li>
             </ul>
         </nav>
@@ -69,11 +72,73 @@
                             <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
                         </div>
                     <pre class="code-content">
-<span class="function">echo</span> <span class="function">date</span>(<span class="string">"H:i:s"</span>) <span class="comment">// Console : 03:46:50</span>
+<span class="variable">$number1</span> = <span class="number">25</span>; <span class="comment">// Création de la variable number1 qui stocker le nombre 25.</span>
+<span class="variable">$email</span> = <span class="string">"johndoe@gmail.com"</span>; <span class="comment">// Création de la variable email qui stocke un string</span>
+                    </pre>
+                    </div>
+            </ol>
+                <p>Une variables est correcte seulement si :</p>
+                <ul style="margin-left: 40px;margin-top: 10px;">
+                    <li>Elle commence avec le signe dollar ($).</li>
+                    <li>Elle ne comporte pas d'espace dans son nom.</li>
+                    <li>Elle commence par une lettre de l'alphabet (pas de symboles ni de chiffres)</li>
+                </ul>
+            </section>
+
+            <section id="constantes">
+                <h2>Construction de variables constantes</h2>
+                <p>Une variable constante contient une valeur qui restera inchangée durant tout le script du programme. Elle se créer avec
+                    la fonction define()
+                </p>
+                <p>La syntaxe de la création d'une <b>variable constante</b>  en PHP : </p>
+
+                <ol style="margin-left: 40px;margin-top: 10px;">
+                    <li>define() -> Pour créer une constante il faut utiliser la fonction define()</li>
+                    <li>Le nom de la variable à l'intérieur des parenthèses : define(<b>"NOM_VAR"</b>)
+                    <li>La valeur de la variable à l'intérieur des parenthèses : define("NOM_VAR", <b>"VALEUR_VAR"</b>)
+                        <div class="code-box">
+                            <div class="toolbar">
+                                <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                                <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                            </div>
+                        <pre class="code-content">
+<span class="function">define</span>(<span class="string">"PRENOM"</span>, <span class="string">"Jonathan"</span>) <span class="comment">// Création de la variable PRENOM qui stocke la valeur Jonathan.</span>
+<span class="function">define</span>(<span class="string">"NUMBER"</span>, <span class="number">18</span>) <span class="comment">// Création de la variable NUMBER qui stocke le nombre 18.</span>                    
+                        </pre>
+                        </div>
+                </ol>
+                <br><hr><br>
+                <h2>Les manières d'afficher une variable constante</h2>
+                <p>Imaginons que nous avons créer une variable et que nous voulons l'afficher, il y'a deux façons ! :</p>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                <pre class="code-content">
+<span class="function">define</span>(<span class="string">"FOOD"</span>, <span class="string">"Hamburger"</span>) <span class="comment">// Création de la variable FOOD qui stocke une nourriture.</span>
+                </pre>
+                </div>
+                <p>Bien sûr nous devrons l'afficher avec la fonction écho : </p>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" onclick="alert('Hamburger')"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                <pre class="code-content">
+<span class="function">echo</span> <span class="variable">FOOD</span> <span class="comment">// Affichage de la variable FOOD.</span>
+                </pre>
+                </div>
+                <p>Ou bien nous pouvons utiliser echo + la fonction constant()</p>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" onclick="alert('Hamburger')"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>
+                    </div>
+                    <pre class="code-content">
+<span class="function">echo constant</span>(<span class="string">"FOOD"</span>) <span class="comment">// Affichage de la variable FOOD.</span>
                     </pre>
                 </div>
-
-                </ol>
             </section>
         </main>
     </div>

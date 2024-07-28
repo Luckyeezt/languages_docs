@@ -6,6 +6,8 @@
     <title>Types de Données</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../languages-color.css">
+    <link rel="stylesheet" href="../codebox.css">
+    <link rel="stylesheet" href="tokens-php.css">
     <link rel="icon" href="logo-php.png">
     <style>
         .section-nav li a:hover {
@@ -28,7 +30,8 @@
 
     <nav id="languages-nav">
         <ul>
-            <li class="home"><a href="../documentations.html">Accueil</a></li>
+            <li class="home"><a href="../index.html">Accueil</a></li>
+            <li class="html"><a href="../DOCUMENTATION-HTML/html-home.html">HTML</a></li>
             <li class="javascript"><a href="../DOCUMENTATION-JS/js-home.html">Javascript</a></li>
             <li class="python"><a href="../DOCUMENTATION-PY/py-home.html">Python</a></li>
             <li class="php"><a href="../DOCUMENTATION-PHP/php-home.html">PHP</a></li>
@@ -45,6 +48,7 @@
                 <li><a href="php-home.html">Introduction au PHP</a></li>
                 <li><a href="php-datatypes.html">Types de données</a></li>
                 <li><a href="php-variables.html">Les Variables</a></li>
+                <li><a href="php-magic-var.html">Les Constantes Magiques</a></li>
                 <li><a href="php-date_time.html">Date et Heure</a></li>
             </ul>
         </nav>
@@ -55,6 +59,7 @@
                 <li><a href="php-datatypes.html#integers">Nombres entiers</a></li><hr>
                 <li><a href="php-datatypes.html#float">Nombres décimaux</a></li><hr>
                 <li><a href="php-datatypes.html#bool">Booléens</a></li><hr>
+                <li><a href="php-datatypes.html#vardump">Fonction var_dump()</a></li><hr>
             <ul>
         </nav>
         <main>
@@ -65,6 +70,7 @@
                     <li>Les nombres entiers (int) : </li>
                     <li>Les nombres décimaux / flottants (float) : </li>
                     <li>Les booléens (bool) : </li>
+                    <li>La fonction <b>var_dump()</b> : Elle nous permet de savoir de quel type est la valeur de n'importe quelle variable / valeur.</li>
             </section>
 
             <section id="string">
@@ -81,6 +87,36 @@
 
             <section id="bool">
                 <h2>Les booléens (bool)</h2>
+            </section>
+
+            <section id="vardump">
+                <h2>La fonction var_dump()</h2>
+                <p>La fonction var_dump() nous permet de connaître de quel type est la valeur d'une variable, cela peut être un nombre entier ou flottant, une chaine de caractères, un booléen etc...</p>
+                <br>
+                <hr>
+                <br>
+                <h3>Essayez de comprendre avec ces exemples ci-dessous : </h3>
+                <div class="code-box">
+                    <div class="toolbar">
+                        <button class="play-btn" style="display:none;"><i class="fas fa-play"></i> Exécuter</button>
+                        <button id="copy-btn" onclick="copyButton()"><i class="fas fa-copy"></i> Copier</button>                  
+                    </div>
+                    <pre class="code-content">
+<span class="function">echo var_dump</span>(<span class="number">25</span>) <span class="comment">// Console : int(25) -> Nombre entier</span>
+<span class="function">echo var_dump</span>(<span class="number">3.15</span>) <span class="comment">// Console : float(3.15) -> Nombre entier</span>
+<span class="function">echo var_dump</span>(<span class="string">"Hello World!"</span>); <span class="comment">// Console : string(12) "Hello World!" -> String</span>
+<span class="function">echo var_dump</span>(<span class="bool">true</span>); <span class="comment">// Console : bool(true) -> Booléen</span>
+                    
+                    </pre>
+                </div>
+
+                <p>La fonction var_dump() nous renvoie plusieurs informations</p>
+                <ul style="margin-left: 40px;margin-top: 10px;">
+                    <li>Nombre entier : Type : int | Valeur entre parenthèses ()</li>
+                    <li>Nombre flottant : Type : float | Valeur entre parenthèses ()</li>
+                    <li>String : Type : string | Longueur de la valeur entre parenthèses () | Valeur " "</li>
+                    <li>Booléen : Type : bool | Valeur entre parenthèses (true/false)</li>
+                </ul>
             </section>
 
         </main>

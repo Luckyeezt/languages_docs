@@ -1,0 +1,1 @@
+list-style-type: disc, circle, square, none -> Modifie le type des puces dans une liste non-ordonnée
